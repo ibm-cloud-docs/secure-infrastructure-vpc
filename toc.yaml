@@ -1,0 +1,76 @@
+toc:
+  properties:
+    subcollection: secure-infrastructure-vpc
+    audience: solution
+    content-type: deployment
+    use-case: DevOps
+    category: solution_docs
+    compliance: IBMCloudFFS
+    href: /docs/secure-infrastructure-vpc
+    path: secure-infrastructure-vpc
+    description: The landing zone deployable architectures create a secure and customizable Virtual Private Cloud (VPC) environment. Deployable code is also available Red Hat OpenShift and virtual servers (VSI).
+    label: Landing zone
+    deployable: true
+
+#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation-design for more details on the toc design.
+  entries:
+  - navgroup:
+      id: overview
+      topics:
+      - topic: overview.md
+        navtitle: Overview
+      - topic: release-notes.md
+        navtitle: Release notes
+
+  - navgroup:
+      id: architecture
+      topics:
+      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpc-standard.md
+        navtitle: VPC landing zone
+      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
+        navtitle: VSI on VPC landing zone
+      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
+      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
+        navtitle: Red Hat OpenShift Container Platform on VPC landing zone
+
+  - navgroup:
+      id: plan
+      topics:
+      - topic: planning-vpc.md
+
+  - navgroup:
+      id: deploy
+      topics:
+      - deploying.md
+
+  - navgroup:
+      id: reference
+      topics:
+      - topic: shared-responsibilities.md
+        navtitle: Responsibilities
+
+  - navgroup:
+      id: help
+      topics:
+      - topic: support.md
+        navtitle: Getting help and support
+      - faqs.md
+      - topic: known-issues.md
+        navtitle: Known issues
+      - topicgroup:
+          label: Troubleshooting
+          topics:
+          - topicgroup:
+              label: Troubleshooting Schematics
+              topics:
+              - include: ../schematics/troubleshooting/apply_500_errors.md
+                navtitle: Why am I getting 5xx errors in Schematics?
+              - include: ../schematics/troubleshooting/apply_nullresource.md
+                navtitle: How can I find the root cause of Schematics apply failures?
+          - topicgroup:
+              label: Troubleshooting projects
+              topics:
+              - include: ../secure-enterprise/ts-needs-attention.md
+                navtitle: How do I address a failed validation?
+              - include: ../secure-enterprise/ts-deploy.md
+                navtitle: How do I address a failed deployment?
