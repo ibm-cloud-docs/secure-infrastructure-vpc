@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-17"
 
 keywords:
 
@@ -45,12 +45,17 @@ To deploy a landing zone deployable architecture through the {{site.data.keyword
 
         {{site.data.keyword.cloud_notm}} projects runs a Code Risk Analyzer scan that includes a [specific set of {{site.data.keyword.compliance_short}} goals](/docs/code-risk-analyzer-cli-plugin?topic=code-risk-analyzer-cli-plugin-cra-cli-plugin#terraform-scc-goals). Controls that are part of the deployable architecture and that are also supported by {{site.data.keyword.cloud_notm}} projects are checked. Any extra controls that are not included in the list of supported {{site.data.keyword.compliance_short}} goals are not checked when you validate the configuration.
 
-        If the validation fails because of the Code Risk Analyzer scan, you can [troubleshoot the failure](/docs/secure-enterprise?topic=secure-enterprise-ts-na-failures#na-checks-fail).
-1.  After validation succeeds, click **Deploy**.
+        If the validation fails because of the Code Risk Analyzer scan, you can [troubleshoot the failure](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ts-na-failures).
+1.  Deploy the configuration:
 
-    Deploying the deployable architecture can take more than an hour. You are notified when the deployment is successful.
+    After you validate your configuration, you can deploy it to your target account.
 
-    The output tab populates a website URL in addition to other values. Copy the website URL and paste it into your browser to view the website that's created from your configuration.
+    1.  1. Review the input values and make any necessary changes.
+    1.  Click **Deploy**.
+
+        Deploying the deployable architecture can take more than an hour. You are notified when the deployment is successful.
+
+1.  Review the outputs from the deployable architecture.
 
 During the validation and deployment process, monitor the [needs attention items](/docs/secure-enterprise?topic=secure-enterprise-needs-attention-projects). The widget reflects any issue that occurs in your configurations.
 {: remember}
