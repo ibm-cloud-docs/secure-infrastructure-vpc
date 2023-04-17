@@ -14,7 +14,7 @@ content-type: release-note
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Release notes for the landng zone deployable architecture
+# Release notes for the landing zone deployable architecture
 {: #secure-infrastructure-vpc-relnotes}
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries grouped by date.
