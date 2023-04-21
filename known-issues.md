@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-04-21"
 
 keywords:
 
@@ -15,6 +15,10 @@ subcollection: secure-infrastructure-vpc
 # Known issues with landing zone deployable architectures
 {: #known-issues}
 
+## Intermittent failures when you run apply or click deploy
+{: #ki-policy-404}
+
+You might experience a `404` `policy_not_found` error when the deployable architecture attempts to create an authorization policy. The failure is intermittent. Retry the command, for example, by clicking **Deploy** in projects or **Apply plan** in Schematics, or by running the apply command again. For more information, see [Intermittently getting error retrieving authorizationPolicy](https://github.com/IBM-Cloud/terraform-provider-ibm/issues/4413).
 
 ## Service ID API keys and Red Hat OpenShift
 {: #ki-svc-key-rhos}
