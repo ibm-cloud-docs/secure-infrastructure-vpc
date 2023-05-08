@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-08"
 
 keywords:
 
@@ -26,7 +26,7 @@ FAQs for the VPC landing zone deployable architectures. To find all FAQs for {{s
 {: #what-is-da}
 {: faq}
 
-A deployable architecture is a combination of capabilities from one or more technologies that solve a customer-defined problem, and it can have one or more reference architectures based on the customer business needs. For more information, see [What are deployable architectures and modules?](/docs/solution-as-code?topic=solution-as-code-what-is)
+A deployable architecture is a combination of capabilities from one or more technologies that solve a customer-defined problem, and it can have one or more reference architectures based on the customer business needs. For more about deployable architectures, read about [infrastructure architectures](/docs/overview?topic=overview-secure-enterprise#define-architecture) in "Running secure enterprise workloads on IBM Cloud".
 
 ## What is infrastructure as code?
 {: #what-is-iac}
