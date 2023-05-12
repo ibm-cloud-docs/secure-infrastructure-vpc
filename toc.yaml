@@ -60,6 +60,7 @@ toc:
       - topicgroup:
           label: Troubleshooting
           topics:
+          - topic: ts-deploy.md
           - topicgroup:
               label: Troubleshooting Schematics
               topics:

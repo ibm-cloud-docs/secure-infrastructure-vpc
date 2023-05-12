@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-05-12"
 
 keywords:
 
@@ -37,7 +37,7 @@ To ensure that the support team can start investigating your case to provide a t
     1.  From the workspace **Activity** page, select the {{site.data.keyword.bpshort}} apply action that failed.
     1.  Click **Jobs** to see the detailed log output.
 1.  Provide errors from the {{site.data.keyword.bpshort}} log:
-    1.  In the log file, find the last action that {{site.data.keyword.bpshort}} started before the error occured. For example, in the following log output, {{site.data.keyword.bpshort}} tried to run a copy script in the `instances_module` module by using the Terraform `null_resource`.
+    1.  In the log file, find the last action that {{site.data.keyword.bpshort}} started before the error occurred. For example, in the following log output, {{site.data.keyword.bpshort}} tried to run a copy script in the `instances_module` module by using the Terraform `null_resource`.
 
         ```text
         2021/05/24 05:03:41 Terraform apply | module.instances_module.module.compute_remote_copy_rpms.null_resource.remote_copy[0]: Still creating... [5m0s elapsed]
@@ -51,18 +51,30 @@ To ensure that the support team can start investigating your case to provide a t
     1.  Paste the errors into the case details.
 
 1.  Provide the architecture name, source URL, and version from the log:
+
     1.  In the log file, find the architecture information. In the following example, you see the `Related Workspace`, `sourcerelease`, and `sourceurl`:
 
-      ```sh
-      2023/04/06 18:11:43 Related Workspace: name=deploy-arch-ibm-slz-ocp-04-06-2023, sourcerelease=(not specified), sourceurl=https modules/terraform-ibm-landing-zone/archive/v3.1.2.tar.gz,tolder=terratorm-ibm-landing-zone-3.1.2/patterns/roks
-       ```
+        ```sh
+        2023/04/06 18:11:43 Related Workspace: name=deploy-arch-ibm-slz-ocp-04-06-2023, sourcerelease=(not specified), sourceurl=https modules/terraform-ibm-landing-zone/archive/v3.1.2.tar.gz, folder=terraform-ibm-landing-zone-3.1.2/patterns/roks
+        ```
+        {: screen}
 
-    1.  Paste the architecture information into the case details.
+    1.  Copy the architecture information and paste it into the case details.
 
 ## Routing your support case
 {: #support-case-routing}
 
-To route your support case correctly to speed up resolution, select the applicable product when you open the case:
+To route your support case correctly to speed up resolution, select the applicable product when you open the case.
 
-- If you can't deploy successfully, use the name of the deployable architecture as it is listed in the {{site.data.keyword.cloud_notm}} catalog as the product name in the case.
-- If you successfully deployed, yet have an issue with a service in the deployable architecture, use that service name.
+### Routing when you can't deploy successfully
+{: #support-routing-no-deploy}
+
+If you can't deploy your deployable architecture, open a support case with the most likely cause of the issue:
+
+- If you identified the service that you think is causing the error from the {{site.data.keyword.bpshort}} log, use the name of that service as the product name in the case.
+- If you can't identify the error from the {{site.data.keyword.bpshort}} log, use the name of the deployable architecture as it is listed in the IBM Cloud catalog.
+
+### Routing when you deployed successfully
+{: #support-routing-deploy}
+
+If you successfully deployed, yet have an issue with a service in the deployable architecture, open a support case and use the name of that service.
