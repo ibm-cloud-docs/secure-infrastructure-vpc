@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-18"
 
 keywords:
 
@@ -20,12 +20,20 @@ content-type: release-note
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries grouped by date.
 {: shortdesc}
 
+## 18 May 2023
+{: #secure-infrastructure-vpc-may1823}
+{: release-note}
+
+Version 3.8.3 of the landing zone deployable architectures available
+:   Version 3.8.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}. This version fixes the issue that prevented deletion of the SSH key in the VSI on VPC landing zone. For other changes in the release, see the [release notes](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/v3.8.3){: external} on GitHub.
+
+
 ## 04 May 2023
 {: #secure-infrastructure-vpc-may0523}
 {: release-note}
 
 Version 3.6.4 of the landing zone deployable architectures available
-:   Version 3.6.4 of the the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} catalog. This version includes updates to several variable descriptions and support for {{site.data.keyword.compliance_long}} v2 rules.
+:   Version 3.6.4 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} catalog. This version includes updates to several variable descriptions and support for {{site.data.keyword.compliance_long}} v2 rules.
 
 ## 17 April 2023
 {: #secure-infrastructure-vpc-apr1723}

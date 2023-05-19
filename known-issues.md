@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-05-18"
 
 keywords:
 
@@ -14,15 +14,6 @@ subcollection: secure-infrastructure-vpc
 
 # Known issues with landing zone deployable architectures
 {: #known-issues}
-
-## Cannot delete SSH key in VSI on VPC landing zone
-{: #ki-vsi-sshkey-error}
-
-After the initial deployment of the VSI on VPC landing zone, subsequent `plan` or `apply` (deploy) commands incorrectly indicate that the public SSH key will be destroyed. When you try to apply the changes, the command fails with the following error:
-
-> Error deleting SSH Key : SSH-key still in use
-
-The issue applies to version 3.5.0 and later of the VSI on VPC landing zone. A fix is planned for an upcoming version.
 
 ## Intermittent failures when you run apply or click deploy
 {: #ki-policy-404}
