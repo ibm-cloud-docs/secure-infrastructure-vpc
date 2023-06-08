@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-05-18"
+lastupdated: "2023-06-05"
 
 keywords:
 
@@ -18,19 +18,19 @@ subcollection: secure-infrastructure-vpc
 ## Intermittent failures when you run apply or click deploy
 {: #ki-policy-404}
 
-You might experience a `404` `policy_not_found` error when the deployable architecture attempts to create an authorization policy. The failure is intermittent. Retry the command, for example, by clicking **Deploy** in projects or **Apply plan** in Schematics, or by running the apply command again.
+You might experience a `404` `policy_not_found` error when the deployable architecture attempts to create an authorization policy. The failure is intermittent. Retry the command, for example, by clicking **Deploy** in projects or **Apply plan** in {{site.data.keyword.bpshort}}, or by running the apply command again.
 
-## Service ID API keys and Red Hat OpenShift
+## Service ID API keys and {{site.data.keyword.redhat_openshift_notm}}
 {: #ki-svc-key-rhos}
 
-Service ID API keys are not supported for the Red Hat OpenShift Container Platform on VPC landing zone deployable architecture. Use an {{site.data.keyword.cloud_notm}} [API key](https://cloud.ibm.com/docs/account?topic=account-userapikey#create_user_key). For more information, see [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions) in the Red Hat OpenShift Cloud Docs.
+Service ID API keys are not supported for the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone deployable architecture. Use an {{site.data.keyword.cloud_notm}} [API key](https://cloud.ibm.com/docs/account?topic=account-userapikey#create_user_key). For more information, see [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions) in the {{site.data.keyword.redhat_openshift_notm}} Cloud Docs.
 
 ## Authentication with trusted profiles not supported in some landing zones
 {: #ki-trusted-profile}
 
-When you deploy a deployable architecture with {{site.data.keyword.cloud_notm}} projects, you select an authentication method to deploy your configuration. 
+When you deploy a deployable architecture with {{site.data.keyword.cloud_notm}} projects, you select an authentication method to deploy your configuration.
 
-Currently, the Red Hat OpenShift Container Platform on VPC landing zone supports authenticating only with an API key and not a service ID API key (see previous known issue). Trusted profile is not supported as an authentication method for this landing zone.
+Currently, the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone supports authenticating only with an API key and not a service ID API key (see previous known issue). Trusted profile is not supported as an authentication method for this landing zone.
 
 ## Supported {{site.data.keyword.compliance_short}} rules
 {: #ki-scc-goals}
