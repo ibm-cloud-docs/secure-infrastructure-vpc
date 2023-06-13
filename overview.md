@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-06-13"
 
 keywords:
 
@@ -12,8 +12,6 @@ subcollection: secure-infrastructure-vpc
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!-- Make sure each H1/H2/H3/etc. heading is _unique_ to your topic by adding a short but human-readable identifier. -->
-
 # Overview of VPC landing zone deployable architectures
 {: #overview}
 
@@ -22,7 +20,7 @@ The VPC landing zone [deployable architectures](#x10293733){: term} are a precon
 
 Three deployable architectures are included: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. You can use the deployable architectures to create a secure and customizable [Virtual Private Cloud](#x4585403){: term} (VPC) environment.
 
-The deployable architectures can help you meet the requirements and follow the best practices of {{site.data.keyword.cloud_notm}} Framework for Financial Services. For more information, see [Getting started with {{site.data.keyword.cloud_notm}} for Financial Services](/docs/framework-financial-services). For more about deployable architectures, read about [infrastructure architectures](/docs/overview?topic=overview-secure-enterprise#define-architecture) in "Running secure enterprise workloads on {{site.data.keyword.cloud_notm}}".
+The deployable architectures can help you meet the requirements and follow the best practices of {{site.data.keyword.cloud_notm}} Framework for Financial Services. For more information, see [Getting started with {{site.data.keyword.cloud_notm}} for Financial Services](/docs/framework-financial-services). For more information about deployable architectures, read about [infrastructure architectures](/docs/overview?topic=overview-secure-enterprise#define-architecture) in "Running secure enterprise workloads on {{site.data.keyword.cloud_notm}}".
 
 ## VPC landing zone
 {: #overview-vpc}
