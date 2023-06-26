@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-06-05"
+lastupdated: "2023-06-26"
 
 keywords:
 
@@ -36,4 +36,32 @@ Currently, the {{site.data.keyword.redhat_openshift_notm}} Container Platform on
 {: #ki-scc-goals}
 
 The deployable architectures support a set of security controls, and those controls are listed with the deployable architecture in the {{site.data.keyword.cloud_notm}} catalog.
+
 If you use {{site.data.keyword.compliance_short}} or the Code Risk Analyzer plug-in for {{site.data.keyword.cloud_notm}} to scan your deployed resources against another security profile, you might see failures in the results.
+
+## Unsupported attribute error after interrupted apply or destroy
+{: #ki-unsupported-attribute}
+
+If a Terraform `apply` or `destroy` operation is interrupted, you might see an "Unsupported attribute" error at the next Terraform operation. Typically, this error occurs when a `destroy` operation is cancelled or has an unexpected error.
+
+```
+Error: Unsupported attribute
+   on .terraform/modules/landing_zone/dynamic_values/config_modules/vsi/vsi.tf line 20, in module "vsi_subnets":
+   20:   subnet_zone_list = var.vpc_modules[each.value.vpc_name].subnet_zone_list
+     ├────────────────
+     │ each.value.vpc_name is "management"
+     │ var.vpc_modules is object with 3 attributes
+
+This object does not have an attribute named "subnet_zone_list".
+```
+{: screen}
+
+The error occurs because the interrupted operation leaves key resources in a partial deployment state and other resources are configured to use these missing components.
+
+### Workaround
+{: #ki-unsupported-workaround}
+
+To complete the `destroy` operation that is stuck in this state, try to decouple the resources that depend on the missing components. To decouple the resources, use the `override` feature, for example by setting the `override_json_string` input variable.
+
+- VSI on VPC landing zone deployable architectures that are missing their VPC components: `override_json_string` = `'{"vsi": []}'`
+- Red Hat OpenShift Container Platform on VPC landing zone deployable architectures:`override_json_string` = `'{"clusters": []}'`
