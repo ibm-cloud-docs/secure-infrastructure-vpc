@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-04-17"
+lastupdated: "2023-07-06"
 
 keywords:
 
@@ -83,19 +83,41 @@ For more information, see [Assigning users access to projects](/docs/allowlist/p
 
 Make sure that you have an SSH key that you can use for authentication. This key is used to log in to all virtual server instances that you create. For more information about creating SSH keys, see [SSH keys](/docs/vpc?topic=vpc-ssh-keys).
 
-## (Optional) Set up {{site.data.keyword.cloud_notm}} Hyper Protect Crypto Services
+## (Optional) Set up {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}
 {: #vpc-crypto-prereqs}
 
-For key management services, you can use {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} instead of {{site.data.keyword.cos_full_notm}}. Create an instance of the service before you deploy this deployable architecture.
+For key management services, you can use {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} instead of {{site.data.keyword.cos_full_notm}}. {{site.data.keyword.hscrypto}} is a dedicated key management service and hardware security module based on {{site.data.keyword.cloud_notm}} that enables keep your own key (KYOK) features. 
 
-1.  Create the service instance:
+By using {{site.data.keyword.hscrypto}}, your deployable architecture satisfies the requirements for the following controls: 
 
-    1.  (Optional) [Create a resource group](https://cloud.ibm.com/docs/account?topic=account-rgs&interface=ui) for your instance.
-    1.  On the {{site.data.keyword.hscrypto}} [details page](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services), select a plan.
-    1.  Complete the required details that are required and click **Create**.
+- [SC-13(0) - Cryptographic Protection](/docs/framework-financial-services-controls?topic=framework-financial-services-controls-sc-13)
+- [SC-28(0) - Protection of Information at Rest](/docs/framework-financial-services-controls?topic=framework-financial-services-controls-sc-28)
+- [SC-28(1) - Cryptographic Protection](/docs/framework-financial-services-controls?topic=framework-financial-services-controls-sc-28.1)
+
+For more information, see the [security information](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about#services-security-hpcs) in the VPC reference architecture for IBM Cloud for Financial Services.
+
+It is not possible to update an existing deployable architecture from {{site.data.keyword.keymanagementserviceshort}} to {{site.data.keyword.hscrypto}}. You must create and deploy another deployable architecture.
+{:restriction: .restriction}
+
+### Provisioning and initializing the {{site.data.keyword.hscrypto}} service
+{: #vpc-hpcs-setup}
+
+Before you deploy this deployable architecture, you need an instance of the Hyper Protect Crypto Services service.
+
+1.  You can provision {{site.data.keyword.hscrypto}} in one of two ways:
+
+    - By using the [{{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](https://github.com/terraform-ibm-modules/terraform-ibm-hpcs){: external} Terraform module.
+    - By creating and initializing an instance directly.
+
+        1.  (Optional) [Create a resource group](https://cloud.ibm.com/docs/account?topic=account-rgs&interface=ui) for your instance.
+        1.  On the {{site.data.keyword.hscrypto}} [details page](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services), select a plan.
+        1.  Complete the required details and click **Create**.
 
 1.  Initialize {{site.data.keyword.hscrypto}}:
 
-    To initialize the provisioned {{site.data.keyword.hscrypto}} instance, follow the steps in [Getting started with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started).
+    - If you used the {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} module, follow the steps in the module [readme file](https://github.com/terraform-ibm-modules/terraform-ibm-hpcs#create-hyper-protect-crypto-services-instance){: external}.
+    - If you created the instance directly, follow the steps in [Getting started with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started).
 
     For proof-of-technology environments, use the `auto-init` flag. For more information, see [Initializing service instances using recovery crypto units](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-initialize-hsm-recovery-crypto-unit).
+
+1.  When you configure your deployable architecture, specify the resource group in the `hs_crypto_resource_group` input value and the instance name in the `hs_crypto_instance_name` value. If you don't provide those values, the default {{site.data.keyword.keymanagementserviceshort}} encryption is used.

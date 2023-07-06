@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-07-06"
 
 keywords:
 
@@ -19,6 +19,22 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries grouped by date.
 {: shortdesc}
+
+## July 2023
+{: #landing-zone-2023-07}
+
+### 06 July 2023
+{: #secure-infrastructure-vpc-july0623}
+{: release-note}
+
+Version 4.4.1 of the landing zone deployable architectures available
+:   Version 4.4.1 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} is now supported by the deployable architectures. {{site.data.keyword.hscrypto}} supports keep your own key (KYOK) features. The default encryption remains Key Protect. For more information, see the [planning information](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-plan#vpc-crypto-prereqs).
+    - The IBM provider version is updated to 1.54.0, which fixes a known issue with failures when creating an authorization policy.
+    - For the VSI on VPC landing zone, the default virtual server image is updated to `ibm-ubuntu-22-04-2-minimal-amd64-1` from `ibm-ubuntu-22-04-1-minimal-amd64-4`, which is deprecated. To avoid downtime and losing data, the image is not changed when you update to version 4.4.1.
+
+   A known issue exists with validation when you deploy by using projects. For more information, see [Validation fails in projects with version 4.1.1 and later](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-known-issues#ki-project-val-fail).
 
 ## June 2023
 {: #landing-zone-2023-06}

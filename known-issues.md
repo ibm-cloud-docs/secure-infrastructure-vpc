@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-06-26"
+lastupdated: "2023-07-06"
 
 keywords:
 
@@ -15,10 +15,17 @@ subcollection: secure-infrastructure-vpc
 # Known issues with landing zone deployable architectures
 {: #known-issues}
 
-## Intermittent failures when you run apply or click deploy
-{: #ki-policy-404}
+## Validation fails in projects with version 4.4.1 and later
+{: #ki-project-val-fail}
 
-You might experience a `404` `policy_not_found` error when the deployable architecture attempts to create an authorization policy. The failure is intermittent. Retry the command, for example, by clicking **Deploy** in projects or **Apply plan** in {{site.data.keyword.bpshort}}, or by running the apply command again.
+With version 4.4.1 of the deployable architectures, when you deploy by using a project, validation fails with the following rule description for Security and compliance:
+
+> Check whether Cloud Object Storage network access is restricted to a specific IP range.
+
+### Workaround
+{: #ki-workaround-project-val-fail}
+
+Override and approve the failed validation. For more information, see [Approving failed validations](/docs/secure-enterprise?topic=secure-enterprise-approve-failed-validation).
 
 ## Service ID API keys and {{site.data.keyword.redhat_openshift_notm}}
 {: #ki-svc-key-rhos}

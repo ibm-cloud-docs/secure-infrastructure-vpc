@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-06-21"
 
 keywords:
 
@@ -50,7 +50,7 @@ To deploy a landing zone deployable architecture through the {{site.data.keyword
 
     After you validate your configuration, you can deploy it to your target account.
 
-    1.  1. Review the input values and make any necessary changes.
+    1.  Review the input values and make any necessary changes.
     1.  Click **Deploy**.
 
         Deploying the deployable architecture can take more than an hour. You are notified when the deployment is successful.
