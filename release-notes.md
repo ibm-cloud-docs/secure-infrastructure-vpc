@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-08-01"
 
 keywords:
 
@@ -22,6 +22,17 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## July 2023
 {: #landing-zone-2023-07}
+
+### 31 July 2023
+{: #secure-infrastructure-vpc-july3123}
+{: release-note}
+
+Version 4.4.7 of the landing zone deployable architectures available
+:   Version 4.4.7 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - For Red Hat OpenShift Container Platform on VPC landing zone:
+        - Changes to the version of the OpenShift cluster are now ignored. Make sure that you update your cluster version outside of the Terraform in the deployable architecture to prevent destructive changes to your infrastructure.
+        - The initial version of the OpenShift cluster is now set to version 4.12 by default. Versions 4.11 and 4.10 are also supported.
 
 ### 06 July 2023
 {: #secure-infrastructure-vpc-july0623}
