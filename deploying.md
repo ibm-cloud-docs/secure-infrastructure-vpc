@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-06-21"
+lastupdated: "2023-08-02"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: secure-infrastructure-vpc
 # Deploying a landing zone deployable architecture
 {: #deploy}
 
-You can deploy a deployable architecture from the {{site.data.keyword.cloud_notm}} catalog. You can choose one of several deployment options, including with {{site.data.keyword.cloud_notm}} projects. [Learn about IaC deployments with projects](https://test.cloud.ibm.com/docs/secure-enterprise?topic=secure-enterprise-understanding-projects).
+You can deploy a deployable architecture from the {{site.data.keyword.cloud_notm}} catalog. You can choose one of several deployment options, including with {{site.data.keyword.cloud_notm}} projects. [Learn about IaC deployments with projects](/docs/secure-enterprise?topic=secure-enterprise-understanding-projects).
 
 ## Deploying with {{site.data.keyword.cloud_notm}} projects
 {: #vpc-deploy-cloud}
