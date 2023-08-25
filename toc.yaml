@@ -61,6 +61,7 @@ toc:
           label: Troubleshooting
           topics:
           - topic: ts-deploy.md
+          - topic: ts-ocp-version.md
           - topicgroup:
               label: Troubleshooting Schematics
               topics:
