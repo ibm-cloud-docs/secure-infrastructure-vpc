@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-10-03"
 
 keywords:
 
@@ -14,6 +14,11 @@ subcollection: secure-infrastructure-vpc
 
 # Known issues with landing zone deployable architectures
 {: #known-issues}
+
+## VSI on VPC landing zone QuickStart variation fails projects validation
+{: #ki-vsiqs-validation-fail}
+
+With the QuickStart variation of the VSI on VPC landing zone that you deploy to {{site.data.keyword.cloud_notm}} projects, the configuration fails validation during the the Code Risk Analyzer scan. The QuickStart variation is designed to deploy quickly for demonstration and development and doesn't claim any controls for the scan.
 
 ## Service ID API keys and {{site.data.keyword.redhat_openshift_notm}}
 {: #ki-svc-key-rhos}
@@ -39,7 +44,7 @@ If you use {{site.data.keyword.compliance_short}} or the Code Risk Analyzer plug
 
 If a Terraform `apply` or `destroy` operation is interrupted, you might see an "Unsupported attribute" error at the next Terraform operation. Typically, this error occurs when a `destroy` operation is cancelled or has an unexpected error.
 
-```
+```text
 Error: Unsupported attribute
    on .terraform/modules/landing_zone/dynamic_values/config_modules/vsi/vsi.tf line 20, in module "vsi_subnets":
    20:   subnet_zone_list = var.vpc_modules[each.value.vpc_name].subnet_zone_list

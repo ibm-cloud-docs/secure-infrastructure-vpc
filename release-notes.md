@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-10-03"
 
 keywords:
 
@@ -17,8 +17,42 @@ content-type: release-note
 # Release notes for the landing zone deployable architecture
 {: #secure-infrastructure-vpc-relnotes}
 
-Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries grouped by date.
+Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## October 2023
+{: #landing-zone-2023-10}
+
+### 03 October 2023
+{: #secure-infrastructure-vpc-oct0323}
+{: release-note}
+
+Version 4.12.3 of the landing zone deployable architectures available
+:   Version 4.12.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - For the `existing_ssh_key_name` variable, you can now select from a list of all keys in the account when you deploy with projects or {{site.data.keyword.bplong_notm}}.
+    - Deployable architectures now use the IBM Cloud Terraform provider resource `clean_default_sg_acl` to clean the default ACL and security group rules. The new resource replaces the `null_resource.clean_default_security_group[0]` and `null_resource.clean_default_acl[0]` resources. When you upgrade from v4.4.7, the null resources are destroyed. This behavior is expected and does not affect your provisioned infrastructure.
+    - You can now attach existing access tags to resources that are provisioned by the deployable architecture in an override. If you deploy with projects  or {{site.data.keyword.bplong_notm}}, edit the `override_json_string` optional variable as in the following example that adds a tag to the key management resources:
+
+        ```json
+        {
+          "key_management": {
+            "access_tags": ["tag-group:tag-name"]
+          }
+        }
+        ```
+        {: codeblock}
+
+    - For deployable architectures with a transit gateway enabled, a new `transit_gateway_global` variable supports connecting to networks outside the associated region.
+    - Key management changes:
+        - You can now use key management keys that you create outside the deployable architecture or from different accounts by specifying the key CRN in the `existing_key_crn` field in an override. If you deploy with projects, edit the `override_json_string` optional variable. For more information, see https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/v4.9.0.
+        - The following outputs are now included with key management resources: `key_management_name`, `key_management_crn`, `key_management_guid`, `key_rings`, and `key_map`.
+    - Added placement group details to the outputs. A placement group provides flexibility with performance and high availability for {{site.data.keyword.hpc-cluster_short}} solutions.
+    - Changes related to VSI on VPC landing zone:
+        - The default virtual server image is updated to `ibm-ubuntu-22-04-3-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 4.12.3. Update the image outside of the Terraform code.
+        - You can't upgrade the QuickStart variation from v4.4.7 because of an issue with the provider configuration. Create another instance of the VSI on VPC landing zone QuickStart variation.
+    - Changes related to Red Hat OpenShift Container Platform on VPC landing zone:
+        - Added OpenShift Container Platform boot volume KMS encryption support. The boot volume is enabled for new clusters, but is not enabled when you upgrade because encryption can happen only during the initial provisioning.
 
 ## July 2023
 {: #landing-zone-2023-07}
@@ -70,6 +104,7 @@ Version 4.0.0 of the landing zone deployable architectures available
         . . .  # the rest of your VPC configuration
       }]
     ```
+    {: codeblock}
 
     For more information about implementing the Terraform logic, see the [release notes](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/4.0.0) on GitHub.
 
