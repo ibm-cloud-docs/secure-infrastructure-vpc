@@ -15,6 +15,21 @@ subcollection: secure-infrastructure-vpc
 # Known issues with landing zone deployable architectures
 {: #known-issues}
 
+## Security and compliance tab displays all controls
+{: #ki-scc-fscloud}
+
+The "Security &amp; compliance" tab in the catalog detail pages of all landing zone deployable architectures lists all the controls that are defined for the IBM Cloud for Financial Services profile. The list is meant to include only the controls that the deployable architecture claims. Because all controls for the profile are listed, resources might fail the scan on controls that are not claimed by the deployable architecture.
+
+## Some controls fail in Red Hat landing zone deployable architectures
+{: #ki-ocp-version-fail}
+
+Scans of the Red Hat OpenShift Container Platform on VPC landing zone deployable architecture can fail on the rule "Check whether OpenShift version is up-to-date". You see the failure with Red Hat OpenShift Container Platform version 4.12 after you deploy the deployable architecture and then run a scan in {{site.data.keyword.compliance_short}}. The following controls are part of the failure:
+
+- CM-8 (3) - Automated Unauthorized Component Detection
+- SI-2 (2) - Automated Flaw Remediation Status
+
+Version 4.12 is a supported version. You can ignore this failure.
+
 ## VSI on VPC landing zone QuickStart variation fails projects validation
 {: #ki-vsiqs-validation-fail}
 
