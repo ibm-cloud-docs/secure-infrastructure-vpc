@@ -35,6 +35,7 @@ Stack trace from the terraform-provider-ibm_v1.59.0 plugin:
 panic: runtime error: invalid memory address or nil pointer dereference
 [signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x36ae0bd]
 ```
+{: screen}
 
 For more information about this issue with the {{site.data.keyword.cloud_notm}} Terraform provider plug-in, see [issue 4898](https://github.com/IBM-Cloud/terraform-provider-ibm/issues/4898){: external}.
 
