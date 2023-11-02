@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-10-03"
+lastupdated: "2023-11-02"
 
 keywords:
 
@@ -19,6 +19,24 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## November 2023
+{: #landing-zone-2023-11}
+
+### 02 November 2023
+{: #secure-infrastructure-vpc-nov-0223}
+{: release-note}
+
+Version 4.13.3 of the landing zone deployable architectures available
+:   Version 4.13.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - The IBM Terraform provider version is now locked to 1.59.0.
+    - The `landing-zone-vsi` submodule is updated from 2.6.0 to 2.12.1. For more information about changes in the submodule, see [issue 577](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/pull/577) in GitHub.
+    - The VSI on VPC landing zone and the Red Hat OpenShift Container Platform on VPC landing zone deployable architectures now include a `vpc_resource_list` output.
+    - The Red Hat OpenShift Container Platform on VPC landing zone deployable architecture now includes a `cluster_data` output with information about the created clusters, including IDs and names of the clusters.
+    - The initial version of the OpenShift cluster is now set to 4.13 by default. Versions 4.11 and 4.12 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+
+        Version 4.10 of Red Hat OpenShift is no longer supported.
 
 ## October 2023
 {: #landing-zone-2023-10}
