@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-11-02"
+lastupdated: "2023-11-07"
 
 keywords:
 
@@ -38,11 +38,6 @@ panic: runtime error: invalid memory address or nil pointer dereference
 {: screen}
 
 For more information about this issue with the {{site.data.keyword.cloud_notm}} Terraform provider plug-in, see [issue 4898](https://github.com/IBM-Cloud/terraform-provider-ibm/issues/4898){: external}.
-
-## Security and compliance tab displays all controls
-{: #ki-scc-fscloud}
-
-The "Security &amp; compliance" tab in the catalog detail pages of all landing zone deployable architectures lists all the controls that are defined for the IBM Cloud for Financial Services profile. The list is meant to include only the controls that the deployable architecture claims. Because all controls for the profile are listed, resources might fail the scan on controls that are not claimed by the deployable architecture.
 
 ## VSI on VPC landing zone QuickStart variation fails projects validation
 {: #ki-vsiqs-validation-fail}
