@@ -44,6 +44,14 @@ toc:
       - deploying.md
 
   - navgroup:
+      id: tutorial
+      topics:
+      - include: ../solution-tutorials/connect-landingzone-client-vpn.md
+        navtitle: Connect by using a client-to-site VPN
+      - include: ../solution-tutorials/connect-landingzone-site-vpn.md
+        navtitle: Connect by using a site-to-site VPN
+
+  - navgroup:
       id: reference
       topics:
       - topic: shared-responsibilities.md
