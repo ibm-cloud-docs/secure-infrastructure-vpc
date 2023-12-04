@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-02"
+lastupdated: "2023-12-04"
 
 keywords:
 
@@ -19,6 +19,27 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## December 2023
+{: #landing-zone-2023-12}
+
+### 04 December 2023
+{: #secure-infrastructure-vpc-dec-0423}
+{: release-note}
+
+Version 5.1.0 of the landing zone deployable architectures available
+:   Version 5.1.0 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - Backward-incompatible change for VSIs with floating IPs.
+        - If your landing zone deployable architecture provisions a VSI, and you enabled a floating IP address for it, the IP addresses are deleted and re-created when you apply the changes in this version.
+        - If you deployed with the default settings, only the [QuickStart variation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra-qs) of the VSI on VPC landing zone deployable architecture is affected because it provisions a floating IP address for use as a jump box. However, any deployable architecture in which you provisioned floating IP addresses are affected.
+        -  The removal happens because the IP addresses were created in the wrong resource group (the default group). The IP addresses are re-created in the same resource group as the VSI.
+
+        Plan for the change to make sure that anything using the IP addresses is not disrupted.
+    - Other changes
+        - Added support for for Madrid (`eu-es`) region.
+        - Added support for configuring the idle connection timeout value for any VSI load balancers that are provisioned.
+        - Removed support for VPN gateway connections. Current connections, if manually made, are not removed when you update to this version. However, if the connections were created in an override, they will be removed when you update to this version.
 
 ## November 2023
 {: #landing-zone-2023-11}
