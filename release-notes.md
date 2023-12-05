@@ -145,7 +145,7 @@ Version 4.0.0 of the landing zone deployable architectures available
     ```
     {: codeblock}
 
-    For more information about implementing the Terraform logic, see the [release notes](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/4.0.0) on GitHub.
+    For more information about implementing the Terraform logic, see the [release notes](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/v4.0.0) on GitHub.
 
 ## May 2023
 {: #landing-zone-2023-05}
