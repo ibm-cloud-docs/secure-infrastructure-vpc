@@ -52,6 +52,12 @@ toc:
         navtitle: Connect by using a site-to-site VPN
 
   - navgroup:
+      id: howto
+      topics:
+      - topic: override-kms.md
+        navtitle: Overriding key management
+
+  - navgroup:
       id: reference
       topics:
       - topic: shared-responsibilities.md
