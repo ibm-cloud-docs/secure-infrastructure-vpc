@@ -50,6 +50,10 @@ toc:
         navtitle: Connect by using a client-to-site VPN
       - include: ../solution-tutorials/connect-landingzone-site-vpn.md
         navtitle: Connect by using a site-to-site VPN
+      - topic: access-public-app.md
+        navtitle: Expose an app to the internet
+      - topic: access-slz-cis.md
+        navtitle: Configure access through CIS
 
   - navgroup:
       id: howto
