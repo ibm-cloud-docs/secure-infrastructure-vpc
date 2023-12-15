@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-05-12"
+lastupdated: "2023-12-12"
 
 keywords:
 
@@ -21,9 +21,9 @@ If you experience an issue or have questions when you deploy a VPC landing zone 
 - Review the [FAQs](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-faqs).
 - ![{{site.data.keyword.cloud_notm}} icon](../icons/ibm-cloud-16.svg "IBM Cloud icon") Check the status of the {{site.data.keyword.cloud_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 - ![GitHub icon](../icons/logo-github-16.svg "GitHub icon") Review the [GitHub issues](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/issues){: external} to see whether other users experienced the same problem.
+- Review the [troubleshooting documentation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ts-deploy) to troubleshoot and resolve common issues.
 
 <!-- - ![Slack icon](../icons/logo-slack-16.svg "Slack icon") Join the [Cloud Dev Tools @ IBM](https://ic-devops-slack-invite.us-south.devops.cloud.ibm.com/){: external} Slack community and reach out to us. -->
-<!-- Add when we have a topic: - Review the [troubleshooting documentation](/docs/linktoyourfirsttroubleshootingtopic) to troubleshoot and resolve common issues. -->
 
 If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/get-support?topic=get-support-open-case). If you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
 

@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-12-12"
 
 keywords:
 
@@ -45,7 +45,7 @@ Complete the following steps before you deploy the VPC landing zone deployable a
         {: tip}
 
     1.  For compliance with {{site.data.keyword.framework-fs_notm}}: Require users in your account to use [multifactor authentication (MFA)](https://cloud.ibm.com/docs/account?topic=account-account-getting-started#account-gs-mfa).
-    1.  [Set up access groups](https://cloud.ibm.com/docs/account?topic=account-accoungetting-started#account-gs-accessgroups).
+    1.  [Set up access groups](/docs/account?topic=account-account-getting-started#account-gs-accessgroups).
 
         User access to {{site.data.keyword.cloud_notm}} resources is controlled by using the access policies that are assigned to access groups. For {{site.data.keyword.cloud_notm}} Financial Services validation, do not assign direct IAM access to any {{site.data.keyword.cloud_notm}} resources.
 
@@ -76,7 +76,7 @@ You need the following access to create a project and create project tooling res
 - The Editor and Manager role on the {{site.data.keyword.bpshort}} service
 - The Viewer role on the resource group for the project
 
-For more information, see [Assigning users access to projects](/docs/allowlist/projects?topic=projects-access-project).
+For more information, see [Assigning users access to projects](/docs/secure-enterprise?topic=secure-enterprise-access-project).
 
 ## Create an SSH key
 {: #vpc-ssh-key}
@@ -86,9 +86,9 @@ Make sure that you have an SSH key that you can use for authentication. This key
 ## (Optional) Set up {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}
 {: #vpc-crypto-prereqs}
 
-For key management services, you can use {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} instead of {{site.data.keyword.cos_full_notm}}. {{site.data.keyword.hscrypto}} is a dedicated key management service and hardware security module based on {{site.data.keyword.cloud_notm}} that enables keep your own key (KYOK) features. 
+For key management services, you can use {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} instead of {{site.data.keyword.cos_full_notm}}. {{site.data.keyword.hscrypto}} is a dedicated key management service and hardware security module based on {{site.data.keyword.cloud_notm}} that enables keep your own key (KYOK) features.
 
-By using {{site.data.keyword.hscrypto}}, your deployable architecture satisfies the requirements for the following controls: 
+By using {{site.data.keyword.hscrypto}}, your deployable architecture satisfies the requirements for the following controls:
 
 - [SC-13(0) - Cryptographic Protection](/docs/framework-financial-services-controls?topic=framework-financial-services-controls-sc-13)
 - [SC-28(0) - Protection of Information at Rest](/docs/framework-financial-services-controls?topic=framework-financial-services-controls-sc-28)
