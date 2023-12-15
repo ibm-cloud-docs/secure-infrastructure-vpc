@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-11-07"
+lastupdated: "2023-12-13"
 
 keywords:
 
@@ -14,30 +14,6 @@ subcollection: secure-infrastructure-vpc
 
 # Known issues with landing zone deployable architectures
 {: #known-issues}
-
-## Provider plug-in failure
-{: #ki-provider-crash}
-
-You might see an error message similar to the following message when you apply changes to a landing zone deployable architecture:
-
-```text
-| Error: Plugin did not respond
-|
-|   with module.vsi_landing_zone.module.landing_zone.ibm_is_vpn_gateway.gateway["management-gateway"],
-|   on ../../vpn.tf line 17, in resource "ibm_is_vpn_gateway" "gateway":
-|   17: resource "ibm_is_vpn_gateway" "gateway" {
-|
-| The plugin encountered an error, and failed to respond to the
-| plugin.(*GRPCProvider).ApplyResourceChange call. The plugin logs may
-| contain more details.
-
-Stack trace from the terraform-provider-ibm_v1.59.0 plugin:
-panic: runtime error: invalid memory address or nil pointer dereference
-[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x36ae0bd]
-```
-{: screen}
-
-For more information about this issue with the {{site.data.keyword.cloud_notm}} Terraform provider plug-in, see [issue 4898](https://github.com/IBM-Cloud/terraform-provider-ibm/issues/4898){: external}.
 
 ## VSI on VPC landing zone QuickStart variation fails projects validation
 {: #ki-vsiqs-validation-fail}

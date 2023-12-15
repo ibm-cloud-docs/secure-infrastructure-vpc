@@ -29,6 +29,7 @@ toc:
         navtitle: VPC landing zone
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
         navtitle: VSI on VPC landing zone
+      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-extension.md
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
         navtitle: Red Hat OpenShift Container Platform on VPC landing zone
@@ -58,6 +59,8 @@ toc:
   - navgroup:
       id: howto
       topics:
+      - topic: deploy-vsi-on-vpc.md
+        navtitle: Adding a VSI to your deployable architecture
       - topic: override-kms.md
         navtitle: Overriding key management
 

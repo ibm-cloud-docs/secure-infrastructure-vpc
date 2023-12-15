@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-12-11"
+lastupdated: "2023-12-12"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -209,5 +209,8 @@ You accessed your workload that is deployed in the landing zone through {{site.d
 You can configure [more features](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security) such as WAF, DDoS in {{site.data.keyword.cis_short_notm}} to make it more secure. For more information, read the following topics:
 
 - [Managing {{site.data.keyword.cis_short_notm}} for optimal security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security)
-- [Deploying architecture configurations from a project](/docs/secure-enterprise?topic=secure-enterprise-project-getting-started)
 - [Deploy and configure {{site.data.keyword.cis_short_notm}} using terraform](https://github.com/terraform-ibm-modules/terraform-ibm-cis/)
+
+<!-- static website DA doesn't exist in production
+- [Deploying architecture configurations from a project](/docs/secure-enterprise?topic=secure-enterprise-project-getting-started)
+-->

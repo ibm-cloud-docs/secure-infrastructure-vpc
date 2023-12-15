@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-12-11"
+lastupdated: "2023-12-12"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -158,4 +158,4 @@ Learn more about how you can further extend your deployable architecture.
 - Learn how to [share your deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-share-custom).
 - Read about the [global load balancing](/docs/cis?topic=cis-configure-glb#glb-details) capabilities with {{site.data.keyword.cis_full_notm}} (CIS).
 
-<!-- - Use an online tool to [customize your landing zone](https://ibm.biz/override-landing-zone) deployable architecture. -->
+<!-- - Use an online tool to [customize your landing zone](https://setup.deploy-arch-ibm-slz-vpc.cloud.ibm.com/) deployable architecture. -->

@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-05-08"
+lastupdated: "2023-12-12"
 
 keywords:
 
@@ -20,7 +20,7 @@ Learn about the management responsibilities and terms and conditions that you ha
 
 - For more information about the responsibilities for you and for {{site.data.keyword.IBM}} when you use a deployable architecture, see [Understanding your responsibilities when you use deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-responsibilities-deployable-architectures).
 - For a high-level view of the service types in {{site.data.keyword.cloud}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for using {{site.data.keyword.cloud}} products](/docs/overview?topic=overview-shared-responsibilities).
-- For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
+- For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview?topic=overview-terms).
 - For more information about the shared responsibilities for each Financial Services Validated service, see [Responsibilities for operating services in your deployment](/docs/framework-financial-services?topic=framework-financial-services-shared-responsibilities) in {{site.data.keyword.framework-fs_full}}.
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use a landing zone deployable architecture.
@@ -67,7 +67,7 @@ Security and regulation compliance includes tasks such as security controls impl
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
 |------|-------------------------------------------------|-----------------------|
-| Meet security and compliance objectives | Provide a deployable architecture that complies with the set of of controls that are defined with the release of the deployable architecture. The controls in the deployable architecture do not necessarily cover the complete profile for the {{site.data.keyword.framework-fs_notm}}, as shown in the [Available predefined profiles](/docs/security-compliance?topic=security-compliance-predefined-profiles).
+| Meet security and compliance objectives | Provide a deployable architecture that complies with the set of controls that are defined with the release of the deployable architecture. The controls in the deployable architecture do not necessarily cover the complete profile for the {{site.data.keyword.framework-fs_notm}}, as shown in the [Available predefined profiles](/docs/security-compliance?topic=security-compliance-predefined-profiles).
 | Verify configuration changes | | Understand the effects on the security and compliance posture of any user-initiated changes to the default configuration. Run {{site.data.keyword.compliance_long}} checks if needed to ensure that the deployable architecture remains in compliance. |
 {: row-headers}
 {: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="bottom"}
