@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-12-07"
+lastupdated: "2023-12-21"
 
 keywords:
 
@@ -121,7 +121,7 @@ To use {{site.data.keyword.hscrypto}} instead of {{site.data.keyword.keymanageme
 ## Use existing keys with no KMS
 {: #no-kms-existing-keys}
 
-To use existing keys without pulling in an existing KMS instance, include the CRN of the key. The CRN can refer to a key in the account that is deploying the deployable architecture or in a different account. The attributes for existing keys are `name` and `existing_key_crn`. When you use an existing key CRN, you must have an authentication policy that allows `block-storage`, `cloud-object-storage`, and `secrets-manager` to access the KMS in the external account. For more information, see [Using authorizations to grant access between services](https://cloud.ibm.com/docs/account?topic=account-serviceauth&interface=ui)
+To use existing keys without pulling in an existing KMS instance, include the CRN of the key. The CRN can refer to a key in the account that is deploying the deployable architecture or in a different account. The attributes for existing keys are `name` and `existing_key_crn`. When you use an existing key CRN, you must have an authentication policy that allows `block-storage` and `cloud-object-storage`, to access the KMS in the external account. For more information, see [Using authorizations to grant access between services](https://cloud.ibm.com/docs/account?topic=account-serviceauth&interface=ui)
 
 Make sure to omit `key_management.name` and `key_management.resource_group` when you don't want the deployable architecture to create a KMS.
 {: tip}
