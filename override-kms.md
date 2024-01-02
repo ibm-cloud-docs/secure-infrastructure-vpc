@@ -160,7 +160,7 @@ Make sure to omit `key_management.name` and `key_management.resource_group` when
 
 This example both creates keys and also uses an existing key. A {{site.data.keyword.keymanagementserviceshort}} instance that is called `test-kms` is created with three keys that are called `slz-slz-key`, `slz-atracker-key`, and `slz-roks-key`. In addition, the existing `slz-vsi-volume-key` key is used.
 
-In this example, the existing key is identified by CRN to pull in the key without the KMS instance. Alternatively, you can set `"use_data": true` as in the [Create keys in an existing KMS](#existing-kms-new-keys) example. When you use an existing key CRN, you must have an authentication policy that allows `block-storage`, `cloud-object-storage`, and `secrets-manager` to access the KMS in the external account. For more information, see [Using authorizations to grant access between services](https://cloud.ibm.com/docs/account?topic=account-serviceauth&interface=ui)
+In this example, the existing key is identified by CRN to pull in the key without the KMS instance. Alternatively, you can set `"use_data": true` as in the [Create keys in an existing KMS](#existing-kms-new-keys) example. When you use an existing key CRN, you must have an authentication policy that allows `block-storage`, `cloud-object-storage`, and `secrets-manager` to access the KMS in the external account. For more information, see [Using authorizations to grant access between services](https://cloud.ibm.com/docs/account?topic=account-serviceauth&interface=ui).
 
 1.  Copy the following JSON.
 
