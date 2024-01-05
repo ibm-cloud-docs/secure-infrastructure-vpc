@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2023
-lastupdated: "2023-12-12"
+  years: 2023, 2024
+lastupdated: "2024-01-05"
 
 keywords:
 
@@ -27,24 +27,24 @@ Complete the following steps before you deploy the VPC landing zone deployable a
 
     Make sure that you have an {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account:
 
-    - If you don't have an {{site.data.keyword.cloud_notm}} account, [create one](https://cloud.ibm.com/docs/account?topic=account-account-getting-started).
-    - If you have a Trial or Lite account, [upgrade your account](https://cloud.ibm.com/docs/account?topic=account-upgrading-account).
+    - If you don't have an {{site.data.keyword.cloud_notm}} account, [create one](/docs/account?topic=account-account-getting-started).
+    - If you have a Trial or Lite account, [upgrade your account](/docs/account?topic=account-upgrading-account).
 1.  Configure your {{site.data.keyword.cloud_notm}} account:
     1.  Log in to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com) with the {{site.data.keyword.ibmid}} you used to set up the account. This {{site.data.keyword.ibmid}} user is the account owner and has full IAM access.
-    1.  [Complete the company profile](https://cloud.ibm.com/docs/account?topic=account-contact-info) and contact information for the account. This profile is required to stay in compliance with {{site.data.keyword.cloud_notm}} Financial Services profile.
-    1.  [Enable the Financial Services Validated option](https://cloud.ibm.com/docs/account?topic=account-enabling-fs-validated) for your account.
-    1.  Enable virtual routing and forwarding (VRF) and service endpoints by creating a support case. Follow the instructions in [enabling VRF and service endpoints](https://cloud.ibm.com/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf).
+    1.  [Complete the company profile](/docs/account?topic=account-contact-info) and contact information for the account. This profile is required to stay in compliance with {{site.data.keyword.cloud_notm}} Financial Services profile.
+    1.  [Enable the Financial Services Validated option](/docs/account?topic=account-enabling-fs-validated) for your account.
+    1.  Enable virtual routing and forwarding (VRF) and service endpoints by creating a support case. Follow the instructions in [enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf).
 
 ## Set the IAM permissions
 {: #vpc-iam-prereqs}
 
 1.  Set up account access ({{site.data.keyword.iamshort}} (IAM)):
-    1.  Create an {{site.data.keyword.cloud_notm}} [API key](https://cloud.ibm.com/docs/account?topic=account-userapikey#create_user_key). The user who owns this key must have the Administrator role.
+    1.  Create an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=terraform#create_user_key). The user who owns this key must have the Administrator role.
 
         Service ID API keys are not supported for the Red Hat OpenShift Container Platform on VPC landing zone deployable architecture.
         {: tip}
 
-    1.  For compliance with {{site.data.keyword.framework-fs_notm}}: Require users in your account to use [multifactor authentication (MFA)](https://cloud.ibm.com/docs/account?topic=account-account-getting-started#account-gs-mfa).
+    1.  For compliance with {{site.data.keyword.framework-fs_notm}}: Require users in your account to use [multifactor authentication (MFA)](/docs/account?topic=account-account-getting-started#account-gs-mfa).
     1.  [Set up access groups](/docs/account?topic=account-account-getting-started#account-gs-accessgroups).
 
         User access to {{site.data.keyword.cloud_notm}} resources is controlled by using the access policies that are assigned to access groups. For {{site.data.keyword.cloud_notm}} Financial Services validation, do not assign direct IAM access to any {{site.data.keyword.cloud_notm}} resources.
@@ -109,15 +109,15 @@ Before you deploy this deployable architecture, you need an instance of the Hype
     - By using the [{{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](https://github.com/terraform-ibm-modules/terraform-ibm-hpcs){: external} Terraform module.
     - By creating and initializing an instance directly.
 
-        1.  (Optional) [Create a resource group](https://cloud.ibm.com/docs/account?topic=account-rgs&interface=ui) for your instance.
+        1.  (Optional) [Create a resource group](/docs/account?topic=account-rgs&interface=ui) for your instance.
         1.  On the {{site.data.keyword.hscrypto}} [details page](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services), select a plan.
         1.  Complete the required details and click **Create**.
 
 1.  Initialize {{site.data.keyword.hscrypto}}:
 
     - If you used the {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} module, follow the steps in the module [readme file](https://github.com/terraform-ibm-modules/terraform-ibm-hpcs#create-hyper-protect-crypto-services-instance){: external}.
-    - If you created the instance directly, follow the steps in [Getting started with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started).
+    - If you created the instance directly, follow the steps in [Getting started with {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-get-started).
 
-    For proof-of-technology environments, use the `auto-init` flag. For more information, see [Initializing service instances using recovery crypto units](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-initialize-hsm-recovery-crypto-unit).
+    For proof-of-technology environments, use the `auto-init` flag. For more information, see [Initializing service instances using recovery crypto units](/docs/hs-crypto?topic=hs-crypto-initialize-hsm-recovery-crypto-unit).
 
 1.  When you configure your deployable architecture, specify the resource group in the `hs_crypto_resource_group` input value and the instance name in the `hs_crypto_instance_name` value. If you don't provide those values, the default {{site.data.keyword.keymanagementserviceshort}} encryption is used.

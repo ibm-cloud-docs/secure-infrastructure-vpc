@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2023
-lastupdated: "2023-12-13"
+  years: 2023, 2024
+lastupdated: "2024-01-05"
 
 keywords:
 
@@ -23,7 +23,7 @@ With the QuickStart variation of the VSI on VPC landing zone that you deploy to 
 ## Service ID API keys and {{site.data.keyword.redhat_openshift_notm}}
 {: #ki-svc-key-rhos}
 
-Service ID API keys are not supported for the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone deployable architecture. Use an {{site.data.keyword.cloud_notm}} [API key](https://cloud.ibm.com/docs/account?topic=account-userapikey#create_user_key). For more information, see [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions) in the {{site.data.keyword.redhat_openshift_notm}} Cloud Docs.
+Service ID API keys are not supported for the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone deployable architecture. Use an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=terraform#create_user_key). For more information, see [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds#owner_permissions) in the {{site.data.keyword.redhat_openshift_notm}} Cloud Docs.
 
 ## Authentication with trusted profiles not supported in some landing zones
 {: #ki-trusted-profile}
