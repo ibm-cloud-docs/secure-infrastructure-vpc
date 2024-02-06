@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-15"
+  years: 2023, 2024
+lastupdated: "2024-02-06"
 
 keywords:
 
@@ -19,6 +19,51 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## February 2024
+{: #landing-zone-2024-02}
+
+### 6 February 2024
+{: #secure-infrastructure-vpc-feb-0624}
+{: release-note}
+
+Version 5.14.0 of the landing zone deployable architectures is available
+:   Version 5.14.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - The `time_sleep.wait_for_authorization_policy` resource is destroyed when you upgrade to this version. This behavior is expected and does not affect your provisioned infrastructure.
+    - The initial version of Red Hat OpenShift is now set to 4.14. Versions 4.12 and 4.13 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+    - A new `skip_all_s2s_auth_policies` variable is available to manage authorization policies outside of your deployable architecture. To keep names consistent, the `add_kms_block_storage_s2s` variable is renamed to `skip_kms_block_storage_s2s_auth_policy`.
+    - The version now exposes the `secondary_storage` variable for the Kubernetes service from the IBM Terraform Provider. Use the variable to provision a secondary disk to your worker nodes.
+    - A service-to-service authorization policy between Kubernetes and your KMS is now created when you provision a cluster. This change fixes an issue that the policy was not created by default.
+    - A `service_endpoint` input variable supports whether access to {{site.data.keyword.keymanagementserviceshort}} is through a public or private-only endpoint. The default value is `public-and-private.`
+    - Removed in this version:
+        - Version 4.11 of Red Hat OpenShift is no longer supported.
+        - The `update_all_workers` input variable is removed. The variable was meant to update the Kubernetes version of all workers, but the deployable architecture ignores the version.
+    - You can now set an expiration rule for {{site.data.keyword.cos_full_notm}} buckets in an override. If you deploy with projects or {{site.data.keyword.bplong_notm}}, edit the `override_json_string` optional variable. For example, the following example adds a 30-day expiration in the `expire_rule` property:
+
+        ```json
+        "cos": [
+          {
+            "buckets": [
+              {
+                "endpoint_type": "public",
+                "force_delete": true,
+                "kms_key": "slz-atracker-key",
+                "name": "atracker-bucket",
+                "storage_class": "standard",
+                "region_location": "us-south",
+                "hard_quota": 0,
+                "expire_rule": {
+                  "rule_id": "a-bucket-expire-rule",
+                  "enable": true,
+                  "days": 30,
+                  "prefix": "logs/"
+                }
+              }
+            ]
+          }
+        ]
+        ```
 
 ## December 2023
 {: #landing-zone-2023-12}
@@ -84,8 +129,8 @@ Version 4.12.3 of the landing zone deployable architectures available
 :   Version 4.12.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
 
     - For the `existing_ssh_key_name` variable, you can now select from a list of all keys in the account when you deploy with projects or {{site.data.keyword.bplong_notm}}.
-    - Deployable architectures now use the IBM Cloud Terraform provider resource `clean_default_sg_acl` to clean the default ACL and security group rules. The new resource replaces the `null_resource.clean_default_security_group[0]` and `null_resource.clean_default_acl[0]` resources. When you upgrade from v4.4.7, the null resources are destroyed. This behavior is expected and does not affect your provisioned infrastructure.
-    - You can now attach existing access tags to resources that are provisioned by the deployable architecture in an override. If you deploy with projects  or {{site.data.keyword.bplong_notm}}, edit the `override_json_string` optional variable as in the following example that adds a tag to the key management resources:
+    - Deployable architectures now use the {{site.data.keyword.cloud_notm}} Terraform provider resource `clean_default_sg_acl` to clean the default ACL and security group rules. The new resource replaces the `null_resource.clean_default_security_group[0]` and `null_resource.clean_default_acl[0]` resources. When you upgrade from v4.4.7, the null resources are destroyed. This behavior is expected and does not affect your provisioned infrastructure.
+    - You can now attach existing access tags to resources that are provisioned by the deployable architecture in an override. If you deploy with projects or {{site.data.keyword.bplong_notm}}, edit the `override_json_string` optional variable as in the following example that adds a tag to the key management resources:
 
         ```json
         {
@@ -128,7 +173,7 @@ Version 4.4.7 of the landing zone deployable architectures available
 Version 4.4.1 of the landing zone deployable architectures available
 :   Version 4.4.1 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
 
-    - {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} is now supported by the deployable architectures. {{site.data.keyword.hscrypto}} supports keep your own key (KYOK) features. The default encryption remains Key Protect. For more information, see the [planning information](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-plan#vpc-crypto-prereqs).
+    - {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} is now supported by the deployable architectures. {{site.data.keyword.hscrypto}} supports keep your own key (KYOK) features. The default encryption remains {{site.data.keyword.keymanagementserviceshort}}. For more information, see the [planning information](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-plan#vpc-crypto-prereqs).
     - The IBM provider version is updated to 1.54.0, which fixes a known issue with failures when creating an authorization policy.
     - For the VSI on VPC landing zone, the default virtual server image is updated to `ibm-ubuntu-22-04-2-minimal-amd64-1` from `ibm-ubuntu-22-04-1-minimal-amd64-4`, which is deprecated. To avoid downtime and losing data, the image is not changed when you update to version 4.4.1.
 
