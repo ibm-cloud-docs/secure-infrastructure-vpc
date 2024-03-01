@@ -31,7 +31,7 @@ Version 5.17.2 of the landing zone deployable architectures is available
 :   Version 5.17.2 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
 
     - The deployable architecture is updated to allow all versions of Terraform 1.6. Versions 1.3.0 - 1.6.x are allowed. The `landing-zone-vpc` and `landing-zone-vsi` submodules are also updated to support these versions.
-    - The IBM Terraform provider version is now locked to 1.62.
+    - The IBM Terraform provider version is now locked to 1.62.0.
 
 ## February 2024
 {: #landing-zone-2024-02}
