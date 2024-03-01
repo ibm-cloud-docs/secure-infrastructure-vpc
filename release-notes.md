@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-06"
+lastupdated: "2024-03-01"
 
 keywords:
 
@@ -19,6 +19,19 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## March 2024
+{: #landing-zone-2024-03}
+
+### 1 March 2024
+{: #secure-infrastructure-vpc-mar-0124}
+{: release-note}
+
+Version 5.17.2 of the landing zone deployable architectures is available
+:   Version 5.17.2 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - The deployable architecture is updated to allow all versions of Terraform 1.6. Versions 1.3.0 - 1.6.x are allowed. The `landing-zone-vpc` and `landing-zone-vsi` submodules are also updated to support these versions.
+    - The IBM Terraform provider version is now locked to 1.62.
 
 ## February 2024
 {: #landing-zone-2024-02}
