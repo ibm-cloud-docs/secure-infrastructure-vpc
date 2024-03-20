@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2023
-lastupdated: "2023-12-12"
+   years: 2023, 2024
+lastupdated: "2024-03-19"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -211,6 +211,8 @@ You can configure [more features](/docs/cis?topic=cis-manage-your-ibm-cis-for-op
 - [Managing {{site.data.keyword.cis_short_notm}} for optimal security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security)
 - [Deploy and configure {{site.data.keyword.cis_short_notm}} using terraform](https://github.com/terraform-ibm-modules/terraform-ibm-cis/)
 
-<!-- static website DA doesn't exist in production
+<!-- static website DA doesn't exist in production. Breaking the link so that it doesn't show up in the link checker report
+
 - [Deploying architecture configurations from a project](/docs/secure-enterprise?topic=secure-enterprise-project-getting-started)
+
 -->

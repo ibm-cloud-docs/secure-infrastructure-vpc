@@ -23,8 +23,6 @@ If you experience an issue or have questions when you deploy a VPC landing zone 
 - ![GitHub icon](../icons/logo-github-16.svg "GitHub icon") Review the [GitHub issues](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/issues){: external} to see whether other users experienced the same problem.
 - Review the [troubleshooting documentation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ts-deploy) to troubleshoot and resolve common issues.
 
-<!-- - ![Slack icon](../icons/logo-slack-16.svg "Slack icon") Join the [Cloud Dev Tools @ IBM](https://ic-devops-slack-invite.us-south.devops.cloud.ibm.com/){: external} Slack community and reach out to us. -->
-
 If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/get-support?topic=get-support-open-case). If you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
 
 ## Providing support case details
