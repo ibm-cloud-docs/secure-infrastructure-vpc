@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-01-19"
 
 keywords:
 
@@ -39,7 +39,7 @@ Complete the following steps before you deploy the VPC landing zone deployable a
 {: #vpc-iam-prereqs}
 
 1.  Set up account access ({{site.data.keyword.iamshort}} (IAM)):
-    1.  Create an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=terraform#create_user_key). The user who owns this key must have the Administrator role.
+    1.  Create an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=terraform#create_user_key-api-terra). The user who owns this key must have the Administrator role.
 
         Service ID API keys are not supported for the Red Hat OpenShift Container Platform on VPC landing zone deployable architecture.
         {: tip}

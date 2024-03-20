@@ -12,7 +12,6 @@ toc:
     label: Landing zone
     deployable: true
 
-#  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation-design for more details on the toc design.
   entries:
   - navgroup:
       id: overview
@@ -33,6 +32,7 @@ toc:
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
         navtitle: Red Hat OpenShift Container Platform on VPC landing zone
+      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp-quickstart.md
 
   - navgroup:
       id: plan
@@ -47,9 +47,9 @@ toc:
   - navgroup:
       id: tutorial
       topics:
-      - include: ../solution-tutorials/connect-landingzone-client-vpn.md
+      - topic: connect-landingzone-client-vpn.md
         navtitle: Connect by using a client-to-site VPN
-      - include: ../solution-tutorials/connect-landingzone-site-vpn.md
+      - topic: connect-landingzone-site-vpn.md
         navtitle: Connect by using a site-to-site VPN
       - topic: access-public-app.md
         navtitle: Expose an app to the internet
