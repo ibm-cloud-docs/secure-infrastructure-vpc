@@ -97,7 +97,7 @@ The module creates and configures the following infrastructure:
 ### Architecture
 {: #solution-connect-client-vpn-architecture}
 
-![Architecture](images/c2s-basic.svg){: caption="Figure 1. Architecture diagram of the tutorial" caption-side="bottom"}
+![Architecture](images/c2s-basic.svg){: caption="Figure 1. Architecture diagram of the tutorial" caption-side="bottom"}{: external download="c2s-basic.svg"}
 
 ## Before you begin
 {: #solution-connect-client-vpn-prereqs}
