@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-01"
+lastupdated: "2024-03-22"
 
 keywords:
 
@@ -22,6 +22,19 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## March 2024
 {: #landing-zone-2024-03}
+
+### 22 March 2024
+{: #secure-infrastructure-vpc-mar-2224}
+{: release-note}
+
+Version 5.20.0 of the landing zone deployable architectures is available
+:   Version 5.20.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - The IBM Terraform provider version is now locked to 1.63.0.
+    - The external provider version is now set to 2.3.3.
+    - The Red Hat OpenShift Container Platform on VPC landing zone:
+        - This version includes a new QuickStart variation. For more information, see the [reference architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-roks-ra-qs).
+        - New variables `cluster_addons` and `manage_all_cluster_addons` are added to support the configuration of cluster add-ons.
 
 ### 1 March 2024
 {: #secure-infrastructure-vpc-mar-0124}
