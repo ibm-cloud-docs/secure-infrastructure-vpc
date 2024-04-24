@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-04-23"
 
 keywords:
 
@@ -81,10 +81,10 @@ terraform import 'module.ocp_all_inclusive.module.ocp_base.ibm_container_vpc_wor
 
  Replace `<my cluster name>/<worker pool id>` with the cluster and worker pool information.
 
-## VSI on VPC landing zone QuickStart variation fails projects validation
+## QuickStart variations fail projects validation
 {: #ki-vsiqs-validation-fail}
 
-With the QuickStart variation of the VSI on VPC landing zone that you deploy to {{site.data.keyword.cloud_notm}} projects, the configuration fails validation during the the Code Risk Analyzer scan. The QuickStart variation is designed to deploy quickly for demonstration and development and doesn't claim any controls for the scan.
+With the QuickStart variations of the landing zones (both VSI on VPC and Red Hat OpenShift Container Platform on VPC), the configuration fails validation during the the Code Risk Analyzer scan. QuickStart variations are designed to deploy quickly for demonstration and development and don't claim any controls for the scan.
 
 ## Service ID API keys and {{site.data.keyword.redhat_openshift_notm}}
 {: #ki-svc-key-rhos}
