@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-22"
+lastupdated: "2024-05-01"
 
 keywords:
 
@@ -19,6 +19,23 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## May 2024
+{: #landing-zone-2024-05}
+
+### 1 May 2024
+{: #secure-infrastructure-vpc-may-0124}
+{: release-note}
+
+Version 5.21.0 of the landing zone deployable architectures is available
+:   Version 5.21.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - Controls in the {{site.data.keyword.compliance_long}} Framework for Financial Services profile version 1.6.0 that pass validation are now displayed.
+    - The `landing-zone-vsi` submodule is updated from 3.2.3 to 3.2.4. For more information about changes in the submodule, see VSI on VPC [release v3.2.4](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vsi/releases/tag/v3.2.4) in GitHub.
+    - The default virtual server image is updated to `ibm-ubuntu-22-04-4-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 5.21.0. Update the image outside of the Terraform code.
+    - The QuickStart variation of the Red Hat OpenShift Container Platform on VPC landing zone:
+        - A new `entitlement` input variable is added. The variable defaults to no entitlement and is applied only when the cluster is created.
+        - The variation now includes more outputs. For more information, see the landing zone [release v5.21.0](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/v5.21.0) in GitHub.
 
 ## March 2024
 {: #landing-zone-2024-03}
