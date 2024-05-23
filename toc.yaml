@@ -11,7 +11,6 @@ toc:
     description: The landing zone deployable architectures create a secure and customizable Virtual Private Cloud (VPC) environment. Deployable code is also available Red Hat OpenShift and virtual servers (VSI).
     label: Landing zone
     deployable: true
-
   entries:
   - navgroup:
       id: overview
@@ -20,7 +19,6 @@ toc:
         navtitle: Overview
       - topic: release-notes.md
         navtitle: Release notes
-
   - navgroup:
       id: architecture
       topics:
@@ -33,17 +31,14 @@ toc:
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
         navtitle: Red Hat OpenShift Container Platform on VPC landing zone
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp-quickstart.md
-
   - navgroup:
       id: plan
       topics:
       - topic: planning-vpc.md
-
   - navgroup:
       id: deploy
       topics:
       - deploying.md
-
   - navgroup:
       id: tutorial
       topics:
@@ -55,7 +50,6 @@ toc:
         navtitle: Expose an app to the internet
       - topic: access-slz-cis.md
         navtitle: Configure access through CIS
-
   - navgroup:
       id: howto
       topics:
@@ -63,13 +57,11 @@ toc:
         navtitle: Adding a VSI to your deployable architecture
       - topic: override-kms.md
         navtitle: Overriding key management
-
   - navgroup:
       id: reference
       topics:
       - topic: shared-responsibilities.md
         navtitle: Responsibilities
-
   - navgroup:
       id: help
       topics:

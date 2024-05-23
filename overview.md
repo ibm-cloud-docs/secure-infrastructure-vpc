@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-06-13"
+lastupdated: "2024-05-23"
 
 keywords:
 
@@ -59,7 +59,7 @@ This deployable architecture supports these features:
 - Security groups: Associates security groups with the VSIs to control inbound and outbound traffic to instances.
 - SSH keys: Provisions and manages SSH keys for the VSIs so that you can securely administer the instances.
 
-<!-- 04/06/2023: not now - Integration with existing VPCs: Deploys the VSIs in an existing VPC so that you can integrate with your existing cloud-based networking architecture. -->
+
 
 For more information about the concepts of using the VSI on VPC landing zone deployable architecture, see this [reference architecture](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-detailed-vsi) from the {{site.data.keyword.cloud_notm}} for Financial Services docs.
 

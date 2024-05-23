@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-12-12"
+lastupdated: "2024-05-23"
 
 keywords:
 
@@ -25,7 +25,7 @@ Learn about the management responsibilities and terms and conditions that you ha
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use a landing zone deployable architecture.
 
-<!-- In the following sections, add tasks that are specific to your deployable architecture. Do not add tasks that are covered in the "Understanding your responsibilities when using deployable architectures" that you link to earlier -->
+
 
 ## Incident and operations management
 {: #vpc-incident-and-ops}
@@ -76,8 +76,8 @@ Security and regulation compliance includes tasks such as security controls impl
 ## Disaster recovery
 {: #vpc-disaster-recovery}
 
-<!-- Use this section description exactly as worded. -->
-<!-- If there is a task that is the customer's responsibility and you have associated docs for how a customer completes that task, link to it from the Your responsibilities column. -->
+
+
 
 Disaster recovery includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and failover on disaster events.
 

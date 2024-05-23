@@ -2,7 +2,7 @@
 
 copyright:
    years: 2023
-lastupdated: "2023-12-12"
+lastupdated: "2024-05-23"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -26,7 +26,7 @@ In this tutorial, you use a public {{site.data.keyword.cloud_notm}} {{site.data.
 
 The load balancer can distribute traffic among multiple application server instances that are running in the VPC (in the workload VSIs). It forwards traffic only to instances that respond correctly to periodic health checks. For more information about load balancing, see the [overview](/docs/vpc?topic=vpc-nlb-vs-elb) to Load balancers for VPC.
 
-<!-- It's recommended to include an architectural diagram that shows how the services that are used in this tutorial interact. SVG is the recommended format. If you include a diagram, include a brief text-based description of the workflow shown in the diagram, using active voice to describe the workflow. This makes the content more searchable and improves accessibility. -->
+
 
 ## Before you begin
 {: #prereqs-public-app}
@@ -158,4 +158,4 @@ Learn more about how you can further extend your deployable architecture.
 - Learn how to [share your deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-share-custom).
 - Read about the [global load balancing](/docs/cis?topic=cis-configure-glb#glb-details) capabilities with {{site.data.keyword.cis_full_notm}} (CIS).
 
-<!-- - Use an online tool to [customize your landing zone](https://setup.deploy-arch-ibm-slz-vpc.cloud.ibm.com/) deployable architecture. -->
+

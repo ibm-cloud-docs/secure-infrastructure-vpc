@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-05-08"
+lastupdated: "2024-05-23"
 
 keywords:
 
@@ -14,7 +14,7 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!-- You must add the faq content type in your attribute definitions AND to each FAQ H2. This will ensure that the FAQ entry is pulled into the FAQ library or chatbots. -->
+
 
 # FAQs for VPC landing zone deployable architectures
 {: #faqs}
