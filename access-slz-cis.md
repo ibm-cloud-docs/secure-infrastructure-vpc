@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2023, 2024
-lastupdated: "2024-05-23"
+  years: 2023, 2024
+lastupdated: "2024-06-07"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -62,7 +62,7 @@ Assign operator access to every VSI where you are deploying your application.
 {: #deploy-cis-app}
 {: step}
 
-1.  Access the workload VSI (for example <your_prefix>-workload-server-001) through the management VPC.
+1.  Access the workload VSI (for example, &lt;your_prefix>-workload-server-001) through the management VPC.
 
     1.  Access the ACL of workload VPC and create an [inbound and outbound rule](/docs/vpc?topic=vpc-acl-create-ui&interface=ui) to enable SSH communication (port 22) for management VPC.
     1.  Similarly, create an inbound and outbound rule to enable SSH in the ACL of management VPC for the workload VPC.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2023, 2024
-lastupdated: "2024-01-02"
+  years: 2023, 2024
+lastupdated: "2024-06-07"
 
 keywords:
 
@@ -19,6 +19,9 @@ The landing zone deployable architectures provide key management features by int
 {: shortdesc}
 
 To override the values, you pass the JSON `key_management` object in an override input variable. For deployments with projects or {{site.data.keyword.bplong_notm}}, the values are added in the `override_json_string` input. Both {{site.data.keyword.keymanagementservicelong_notm}} and {{site.data.keyword.hscrypto}} are supported in the [landing zone deployable architectures](/docs/secure-infrastructure-vpc).
+
+You can also use the [landing zone configuration tool](https://terraform-ibm-modules.github.io/landing-zone-config-tool/#/home){: external} to customize your deployable architectures.
+{: tip}
 
 ## Example key management overrides
 {: #override-kms-use-cases}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-   years: 2023
-lastupdated: "2024-05-23"
+  years: 2023
+lastupdated: "2024-06-07"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -157,5 +157,4 @@ Learn more about how you can further extend your deployable architecture.
 
 - Learn how to [share your deployable architecture](/docs/secure-enterprise?topic=secure-enterprise-share-custom).
 - Read about the [global load balancing](/docs/cis?topic=cis-configure-glb#glb-details) capabilities with {{site.data.keyword.cis_full_notm}} (CIS).
-
-
+- Use the landing zone override tool to [customize your landing zone](https://terraform-ibm-modules.github.io/landing-zone-config-tool/#/home) deployable architecture.
