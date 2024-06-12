@@ -23,7 +23,7 @@ Use these release notes to learn about the latest updates to the landing zone de
 ## June 2024
 {: #landing-zone-2024-06}
 
-### 12 June 20204
+### 12 June 2024
 {: #secure-infrastructure-vpc-jun-1224}
 {: release-note}
 
