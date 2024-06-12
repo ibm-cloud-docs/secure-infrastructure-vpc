@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-23"
+lastupdated: "2024-06-12"
 
 keywords:
 
@@ -19,6 +19,26 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## June 20204
+{: #landing-zone-2024-06}
+
+### 12 June 20204
+{: #secure-infrastructure-vpc-jun-1224}
+{: release-note}
+
+Version 5.24.5 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 5.24.5 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - A graphical tool now exists to help you create the `override_json_string` optional input variable and customize your deployable architectures. Use the [landing zone configuration tool](https://terraform-ibm-modules.github.io/landing-zone-config-tool/#/home){: external} to customize aspects of your landing zone deployable architecture, including resource groups, Object Storage, key management, networking, private endpoints, and VPN gateways.
+    - The default virtual server image is updated to `ibm-ubuntu-24-04-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 5.21.0. Update the image outside of the Terraform code.
+    - The IBM Terraform provider version is now locked to 1.66.0.
+    - The `landing-zone-vpc` submodule is updated from 7.18.0 to 7.18.3. For more information about changes in the submodule, see VSI on VPC [release v7.18.3](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/releases/tag/v7.18.3){: external} in GitHub.
+    - The VSI on VPC landing zone:
+        - The `landing-zone-vsi` submodule is updated from 3.2.4 to 3.3.0. For more information about changes in the submodule, see VSI on VPC [release v3.3.0](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vsi/releases/tag/v3.3.0){: external} in GitHub.
+    - The Red Hat OpenShift Container Platform on VPC landing zone:
+        - The initial version of Red Hat OpenShift is now set to 4.15. Versions 4.13 and 4.14 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+        - A new `cluster_force_delete_storage` input variable is added. The variable specifies whether to force the deletion of persistent storage when the associated VPC cluster is deleted so that the cluster can't be recovered. The default value is `false` in the Standard variation and `true` in the QuickStart variation.
 
 ## May 2024
 {: #landing-zone-2024-05}
