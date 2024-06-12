@@ -48,7 +48,7 @@ Version 5.24.5 of the landing zone deployable architectures is available
 {: release-note}
 
 Version 5.21.0 of the landing zone deployable architectures is available
-:   Version 5.21.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   All landing zone deployable architectures are released at version 5.21.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
 
     - Controls in the {{site.data.keyword.compliance_long}} Framework for Financial Services profile version 1.6.0 that pass validation are now displayed.
     - The `landing-zone-vsi` submodule is updated from 3.2.3 to 3.2.4. For more information about changes in the submodule, see VSI on VPC [release v3.2.4](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vsi/releases/tag/v3.2.4){: external} in GitHub.
