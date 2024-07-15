@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-07-15"
 
 keywords:
 
@@ -19,6 +19,22 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## July 2024
+{: #landing-zone-2024-07}
+
+### 15 July 2024
+{: #secure-infrastructure-vpc-jul-1524}
+{: release-note}
+
+Version 5.25.1 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 5.25.1 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+
+    - The `landing-zone-vpc` submodule is updated from 7.18.2 to 7.18.3.
+    - The default virtual server image is updated to `ibm-ubuntu-24-04-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 5.24.5. Update the image outside of the Terraform code.
+    - Red Hat OpenShift Container Platform on VPC landing zone:
+        - A new `kms_wait_for_apply` input variable is added. The variable forces the code to wait until the key management service is applied to the cluster master, is ready, and deployed. The default value is `true`.
+        - Added a fix to prevent an error with the new `ibm-storage-operator` add-on, which is installed by default on Red Hat OpenShift version 4.15.
 
 ## June 2024
 {: #landing-zone-2024-06}
@@ -292,4 +308,3 @@ Version 3.6.4 of the landing zone deployable architectures available
 
 Introducing the landing zone deployable architectures
 :   Three VPC landing zone deployable architectures are released: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. You can use the deployable architectures to create a secure and customizable Virtual Private Cloud (VPC) environment. These [deployable architectures](#x10293733){: term} are based on the {{site.data.keyword.cloud_notm}} for Financial Services reference architecture. For more information about using deployable architectures with projects, see the blog posts [Projects and Cost Estimation: How IBM Cloud is Revolutionizing Complex Workloads for Enterprises](https://www.ibm.com/blog/announcement/projects-and-cost-estimation/) and [Turn Your Terraform Templates into Deployable Architectures](https://www.ibm.com/blog/turn-your-terraform-templates-into-deployable-architectures/).
-
