@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-29"
 
 keywords:
 
@@ -28,7 +28,7 @@ Use these release notes to learn about the latest updates to the landing zone de
 {: release-note}
 
 Version 5.25.1 of the landing zone deployable architectures is available
-:   All landing zone deployable architectures are released at version 5.25.1 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   All landing zone deployable architectures are released at version 5.25.1 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - The `landing-zone-vpc` submodule is updated from 7.18.2 to 7.18.3.
     - The default virtual server image is updated to `ibm-ubuntu-24-04-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 5.24.5. Update the image outside of the Terraform code.
@@ -44,7 +44,7 @@ Version 5.25.1 of the landing zone deployable architectures is available
 {: release-note}
 
 Version 5.24.5 of the landing zone deployable architectures is available
-:   All landing zone deployable architectures are released at version 5.24.5 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   All landing zone deployable architectures are released at version 5.24.5 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - A graphical tool now exists to help you create the `override_json_string` optional input variable and customize your deployable architectures. Use the [landing zone configuration tool](https://terraform-ibm-modules.github.io/landing-zone-config-tool/#/home){: external} to customize aspects of your landing zone deployable architecture, including resource groups, Object Storage, key management, networking, private endpoints, and VPN gateways.
     - The default virtual server image is updated to `ibm-ubuntu-24-04-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 5.24.5. Update the image outside of the Terraform code.
@@ -64,7 +64,7 @@ Version 5.24.5 of the landing zone deployable architectures is available
 {: release-note}
 
 Version 5.21.0 of the landing zone deployable architectures is available
-:   All landing zone deployable architectures are released at version 5.21.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   All landing zone deployable architectures are released at version 5.21.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - Controls in the {{site.data.keyword.compliance_long}} Framework for Financial Services profile version 1.6.0 that pass validation are now displayed.
     - The `landing-zone-vsi` submodule is updated from 3.2.3 to 3.2.4. For more information about changes in the submodule, see VSI on VPC [release v3.2.4](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vsi/releases/tag/v3.2.4){: external} in GitHub.
@@ -81,7 +81,7 @@ Version 5.21.0 of the landing zone deployable architectures is available
 {: release-note}
 
 Version 5.20.0 of the landing zone deployable architectures is available
-:   Version 5.20.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 5.20.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - The IBM Terraform provider version is now locked to 1.63.0.
     - The external provider version is now set to 2.3.3.
@@ -94,7 +94,7 @@ Version 5.20.0 of the landing zone deployable architectures is available
 {: release-note}
 
 Version 5.17.2 of the landing zone deployable architectures is available
-:   Version 5.17.2 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 5.17.2 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - The deployable architecture is updated to allow all versions of Terraform 1.6. Versions 1.3.0 - 1.6.x are allowed. The `landing-zone-vpc` and `landing-zone-vsi` submodules are also updated to support these versions.
     - The IBM Terraform provider version is now locked to 1.62.0.
@@ -107,7 +107,7 @@ Version 5.17.2 of the landing zone deployable architectures is available
 {: release-note}
 
 Version 5.14.0 of the landing zone deployable architectures is available
-:   Version 5.14.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 5.14.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - The `time_sleep.wait_for_authorization_policy` resource is destroyed when you upgrade to this version. This behavior is expected and does not affect your provisioned infrastructure.
     - The initial version of Red Hat OpenShift is now set to 4.14. Versions 4.12 and 4.13 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
@@ -152,7 +152,7 @@ Version 5.14.0 of the landing zone deployable architectures is available
 {: release-note}
 
 Version 5.3.1 of the landing zone deployable architectures available
-:   Version 5.3.1 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 5.3.1 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - The version includes a new extension variation that is called VSI on existing VPC landing zone. It adds a VSI in an existing VPC.
 
@@ -166,7 +166,7 @@ Version 5.3.1 of the landing zone deployable architectures available
 {: release-note}
 
 Version 5.1.0 of the landing zone deployable architectures available
-:   Version 5.1.0 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 5.1.0 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - Backward-incompatible change for VSIs with floating IPs.
         - If your landing zone deployable architecture provisions a VSI, and you enabled a floating IP address for it, the IP addresses are deleted and re-created when you apply the changes in this version.
@@ -187,7 +187,7 @@ Version 5.1.0 of the landing zone deployable architectures available
 {: release-note}
 
 Version 4.13.3 of the landing zone deployable architectures available
-:   Version 4.13.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 4.13.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - The IBM Terraform provider version is now locked to 1.59.0.
     - The `landing-zone-vsi` submodule is updated from 2.6.0 to 2.12.1. For more information about changes in the submodule, see [issue 577](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/pull/577) in GitHub.
@@ -205,7 +205,7 @@ Version 4.13.3 of the landing zone deployable architectures available
 {: release-note}
 
 Version 4.12.3 of the landing zone deployable architectures available
-:   Version 4.12.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 4.12.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - For the `existing_ssh_key_name` variable, you can now select from a list of all keys in the account when you deploy with projects or {{site.data.keyword.bplong_notm}}.
     - Deployable architectures now use the {{site.data.keyword.cloud_notm}} Terraform provider resource `clean_default_sg_acl` to clean the default ACL and security group rules. The new resource replaces the `null_resource.clean_default_security_group[0]` and `null_resource.clean_default_acl[0]` resources. When you upgrade from v4.4.7, the null resources are destroyed. This behavior is expected and does not affect your provisioned infrastructure.
@@ -239,7 +239,7 @@ Version 4.12.3 of the landing zone deployable architectures available
 {: release-note}
 
 Version 4.4.7 of the landing zone deployable architectures available
-:   Version 4.4.7 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 4.4.7 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - For Red Hat OpenShift Container Platform on VPC landing zone:
         - Changes to the version of the OpenShift cluster are now ignored. Make sure that you update your cluster version outside of the Terraform in the deployable architecture to prevent destructive changes to your infrastructure.
@@ -250,7 +250,7 @@ Version 4.4.7 of the landing zone deployable architectures available
 {: release-note}
 
 Version 4.4.1 of the landing zone deployable architectures available
-:   Version 4.4.1 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 4.4.1 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - {{site.data.keyword.cloud_notm}} {{site.data.keyword.hscrypto}} is now supported by the deployable architectures. {{site.data.keyword.hscrypto}} supports keep your own key (KYOK) features. The default encryption remains {{site.data.keyword.keymanagementserviceshort}}. For more information, see the [planning information](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-plan#vpc-crypto-prereqs).
     - The IBM provider version is updated to 1.54.0, which fixes a known issue with failures when creating an authorization policy.
@@ -266,7 +266,7 @@ Version 4.4.1 of the landing zone deployable architectures available
 {: release-note}
 
 Version 4.0.0 of the landing zone deployable architectures available
-:   Version 4.0.0 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}.
+:   Version 4.0.0 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     By default, the default VPC security group and ACLs are removed. Because the landing zone deployable architectures create security groups, the VPC defaults are not needed and might be more permissive than required.
 
@@ -293,7 +293,7 @@ Version 4.0.0 of the landing zone deployable architectures available
 {: release-note}
 
 Version 3.8.3 of the landing zone deployable architectures available
-:   Version 3.8.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external}. This version fixes the issue that prevented deletion of the SSH key in the VSI on VPC landing zone. For other changes in the release, see the [release notes](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/v3.8.3){: external} on GitHub.
+:   Version 3.8.3 of the landing zone deployable architectures is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}. This version fixes the issue that prevented deletion of the SSH key in the VSI on VPC landing zone. For other changes in the release, see the [release notes](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/v3.8.3){: external} on GitHub.
 
 ### 04 May 2023
 {: #secure-infrastructure-vpc-may0523}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-07-22"
 
 keywords:
 
@@ -120,4 +120,4 @@ Before you deploy this deployable architecture, you need an instance of the Hype
 
     For proof-of-technology environments, use the `auto-init` flag. For more information, see [Initializing service instances using recovery crypto units](/docs/hs-crypto?topic=hs-crypto-initialize-hsm-recovery-crypto-unit).
 
-1.  When you configure your deployable architecture, specify the resource group in the `hs_crypto_resource_group` input value and the instance name in the `hs_crypto_instance_name` value. If you don't provide those values, the default {{site.data.keyword.keymanagementserviceshort}} encryption is used.
+1.  When you configure your deployable architecture, specify the resource group in the `hs_crypto_resource_group` input variable and the instance name in the `hs_crypto_instance_name` variable. If you don't provide values for those variables, the default {{site.data.keyword.keymanagementserviceshort}} encryption is used.
