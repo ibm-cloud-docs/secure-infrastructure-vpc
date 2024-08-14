@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-08-14"
 
 keywords:
 
@@ -17,8 +17,32 @@ content-type: release-note
 # Release notes for the landing zone deployable architecture
 {: #secure-infrastructure-vpc-relnotes}
 
-Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. The entries are grouped by date.
+Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## August 2024
+{: #landing-zone-2024-08}
+
+### 15 August 2024
+{: #secure-infrastructure-vpc-aug-1524}
+{: release-note}
+
+Version 5.29.0 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 5.29.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - The `landing-zone-vpc` submodule is updated from 7.18.3 to 7.19.0.
+    - A fix is included to make sure that `resource_group_names` and `resource_group_data` outputs include the value of the `prefix` input variable.
+    - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
+        - A new `operating_system` input variable is added to specify the {{site.data.keyword.redhat_openshift_notm}} version of the cluster workers. The current version is the default. For more information, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available).
+        - The following optional input variables are now available to use existing resources for {{site.data.keyword.cos_full_notm}} and {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}}:
+            - `existing_kms_instance_name`
+            - `existing_kms_resource_group`
+            - `existing_kms_endpoint_type`
+            - `existing_cos_instance_name`
+            - `existing_cos_resource_group`
+            - `existing_cos_endpoint_type`
+            - `use_existing_cos_for_vpc_flowlogs`
+            - `use_existing_cos_for_atracker`
 
 ## July 2024
 {: #landing-zone-2024-07}
@@ -32,9 +56,9 @@ Version 5.25.1 of the landing zone deployable architectures is available
 
     - The `landing-zone-vpc` submodule is updated from 7.18.2 to 7.18.3.
     - The default virtual server image is updated to `ibm-ubuntu-24-04-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 5.24.5. Update the image outside of the Terraform code.
-    - Red Hat OpenShift Container Platform on VPC landing zone:
+    - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - A new `kms_wait_for_apply` input variable is added. The variable forces the code to wait until the key management service is applied to the cluster master, is ready, and deployed. The default value is `true`.
-        - Added a fix to prevent an error with the new `ibm-storage-operator` add-on, which is installed by default on Red Hat OpenShift version 4.15.
+        - Added a fix to prevent an error with the new `ibm-storage-operator` add-on, which is installed by default on {{site.data.keyword.redhat_openshift_notm}} version 4.15.
 
 ## June 2024
 {: #landing-zone-2024-06}
@@ -52,8 +76,8 @@ Version 5.24.5 of the landing zone deployable architectures is available
     - The `landing-zone-vpc` submodule is updated from 7.18.0 to 7.18.2. For more information about changes in the submodule, see VSI on VPC [release v7.18.2](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/releases/tag/v7.18.2){: external} in GitHub.
     - The VSI on VPC landing zone:
         - The `landing-zone-vsi` submodule is updated from 3.2.4 to 3.3.0. For more information about changes in the submodule, see VSI on VPC [release v3.3.0](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vsi/releases/tag/v3.3.0){: external} in GitHub.
-    - The Red Hat OpenShift Container Platform on VPC landing zone:
-        - The initial version of Red Hat OpenShift is now set to 4.15. Versions 4.12, 4.13, and 4.14 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+    - The {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
+        - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.15. Versions 4.12, 4.13, and 4.14 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
         - A new `cluster_force_delete_storage` input variable is added. The variable specifies whether to force the deletion of persistent storage when the associated VPC cluster is deleted so that the cluster can't be recovered. The default value is `false` in the Standard variation and `true` in the QuickStart variation.
 
 ## May 2024
@@ -69,7 +93,7 @@ Version 5.21.0 of the landing zone deployable architectures is available
     - Controls in the {{site.data.keyword.compliance_long}} Framework for Financial Services profile version 1.6.0 that pass validation are now displayed.
     - The `landing-zone-vsi` submodule is updated from 3.2.3 to 3.2.4. For more information about changes in the submodule, see VSI on VPC [release v3.2.4](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vsi/releases/tag/v3.2.4){: external} in GitHub.
     - The default virtual server image is updated to `ibm-ubuntu-22-04-4-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 5.21.0. Update the image outside of the Terraform code.
-    - The QuickStart variation of the Red Hat OpenShift Container Platform on VPC landing zone:
+    - The QuickStart variation of the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - A new `entitlement` input variable is added. The variable defaults to no entitlement and is applied only when the cluster is created.
         - The variation now includes more outputs. For more information, see the landing zone [release v5.21.0](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/releases/tag/v5.21.0){: external} in GitHub.
 
@@ -85,7 +109,7 @@ Version 5.20.0 of the landing zone deployable architectures is available
 
     - The IBM Terraform provider version is now locked to 1.63.0.
     - The external provider version is now set to 2.3.3.
-    - The Red Hat OpenShift Container Platform on VPC landing zone:
+    - The {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - This version includes a new QuickStart variation. For more information, see the [reference architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-roks-ra-qs).
         - New variables `cluster_addons` and `manage_all_cluster_addons` are added to support the configuration of cluster add-ons.
 
@@ -110,13 +134,13 @@ Version 5.14.0 of the landing zone deployable architectures is available
 :   Version 5.14.0 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - The `time_sleep.wait_for_authorization_policy` resource is destroyed when you upgrade to this version. This behavior is expected and does not affect your provisioned infrastructure.
-    - The initial version of Red Hat OpenShift is now set to 4.14. Versions 4.12 and 4.13 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+    - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.14. Versions 4.12 and 4.13 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
     - A new `skip_all_s2s_auth_policies` variable is available to manage authorization policies outside of your deployable architecture. To keep names consistent, the `add_kms_block_storage_s2s` variable is renamed to `skip_kms_block_storage_s2s_auth_policy`.
     - The version now exposes the `secondary_storage` variable for the Kubernetes service from the IBM Terraform Provider. Use the variable to provision a secondary disk to your worker nodes.
     - A service-to-service authorization policy between Kubernetes and your KMS is now created when you provision a cluster. This change fixes an issue that the policy was not created by default.
     - A `service_endpoint` input variable supports whether access to {{site.data.keyword.keymanagementserviceshort}} is through a public or private-only endpoint. The default value is `public-and-private.`
     - Removed in this version:
-        - Version 4.11 of Red Hat OpenShift is no longer supported.
+        - Version 4.11 of {{site.data.keyword.redhat_openshift_notm}} is no longer supported.
         - The `update_all_workers` input variable is removed. The variable was meant to update the Kubernetes version of all workers, but the deployable architecture ignores the version.
     - You can now set an expiration rule for {{site.data.keyword.cos_full_notm}} buckets in an override. If you deploy with projects or {{site.data.keyword.bplong_notm}}, edit the `override_json_string` optional variable. For example, the following example adds a 30-day expiration in the `expire_rule` property:
 
@@ -156,10 +180,10 @@ Version 5.3.1 of the landing zone deployable architectures available
 
     - The version includes a new extension variation that is called VSI on existing VPC landing zone. It adds a VSI in an existing VPC.
 
-        With this variation, you extend either the VPC landing zone or the Red Hat OpenShift Container Platform on VPC landing zone. For more information, see [Adding a VSI to your VPC landing zone deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ext-with-vsi).
+        With this variation, you extend either the VPC landing zone or the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. For more information, see [Adding a VSI to your VPC landing zone deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ext-with-vsi).
     - The IBM Terraform provider version is now locked to 1.60.0. This provider version fixes the known issue that the provider plug-in did not respond. For more information, see [issue 4898](https://github.com/IBM-Cloud/terraform-provider-ibm/issues/4898){: external}.
     - The default virtual server image is updated to `ibm-ubuntu-22-04-3-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 5.3.1. Update the image outside of the Terraform code.
-    - This version of the Red Hat OpenShift Container Platform on VPC landing zone fixes the issue where the value of the `wait_till` input variable is not used.
+    - This version of the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone fixes the issue where the value of the `wait_till` input variable is not used.
 
 ### 04 December 2023
 {: #secure-infrastructure-vpc-dec-0423}
@@ -191,11 +215,11 @@ Version 4.13.3 of the landing zone deployable architectures available
 
     - The IBM Terraform provider version is now locked to 1.59.0.
     - The `landing-zone-vsi` submodule is updated from 2.6.0 to 2.12.1. For more information about changes in the submodule, see [issue 577](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone/pull/577) in GitHub.
-    - The VSI on VPC landing zone and the Red Hat OpenShift Container Platform on VPC landing zone deployable architectures now include a `vpc_resource_list` output.
-    - The Red Hat OpenShift Container Platform on VPC landing zone deployable architecture now includes a `cluster_data` output with information about the created clusters, including IDs and names of the clusters.
+    - The VSI on VPC landing zone and the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone deployable architectures now include a `vpc_resource_list` output.
+    - The {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone deployable architecture now includes a `cluster_data` output with information about the created clusters, including IDs and names of the clusters.
     - The initial version of the OpenShift cluster is now set to 4.13 by default. Versions 4.11 and 4.12 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
 
-        Version 4.10 of Red Hat OpenShift is no longer supported.
+        Version 4.10 of {{site.data.keyword.redhat_openshift_notm}} is no longer supported.
 
 ## October 2023
 {: #landing-zone-2023-10}
@@ -228,7 +252,7 @@ Version 4.12.3 of the landing zone deployable architectures available
     - Changes related to VSI on VPC landing zone:
         - The default virtual server image is updated to `ibm-ubuntu-22-04-3-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 4.12.3. Update the image outside of the Terraform code.
         - You can't upgrade the QuickStart variation from v4.4.7 because of an issue with the provider configuration. Create another instance of the VSI on VPC landing zone QuickStart variation.
-    - Changes related to Red Hat OpenShift Container Platform on VPC landing zone:
+    - Changes related to {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - Added OpenShift Container Platform boot volume KMS encryption support. The boot volume is enabled for new clusters, but is not enabled when you upgrade because encryption can happen only during the initial provisioning.
 
 ## July 2023
@@ -241,7 +265,7 @@ Version 4.12.3 of the landing zone deployable architectures available
 Version 4.4.7 of the landing zone deployable architectures available
 :   Version 4.4.7 of the landing zone deployable architecture is available in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
-    - For Red Hat OpenShift Container Platform on VPC landing zone:
+    - For {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - Changes to the version of the OpenShift cluster are now ignored. Make sure that you update your cluster version outside of the Terraform in the deployable architecture to prevent destructive changes to your infrastructure.
         - The initial version of the OpenShift cluster is now set to version 4.12 by default. Versions 4.11 and 4.10 are also supported.
 
@@ -307,4 +331,4 @@ Version 3.6.4 of the landing zone deployable architectures available
 {: release-note}
 
 Introducing the landing zone deployable architectures
-:   Three VPC landing zone deployable architectures are released: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. You can use the deployable architectures to create a secure and customizable Virtual Private Cloud (VPC) environment. These [deployable architectures](#x10293733){: term} are based on the {{site.data.keyword.cloud_notm}} for Financial Services reference architecture. For more information about using deployable architectures with projects, see the blog posts [Projects and Cost Estimation: How IBM Cloud is Revolutionizing Complex Workloads for Enterprises](https://www.ibm.com/blog/announcement/projects-and-cost-estimation/) and [Turn Your Terraform Templates into Deployable Architectures](https://www.ibm.com/blog/turn-your-terraform-templates-into-deployable-architectures/).
+:   Three VPC landing zone deployable architectures are released: VPC landing zone, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. You can use the deployable architectures to create a secure and customizable Virtual Private Cloud (VPC) environment. These [deployable architectures](#x10293733){: term} are based on the {{site.data.keyword.cloud_notm}} for Financial Services reference architecture. For more information about using deployable architectures with projects, see the blog posts [Projects and Cost Estimation: How IBM Cloud is Revolutionizing Complex Workloads for Enterprises](https://www.ibm.com/blog/announcement/projects-and-cost-estimation/) and [Turn Your Terraform Templates into Deployable Architectures](https://www.ibm.com/blog/turn-your-terraform-templates-into-deployable-architectures/).
