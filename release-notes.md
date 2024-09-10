@@ -43,7 +43,7 @@ Version 5.31.2 of the landing zone deployable architectures is available
             - `management_cluster_public_service_endpoint_url`
             - `workload_cluster_console_url`
             - `management_cluster_console_url`
-        - The following output variable are now included with the standard variation: `workload_cluster_name and management_cluster_name`.
+        - The following output variables are now included with the standard variation: `workload_cluster_name` and `management_cluster_name`.
 
 ## August 2024
 {: #landing-zone-2024-08}
