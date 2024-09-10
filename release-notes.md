@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-14"
+lastupdated: "2024-09-10"
 
 keywords:
 
@@ -19,6 +19,31 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## September 2024
+{: #landing-zone-2024-09}
+
+
+### 10 September 2024
+{: #secure-infrastructure-vpc-sep-1024}
+{: release-note}
+
+Version 5.31.2 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 5.31.2 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - The default virtual server image is updated to `bm-ubuntu-24-04-minimal-amd64-4`. To avoid downtime and losing data, the image is not changed when you update to version 5.31.2. Update the image outside of the Terraform code.
+    - The IBM Terraform provider version is now locked to 1.69.0.
+    - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
+        - The following output variables are now included for both the standard and QuickStart variations:
+            - `workload_cluster_ingress_hostname`
+            - `management_cluster_ingress_hostname`
+            - `workload_cluster_private_service_endpoint_url`
+            - `management_cluster_private_service_endpoint_url`
+            - `workload_cluster_public_service_endpoint_url`
+            - `management_cluster_public_service_endpoint_url`
+            - `workload_cluster_console_url`
+            - `management_cluster_console_url`
+        - The following output variable are now included with the standard variation: `workload_cluster_name and management_cluster_name`.
 
 ## August 2024
 {: #landing-zone-2024-08}
