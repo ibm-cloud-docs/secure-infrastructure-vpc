@@ -43,7 +43,7 @@ Version 6.0.0 of the landing zone deployable architectures is available
     - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - Refactored the logic to use the [base-ocp-vpc](https://registry.terraform.io/modules/terraform-ibm-modules/base-ocp-vpc/ibm/latest) module to create {{site.data.keyword.redhat_openshift_notm}} Container Platform clusters.
         - This module has some extra functionality which requires the runtime to have access to IBM Cloud private endpoints.
-        - Support added to allow you to specify a Virtual Private Cloud (VPC) that you do not wish to create a cluster in. By default a cluster will be created in all of the VPCs specified in the `vpcs` input. Use new input `ignore_vpcs_for_cluster_deployment` to pass a list of VPCs to ignoge.
+        - Support added to allow you to specify a Virtual Private Cloud (VPC) that you do not wish to create a cluster in. By default a cluster will be created in all of the VPCs specified in the `vpcs` input. Use new input `ignore_vpcs_for_cluster_deployment` to pass a list of VPCs to ignore.
     
 ### 10 September 2024
 {: #secure-infrastructure-vpc-sep-1024}
