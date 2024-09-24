@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2024-06-07"
+lastupdated: "2024-09-24"
 
 keywords:
 
@@ -42,9 +42,11 @@ This deployable architecture supports these features:
 - Key management: Adds key management by integrating the {{site.data.keyword.keymanagementservicefull_notm}} service or the {{site.data.keyword.hscrypto}}. These key management services help you create, manage, and use encryption keys to protect your sensitive data.
 - Edge networking: Isolates and speeds traffic to the public internet by using an edge VPC in a specific location, if enabled
 - Flow Logs and Activity tracking: Integrates these services to enhance the observability and auditing of your VPC infrastructure.
+- Adds landing zone VPC CRNs to an existing CBR (Context-based restrictions) network zone if the existing CBR zone ID is specified.
 
 
 For more information about the components of VPCs, see [VPC concepts](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-concepts).
+For more information on how to create custom CBR (Context-based restrictions) zones and rules, see [CBR module](https://github.com/terraform-ibm-modules/terraform-ibm-cbr). Also refer [Pre-wired CBR configuration for FS Cloud](https://github.com/terraform-ibm-modules/terraform-ibm-cbr/tree/main/modules/fscloud) submodule to create default FSCloud compliant coarse-grained CBR rules.
 
 ## VSI on VPC landing zone
 {: #overview-vsi}
