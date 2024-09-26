@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-20"
+lastupdated: "2024-09-26"
 
 keywords:
 
@@ -23,6 +23,17 @@ Use these release notes to learn about the latest updates to the landing zone de
 ## September 2024
 {: #landing-zone-2024-09}
 
+### 26 September 2024
+{: #secure-infrastructure-vpc-sep-2624}
+{: release-note}
+
+Version 6.0.1 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 6.0.1 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
+        - A fix was added to address an issue where secondary storage was not being provisioned.
+        - A fix was added to address and issue where the `workload_cluster_name` and `management_cluster_name` outputs were missing.
+
 ### 20 September 2024
 {: #secure-infrastructure-vpc-sep-2024}
 {: release-note}
@@ -30,10 +41,9 @@ Use these release notes to learn about the latest updates to the landing zone de
 Version 6.0.0 of the landing zone deployable architectures is available
 :   All landing zone deployable architectures are released at version 6.0.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
-    - VSI on VPC landing zone and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
+    - **BREAKING CHANGE:** VSI on VPC landing zone and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - When you upgrade to version 6.0.0, you might see some of your infrastructure marked for deletion and re-creation. Fully supported migration steps will be available shortly to prevent this from occurring, so if re-creating infrastructure is going to impact day-to-day operations, don't update to this version until there is a fully supported migration path. 
        - VPC landing zone deployable architecture is not affected.
-{: important}
     
     - Support added to pass an existing Context-based restriction (CBR) zone ID to allow all Virtual Private Clouds created to be added to the zone.
     - The IBM Terraform provider version is now locked to 1.69.2.
