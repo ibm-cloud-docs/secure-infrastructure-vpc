@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-07"
+lastupdated: "2024-10-09"
 lasttested: "2023-09-27"
 
 keywords:
@@ -41,7 +41,7 @@ The answer is by assigning operator access through the Management VPC. You have 
 - [{{site.data.keyword.dl_short}}](/docs/vpc?topic=vpc-end-to-end-private-connectivity-vpe&interface=cli) - You can establish a direct network connection between your on-premises network and {{site.data.keyword.dl_full_notm}}.
 - [Access from another VPC by using {{site.data.keyword.tg_short}}](/docs/vpc?topic=vpc-end-to-end-private-connectivity-vpe&interface=cli) - Access from another {{site.data.keyword.vpc_short}} to your VPC can be achieved by using {{site.data.keyword.tg_full_notm}}.
 
-![Architecture diagram of site-to-site-VPN connection with strongSwan](images/s2s-strongswan-architecture.svg){: caption="Figure 1. VPC landing zone connected to a network with a site-to-site VPN and strongSwan" caption-side="bottom"}{: external download="s2s-strongswan-architecture.svg"}
+![Architecture diagram of site-to-site-VPN connection with strongSwan](images/s2s-strongswan-architecture.svg){: caption="VPC landing zone connected to a network with a site-to-site VPN and strongSwan" caption-side="bottom"}{: external download="s2s-strongswan-architecture.svg"}
 
 In this tutorial, we can learn on how to set up a site-to-site VPN connection to your on-premises network.
 
@@ -212,7 +212,7 @@ For more information about how to install strongSwan on an operating system othe
         | 2 | Allow | ALL | strongSwan VSI subnet CIDR | LZ VPC CIDR |
         | 3 | Allow | ALL | LZ VPC CIDR | strongSwan VSI subnet CIDR |
         | 4 | Allow | ALL | strongSwan VSI public IP | Management VSI subnet CIDR |
-        {: caption="Table 1. Inbound ACL rules" caption-side="bottom"}
+        {: caption="Inbound ACL rules" caption-side="bottom"}
 
 1.  Create outbound rules for the VPN subnet and public IP to access the on-premises subnet.
     1.  Click **Create** in the Outbound rules section.
@@ -224,7 +224,7 @@ For more information about how to install strongSwan on an operating system othe
         | 2 | Allow | ALL | LZ VPC CIDR | strongSwan VSI subnet CIDR |
         | 3 | Allow | ALL | strongSwan VSI subnet CIDR | LZ VPC CIDR |
         | 4 | Allow | ALL | Management VSI subnet CIDR | strongSwan VSI public IP |
-        {: caption="Table 2. Outbound ACL rules" caption-side="bottom"}
+        {: caption="Outbound ACL rules" caption-side="bottom"}
 
 ## Create a VPN connection in the {{site.data.keyword.cloud_notm}} VPN
 {: #create-vpn}

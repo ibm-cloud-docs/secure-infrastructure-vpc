@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-20"
+lastupdated: "2024-10-09"
 lasttested: "2024-02-12"
 
 keywords:
@@ -97,7 +97,7 @@ The module creates and configures the following infrastructure:
 ### Architecture
 {: #solution-connect-client-vpn-architecture}
 
-![Architecture](images/c2s-basic.svg){: caption="Figure 1. Architecture diagram of the tutorial" caption-side="bottom"}{: external download="c2s-basic.svg"}
+![Architecture](images/c2s-basic.svg){: caption="Architecture diagram of the tutorial" caption-side="bottom"}{: external download="c2s-basic.svg"}
 
 ## Before you begin
 {: #solution-connect-client-vpn-prereqs}
@@ -122,7 +122,7 @@ This tutorial requires the following setup:
         1.  Click the row to display the details in the sidebar for the {{site.data.keyword.secrets-manager_short}} instance that you want to use.
         1.  Copy the GUID.
 
-            ![Example of resource list](images/secrets-manager-resource-list.png){: caption="Figure 1. Example view of the resource list in {{site.data.keyword.cloud_notm}} console" caption-side="bottom"}
+            ![Example of resource list](images/secrets-manager-resource-list.png){: caption="Example view of the resource list in {{site.data.keyword.cloud_notm}} console" caption-side="bottom"}
     - If you used a certificate template to create a private certificate that is applied to your {{site.data.keyword.secrets-manager_short}} instance, copy the name of the certificate template.
         1.  In the resource list, click the name of the {{site.data.keyword.secrets-manager_short}} instance that you selected earlier.
         1.  Click **Secrets engines** > **Private certificates**.
