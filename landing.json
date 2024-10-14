@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "title": "Landing zone",
+  "introduction": "The VPC landing zone deployable architectures are a set of IaC assets based on the IBM Cloud for Financial Services reference architecture. You can use the deployable architectures to create a secure and customizable Virtual Private Cloud (VPC) environment.",
+  "deployment_url": "https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vpc-9fc0fa64-27af-4fed-9dce-47b3640ba739-global",
+  "section_topics": {
+    "links": [
+      {
+        "title": "Overview of the landing zone deployable architectures",
+        "href": "/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-overview"
+      },
+      {
+        "title": "Planning for the landing zone deployable architectures",
+        "href": "/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-plan"
+      },
+      {
+        "title": "Deploying a landing zone deployable architecture",
+        "href": "/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-deploy"
+      }
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "Turn Your Terraform Templates into Deployable Architectures",
+      "description": "Turn a simple Terraform template into a deployable architecture in a private IBM Cloud catalog.",
+      "href": "https://www.ibm.com/blog/turn-your-terraform-templates-into-deployable-architectures/",
+      "type": "blog"
+    },
+    {
+      "title": "Introducing the IBM Cloud Terraform modules for developers",
+      "description": "Curated Terraform modules in an IaC solution for IBM Cloud.",
+      "href": "https://developer.ibm.com/blogs/awb-curated-ibm-cloud-terraform-modules-for-developers/",
+      "type": "blog",
+      "recommended": true
+    }
+  ],
+  "section_architectures": [
+    {
+      "title": "VPC landing zone",
+      "href": "/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vpc-ra",
+      "deployable": true
+    },
+    {
+      "title": "VSI on VPC landing zone",
+      "href": "/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra",
+      "deployable": true
+    },
+    {
+      "title": "VSI on existing VPC landing zone - Extension",
+      "href": "/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ext-ra",
+      "deployable": true
+    },
+    {
+      "title": "Red Hat OpenShift Container Platform on VPC landing zone",
+      "href": "/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ocp-ra",
+      "deployable": true
+    }
+  ],
+  "section_updates": {
+    "view_more": "/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-secure-infrastructure-vpc-relnotes"
+  }
+}
