@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-23"
+lastupdated: "2024-10-24"
 
 keywords:
 
@@ -23,18 +23,19 @@ Use these release notes to learn about the latest updates to the landing zone de
 ## October 2024
 {: #landing-zone-2024-10}
 
-### 23 October 2024
-{: #secure-infrastructure-vpc-oct-2324}
+### 24 October 2024
+{: #secure-infrastructure-vpc-oct-2424}
 {: release-note}
 
-Version 6.2.0 of the landing zone deployable architectures is available
-:   All landing zone deployable architectures are released at version 6.2.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+Version 6.2.1 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 6.2.1 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - Controls in the {{site.data.keyword.compliance_long}} Framework for Financial Services profile version 1.7.0 that pass validation are now displayed.
-    - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 6.2.0. Update the image outside of the Terraform code.
+    - VSI on VPC landing zone:
+        - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 6.2.1. Update the image outside of the Terraform code.
     - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.16. Versions 4.12, 4.13, 4.14 and 4.15 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
-        - The `operating_system` input is now a required input. Valid values are `REDHAT_8_64` or `RHCOS`. By default, the input is set to `REDHAT_8_64. If you are using the `override_json_string` input, this will need to be updated to include a value for `operating_system`. Ensure to also include it for any worker pools being added too. For example:
+        - The `operating_system` input is now a required input. Valid values are `REDHAT_8_64` or `RHCOS`. By default, the input is set to `REDHAT_8_64. If you are using the `override_json_string` input, this will need to be updated to include a value for `operating_system` if there is not currently one set. Ensure to also include it for any worker pools being added too. For example:
         ```json
         "clusters": [
         {
