@@ -35,10 +35,10 @@ Version 6.2.1 of the landing zone deployable architectures is available
         - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 6.2.1. Update the image outside of the Terraform code.
     - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.16. Versions 4.12, 4.13, 4.14 and 4.15 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
-        - The `operating_system` input is now a required input. Valid values are `REDHAT_8_64` or `RHCOS`. By default, the input is set to `REDHAT_8_64. If you are using the `override_json_string` input, this will need to be updated to include a value for `operating_system` if there is not currently one set. Ensure to also include it for any worker pools being added too. For example:
+        - The `operating_system` input is now a required input. Valid values are `REDHAT_8_64` or `RHCOS`. By default, the input is set to `REDHAT_8_64`. If you are using the `override_json_string` input, this will need to be updated to include a value for `operating_system` if there is not currently one set. Ensure to also include it for any worker pools being added too. For example:
         ```json
         "clusters": [
-        {
+          {
             "cos_name": "cos",
             "entitlement": "cloud_pak",
             "kube_type": "openshift",
@@ -51,32 +51,33 @@ Version 6.2.1 of the landing zone deployable architectures is available
             "operating_system": "REDHAT_8_64",
             "kms_wait_for_apply": true,
             "kms_config": {
-                "crk_name": "slz-roks-key",
-                "private_endpoint": true
+              "crk_name": "slz-roks-key",
+              "private_endpoint": true
             },
             "subnet_names": [
-                "vsi-zone-1",
-                "vsi-zone-2",
-                "vsi-zone-3"
+              "vsi-zone-1",
+              "vsi-zone-2",
+              "vsi-zone-3"
             ],
             "vpc_name": "management",
             "worker_pools": [
-                {
-                    "entitlement": "cloud_pak",
-                    "flavor": "bx2.16x64",
-                    "name": "logging-worker-pool",
-                    "subnet_names": [
-                        "vsi-zone-1",
-                        "vsi-zone-2",
-                        "vsi-zone-3"
-                    ],
-                    "vpc_name": "management",
-                    "operating_system": "REDHAT_8_64",
-                    "workers_per_subnet": 2
-                }
+              {
+                "entitlement": "cloud_pak",
+                "flavor": "bx2.16x64",
+                "name": "logging-worker-pool",
+                "subnet_names": [
+                  "vsi-zone-1",
+                  "vsi-zone-2",
+                  "vsi-zone-3"
+                ],
+                "vpc_name": "management",
+                "operating_system": "REDHAT_8_64",
+                "workers_per_subnet": 2
+              }
             ],
             "workers_per_subnet": 2
-        }]
+          }
+        ]
         ```
 
 ## September 2024
