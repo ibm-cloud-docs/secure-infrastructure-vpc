@@ -31,6 +31,7 @@ Version 6.2.1 of the landing zone deployable architectures is available
 :   All landing zone deployable architectures are released at version 6.2.1 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - Controls in the {{site.data.keyword.compliance_long}} Framework for Financial Services profile version 1.7.0 that pass validation are now displayed.
+    - The IBM Terraform provider version is now locked to 1.70.1.
     - VSI on VPC landing zone:
         - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 6.2.1. Update the image outside of the Terraform code.
     - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
