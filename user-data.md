@@ -27,7 +27,7 @@ When using the `user_data` variable in your configuration, it's essential to pro
 
 The `user_data` variable should contain data formatted as follows:
 
-```tf
+```hcl
 {
   management = {
     user_data = <<-EOT
@@ -53,6 +53,7 @@ EOT
   }
 }
 ```
+{: codeblock}
 
 - Keys to the map should be the same as the vpc names.
 - Value for the `user_data` parameter in the object should follow YAML formatting.
