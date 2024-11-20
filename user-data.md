@@ -27,7 +27,7 @@ When using the `user_data` variable in your configuration, it's essential to pro
 
 The `user_data` variable should contain data formatted as follows:
 
-```hcl
+```terraform
 {
   management = {
     user_data = <<-EOT
