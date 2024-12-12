@@ -31,8 +31,10 @@ Version 6.6.0 of the landing zone deployable architectures is available
 :   All landing zone deployable architectures are released at version 6.6.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - The VSI on VPC landing zone deployable architecture will now provision instances with the next gen [virtual network interface](https://cloud.ibm.com/docs/vpc?topic=vpc-vni-about) capabilities.
+
         There is no supported upgrade path to migrate existing virtual server instances on the legacy instance network interface to the new next gen virtual network interface, meaning if you are updating from a previous version of the deployable architecture, you will see several resources identified for a destroy and re-create. If you want to remain on the legacy instance network interface, you can set the `use_legacy_network_interface` input to true before upgrading, and there should be no disruption to any of the resources you may already have deployed.
         {: important}
+
     - A fix was added to the "Existing VPC" variation of the VSI on VPC landing zone deployable architecture that ensures virtual server instances are only deployed in the correct subnets. Previously instances were created in every subnet, including ones that were not designed for virtual server instances. If upgrading from a previous version, the plan will identify for those virtual server instances to be destroyed.
     - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.16. Versions 4.12, 4.13, and 4.14 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
     - The IBM terraform provider has been updated to version 1.71.3.
