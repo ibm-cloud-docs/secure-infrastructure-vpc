@@ -57,8 +57,6 @@ toc:
         navtitle: Adding a VSI to your deployable architecture
       - topic: override-kms.md
         navtitle: Overriding key management
-      - topic: user-data.md
-        navtitle: Adding user data to your VSI
   - navgroup:
       id: reference
       topics:

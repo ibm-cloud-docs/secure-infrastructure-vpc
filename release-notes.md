@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-24"
+lastupdated: "2024-12-12"
 
 keywords:
 
@@ -20,6 +20,23 @@ content-type: release-note
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
 
+## December 2024
+{: #landing-zone-2024-12}
+
+### 12 December 2024
+{: #secure-infrastructure-vpc-dec-1224}
+{: release-note}
+
+Version 6.6.0 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 6.6.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - The VSI on VPC landing zone deployable architecture will now provision instances with the next gen [virtual network interface](https://cloud.ibm.com/docs/vpc?topic=vpc-vni-about) capabilities.
+        There is no supported upgrade path to migrate existing virtual server instances on the legacy instance network interface to the new next gen virtual network interface, meaning if you are updating from a previous version of the deployable architecture, you will see several resources identified for a destroy and re-create. If you want to remain on the legacy instance network interface, you can set the `use_legacy_network_interface` input to true before upgrading, and there should be no disruption to any of the resources you may already have deployed.
+        {: important}
+    - A fix was added to the "Existing VPC" variation of the VSI on VPC landing zone deployable architecture that ensures virtual server instances are only deployed in the correct subnets. Previously instances were created in every subnet, including ones that were not designed for virtual server instances. If upgrading from a previous version, the plan will identify for those virtual server instances to be destroyed.
+    - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.16. Versions 4.12, 4.13, and 4.14 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+    - The IBM terraform provider has been updated to version 1.71.3.
+
 ## October 2024
 {: #landing-zone-2024-10}
 
@@ -35,7 +52,7 @@ Version 6.2.1 of the landing zone deployable architectures is available
     - VSI on VPC landing zone:
         - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 6.2.1. Update the image outside of the Terraform code.
     - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
-        - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.16. Versions 4.12, 4.13, 4.14 and 4.15 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+        - Support for {{site.data.keyword.redhat_openshift_notm}} version 4.16 has been added. Versions 4.12, 4.13, 4.14 and 4.15 are also supported. Version 4.15 is still the default.
         - The `operating_system` input is now a required input. Valid values are `REDHAT_8_64` or `RHCOS`. By default, the input is set to `REDHAT_8_64`. If you are using the `override_json_string` input, this will need to be updated to include a value for `operating_system` if there is not currently one set. Ensure to also include it for any worker pools being added too. For example:
         ```json
         "clusters": [
