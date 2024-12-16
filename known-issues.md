@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-17"
+lastupdated: "2024-12-16"
 
 keywords:
 
@@ -14,6 +14,82 @@ subcollection: secure-infrastructure-vpc
 
 # Known issues with landing zone deployable architectures
 {: #known-issues}
+
+## Invalid index error in v6.6.0
+{: #ki-invlid-index-error}
+
+In version 6.6.0 of all landing zones deployable architectures, the following error may be seen for advanced users who have set `override = true` or passing a value for `override_json_string`:
+```hcl
+╷
+│ Error: Invalid index
+│ 
+│   on outputs.tf line 22, in output "management_rg_id":
+│   22:   value       = module.vpc_landing_zone.resource_group_data[module.vpc_landing_zone.management_rg_name]
+│     ├────────────────
+│     │ module.vpc_landing_zone.management_rg_name is "example-management-rg"
+│     │ module.vpc_landing_zone.resource_group_data is object with 3 attributes
+│ 
+│ The given key does not identify an element in this collection value.
+╵
+╷
+│ Error: Invalid index
+│ 
+│   on outputs.tf line 32, in output "workload_rg_id":
+│   32:   value       = module.vpc_landing_zone.resource_group_data[module.vpc_landing_zone.workload_rg_name]
+│     ├────────────────
+│     │ module.vpc_landing_zone.resource_group_data is object with 3 attributes
+│     │ module.vpc_landing_zone.workload_rg_name is "example-workload-rg"
+│ 
+│ The given key does not identify an element in this collection value.
+╵
+╷
+│ Error: Invalid index
+│ 
+│   on module/outputs.tf line 22, in output "management_rg_id":
+│   22:   value       = module.landing_zone.resource_group_data[module.landing_zone.management_rg_name]
+│     ├────────────────
+│     │ module.landing_zone.management_rg_name is "example-management-rg"
+│     │ module.landing_zone.resource_group_data is object with 3 attributes
+│ 
+│ The given key does not identify an element in this collection value.
+╵
+╷
+│ Error: Invalid index
+│ 
+│   on module/outputs.tf line 32, in output "workload_rg_id":
+│   32:   value       = module.landing_zone.resource_group_data[module.landing_zone.workload_rg_name]
+│     ├────────────────
+│     │ module.landing_zone.resource_group_data is object with 3 attributes
+│     │ module.landing_zone.workload_rg_name is "example-workload-rg"
+│ 
+│ The given key does not identify an element in this collection value.
+╵
+╷
+│ Error: Invalid index
+│ 
+│   on ../../outputs.tf line 290, in output "management_rg_id":
+│  290:   value       = local.resource_groups_info["${var.prefix}-management-rg"]
+│     ├────────────────
+│     │ local.resource_groups_info is object with 3 attributes
+│     │ var.prefix is "example"
+│ 
+│ The given key does not identify an element in this collection value.
+╵
+╷
+│ Error: Invalid index
+│ 
+│   on ../../outputs.tf line 300, in output "workload_rg_id":
+│  300:   value       = local.resource_groups_info["${var.prefix}-workload-rg"]
+│     ├────────────────
+│     │ local.resource_groups_info is object with 3 attributes
+│     │ var.prefix is "example"
+│ 
+│ The given key does not identify an element in this collection value.
+╵
+```
+### Workaround
+{: #ki-workaround-invlid-index-error}
+The current workaround is to deploy (or remain) on version 6.2.1 until a new version with a permanent fix is released.
 
 ## QuickStart variations fail projects validation
 {: #ki-vsiqs-validation-fail}
