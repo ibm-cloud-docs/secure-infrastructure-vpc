@@ -19,20 +19,20 @@ account-plan: paid
 {: #connect-landingzone-client-vpn}
 {: toc-content-type="tutorial"}
 {: toc-services="vpc, openshift, secrets-manager, dl, schematics"}
-{: toc-completion-time="2h"}
+{: toc-completion-time="1h"}
 
-This tutorial dives into the fastest option to get up and running with a [client VPN for VPC](/docs/vpc?topic=vpc-vpn-client-to-site-overview) connectivity. Rather than doing manual steps, you set up an automated way to create a client-to-site VPN connection to one or more landing zones in your account by using {{site.data.keyword.client-to-site-vpn}} deployable architecture from Community Catalog.
+This tutorial dives into the fastest option to get up and running with a [client VPN for VPC](/docs/vpc?topic=vpc-vpn-client-to-site-overview) connectivity. Rather than doing manual steps, you set up an automated way to create a client-to-site VPN connection to one or more landing zones in your account by using Cloud automation for Client to Site VPN [deployable architecture](#x10293733){: term} from the Community registry.
 {: shortdesc}
 
 ## Objectives
 {: #solution-connect-client-vpn-objectives}
 
-- Create a client-to-site VPN connection between the private VPC network and clients by using {{site.data.keyword.client-to-site-vpn}} deployable architecture from Community Catalog.{: term}.
+- Create a client-to-site VPN connection between the private VPC network and clients by using Cloud automation for Client to Site VPN [deployable architecture](#x10293733){: term} from the Community registry.
 
 ### Problem
 {: #solution-connect-client-vpn-problem}
 
-Let's say that you deployed the [Red Hat OpenShift Container Platform on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external} deployable architecture. In the {{site.data.keyword.cloud_notm}} console, you can see that the cluster is created and working correctly. When you try to access the Red Hat OpenShift web console on the management cluster, you see this error:
+Let's say that you deployed the [Red Hat OpenShift Container Platform on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external} [deployable architecture](#x10293733){: term}. In the {{site.data.keyword.cloud_notm}} console, you can see that the cluster is created and working correctly. When you try to access the Red Hat OpenShift web console on the management cluster, you see this error:
 
 > It is not possible to access the Red Hat OpenShift console because the cluster is accessible only on the management VPC’s private network, which is locked down and not accessible from the internet.
 
@@ -66,16 +66,25 @@ Establish secure connections to a private VPC network:
 
 - [Client-to-site VPN server and VPN Client](/docs/vpc?topic=vpc-vpn-client-to-site-overview) - Configure a VPN client application on your device to create a secure connection to your VPC network that uses {{site.data.keyword.cloud_notm}} VPN for VPC. The {{site.data.keyword.cloud_notm}} VPN server service has high availability mode for production use and is managed by {{site.data.keyword.IBM_notm}}.
 
-## Deploying Cloud automation for {{site.data.keyword.client-to-site-vpn}} with projects
+## Deploying Cloud automation for Client to Site VPN with projects
 {: #deploy-client-to-site-vpn}
+{: step}
 
-1. From the {{site.data.keyword.cloud_notm}} catalog, search for Cloud automation for {{site.data.keyword.client-to-site-vpn}}.
+1. From the Community registry, search for Cloud automation for Client to Site VPN.
+1. You can chose between two different variations:
+   - **quickstart**: Designed for quick testing and seamless access to a private VPC network via a VPN client. The VPN is fully open, with ACL rules and security groups granting unrestricted access and allowing all incoming requests from any source.
+   - **standard**: A fully customizable solution. By default, all incoming requests to private VPC networks are denied and must be authorized by configuring ACL rules and security groups. The VPN has two separate VPC subnets for the VPN server, ensuring high availability.
 1. Add it to an existing project or create a project.
-1. Complete the next steps depending on how you plan to use the deployable architecture:
+1. Customize Cloud automation for Client to Site VPN by selecting optional add-on components as needed:
+   - Red Hat OpenShift Container Platform on VPC landing zone
+   - VSI on VPC landing zone
+   - VPC landing zone
+   - Cloud automation for Secrets Manager
+1. Complete the next steps depending on how you plan to use the [deployable architecture](#x10293733){: term}:
    - [Configure](/docs/secure-enterprise?topic=secure-enterprise-config-project) it in your project and [deploy](/docs/secure-enterprise?topic=secure-enterprise-deploy-project)
    - You can [stack deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-config-stack) together in a project to create a robust end-to-end solution architecture. You don't need to code Terraform to connect the member deployable architectures within the stack. As you configure input values in a member deployable architecture, you can reference inputs or outputs from another member to link the deployable architectures together. After you deploy the deployable architectures in your stack, you can add the stack to a private catalog to easily share it with others in your organization.
 
-A deployable architecture is infrastructure as code (IaC) that's designed for easy deployment, scalability, and modularity. In this case, the deployable architecture represents a repeatable way to create client-to-site VPN connections for more than one landing zone in your org. It also simplifies how others in your company can set up more VPN connections for their landing zones.
+A [deployable architecture](#x10293733){: term} is infrastructure as code (IaC) that's designed for easy deployment, scalability, and modularity. In this case, the [deployable architecture](#x10293733){: term} represents a repeatable way to create client-to-site VPN connections for more than one landing zone in your org. It also simplifies how others in your company can set up more VPN connections for their landing zones.
 
 ## Configure the OpenVPN client
 {: #solution-connect-client-vpn-openvpn}
@@ -86,8 +95,8 @@ After the VPN server cloud resources are deployed, set up the OpenVPN client on 
 1.  Download the OpenVPN profile from the VPN server
 
     - By using the {{site.data.keyword.cloud_notm}} console:
-        1.  Click the **Navigation menu** icon ![Navigation menu icon](../icons/icon_hamburger.svg "Menu"), and then click **VPC Infrastructure** > **VPNs** in the **Network** section to open the VPNs for VPC page.
-        1.  Click the **Client-to-site servers** tab and select the client-to-site VPN server that you created.
+        1.  Click the **Navigation menu** icon ![Navigation menu icon](../icons/icon_hamburger.svg "Menu"), and then click **Infrastructure** > **VPNs** in the **Network** section to open the VPNs for VPC page.
+        1.  Click the **Client-to-site servers** tab, and select the client-to-site VPN server that you created.
         1.  Click the **Clients** tab. Then, click **Download client profile**.
 
       Or
