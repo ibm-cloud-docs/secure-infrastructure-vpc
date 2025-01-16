@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-12-16"
+  years: 2023, 2025
+lastupdated: "2025-01-16"
 
 keywords:
 
@@ -89,7 +89,7 @@ In version 6.6.0 of all landing zones deployable architectures, the following er
 ```
 ### Workaround
 {: #ki-workaround-invlid-index-error}
-The current workaround is to deploy (or remain) on version 6.2.1 until a new version with a permanent fix is released.
+Upgrade to version 6.7.0 or later.
 
 ## QuickStart variations fail projects validation
 {: #ki-vsiqs-validation-fail}
