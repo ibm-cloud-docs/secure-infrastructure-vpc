@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-12-12"
+  years: 2023, 2025
+lastupdated: "2025-01-16"
 
 keywords:
 
@@ -19,6 +19,23 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## January 2025
+{: #landing-zone-2025-01}
+
+### 16 January 2025
+{: #secure-infrastructure-vpc-jan-1625}
+{: release-note}
+
+Version 6.7.0 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 6.7.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
+        - Fixed a bug that was introduced in version 6.6.0 where an `Invalid index` error was thrown for advanced users who have set `override = true` or passing a value for `override_json_string`
+    - VSI on VPC landing zone:
+        - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 6.2.1. Update the image outside of the Terraform code.
+        - Support added for specifing optional [user data](https://cloud.ibm.com/docs/vpc?topic=vpc-user-data) that automatically performs common configuration tasks or runs scripts on the provisioned VSIs. For more information about how to use this feature, see [Adding user data to your VSI on VPC landing zone deployable architecture](user-data.md).
+    - The IBM terraform provider has been updated to version 1.74.0.
 
 ## December 2024
 {: #landing-zone-2024-12}
