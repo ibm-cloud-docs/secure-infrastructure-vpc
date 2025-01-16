@@ -31,8 +31,8 @@ Version 6.7.0 of the landing zone deployable architectures is available
 :   All landing zone deployable architectures are released at version 6.7.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - VSI on VPC landing zone:
-        - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 6.2.1. Update the image outside of the Terraform code.
-        - Support added for specifing optional [user data](https://cloud.ibm.com/docs/vpc?topic=vpc-user-data) that automatically performs common configuration tasks or runs scripts on the provisioned VSIs. For more information about how to use this feature, see [Adding user data to your VSI on VPC landing zone deployable architecture](./user-data.md).
+        - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 6.7.0. Update the image outside of the Terraform code.
+        - Support added for specifing optional [user data](https://cloud.ibm.com/docs/vpc?topic=vpc-user-data) that automatically performs common configuration tasks or runs scripts on the provisioned VSIs. For more information about how to use this feature, see [Adding user data to your VSI on VPC landing zone deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-user-data).
     - Fixed a bug that was introduced in version 6.6.0 where an `Invalid index` error was thrown for advanced users who have set `override = true` or passing a value for `override_json_string`.
     - The IBM terraform provider has been updated to version 1.74.0.
 
