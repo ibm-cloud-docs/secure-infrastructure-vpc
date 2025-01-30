@@ -69,7 +69,8 @@ toc:
       topics:
       - topic: support.md
         navtitle: Getting help and support
-      - faqs.md
+      - topic: faqs.md
+        navtitle: FAQ
       - topic: known-issues.md
         navtitle: Known issues
       - topicgroup:
