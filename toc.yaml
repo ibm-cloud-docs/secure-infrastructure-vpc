@@ -78,6 +78,7 @@ toc:
           topics:
           - topic: ts-deploy.md
           - topic: ts-ocp-version.md
+          - topic: ts-migration.md
           - topicgroup:
               label: Troubleshooting Schematics
               topics:
