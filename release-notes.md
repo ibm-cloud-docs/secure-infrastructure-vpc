@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-01-31"
 
 keywords:
 
@@ -22,6 +22,20 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## January 2025
 {: #landing-zone-2025-01}
+
+### 31 January 2025
+{: #secure-infrastructure-vpc-jan-3125}
+{: release-note}
+
+Version 6.8.1 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 6.8.1 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - This version is specifically designed for consumers who are still running on a 5.x.x version of the VSI on VPC landing zone or {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone deployable architectures and wish to upgrade to v6.x.x. When upgrading to 6.8.1, migration automation will be run automatically in IBM Cloud® projects that will prevent resources from being re-created.
+
+    The VSI on VPC landing zone deployable architecture will now provision instances with the next gen [virtual network interface](https://cloud.ibm.com/docs/vpc?topic=vpc-vni-about) capabilities. There is no supported upgrade path to migrate existing virtual server instances on the legacy instance network interface to the new next gen virtual network interface, meaning if you are updating from a version 5.x.x version of the deployable architecture, you will see several resources identified for a destroy and re-create. If you want to remain on the legacy instance network interface, you can set the `use_legacy_network_interface` input to true before upgrading, and there should be no disruption to any of the resources you may already have deployed.
+    {: important}
+
+    - Support for {{site.data.keyword.redhat_openshift_notm}} version 4.17 has been added. Support for 4.12 and 4.13 have been removed. Versions 4.14, 4.15 and 4.16 are also supported. Version 4.16 is still the default.
 
 ### 16 January 2025
 {: #secure-infrastructure-vpc-jan-1625}
@@ -138,8 +152,8 @@ Version 6.0.0 of the landing zone deployable architectures is available
 :   All landing zone deployable architectures are released at version 6.0.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - **BREAKING CHANGE:** VSI on VPC landing zone and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
-        - When you upgrade to version 6.0.0, you might see some of your infrastructure marked for deletion and re-creation. Fully supported migration steps will be available shortly to prevent this from occurring, so if re-creating infrastructure is going to impact day-to-day operations, don't update to this version until there is a fully supported migration path. 
-       - VPC landing zone deployable architecture is not affected.
+        - When you upgrade to version 6.0.0, you might see some of your infrastructure marked for deletion and re-creation. To prevent this from occurring, you should upgrade to version 6.8.0 directly before upgrading to any later version as this version has some migration logic in them that will prevent the re-creation of resources.
+        - VPC landing zone deployable architecture is not affected.
     
     - Support added to pass an existing Context-based restriction (CBR) zone ID to allow all Virtual Private Clouds created to be added to the zone.
     - The IBM Terraform provider version is now locked to 1.69.2.
