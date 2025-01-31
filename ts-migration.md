@@ -14,7 +14,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting issues when upgrading to version 6.8.1?
+# Troubleshooting issues when upgrading to version 6.8.1
 {: #ts-migration}
 {: troubleshoot}
 
