@@ -28,9 +28,9 @@ After choosing a new version in the Projects config UI, the version becomes lock
 {: tsCauses}
 
 Providing you have not proceeding with a deploy of the new version, you can change the version in the dropdown box by following these steps:
-
-    - Locate the menu icon (three-dot symbol) on the top right of the projects config page and click it.
-    - Choose to 'Discard edits'.
-    - Click 'Discard' to proceed.
-    - The version dropdown box becomes active again and a different version can be selected.
 {: tsResolve}
+
+- Locate the menu icon (three-dot symbol) on the top right of the projects config page and click it.
+- Choose to 'Discard edits'.
+- Click 'Discard' to proceed.
+- The version dropdown box becomes active again and a different version can be selected.
