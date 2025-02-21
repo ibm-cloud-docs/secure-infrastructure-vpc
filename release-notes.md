@@ -30,7 +30,7 @@ Use these release notes to learn about the latest updates to the landing zone de
 Version 7.2.2 of the landing zone deployable architectures is available
 :   All landing zone deployable architectures are released at version 7.2.2 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
-    If you are upgrading from an older version, ensure to upgrade to version 6.8.1 before upgrading to this version. If you already selected this version from the IBM projects UI, and need to change it back to 6.8.1, follow these steps.
+    If you are upgrading from an older version, ensure to upgrade to version 6.8.1 before upgrading to this version. If you already selected this version from the IBM projects UI, and need to change it back to 6.8.1, follow these steps: [How do I choose an older DA version after selecting a later one in Projects config UI?](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ts-da-version-projects).
     {: important}
 
     - Update to the service to service IAM authorization policies to comply with the principle of least privilege (PoLP):
