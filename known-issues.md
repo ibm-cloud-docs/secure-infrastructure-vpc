@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-01-16"
+lastupdated: "2025-02-21"
 
 keywords:
 
@@ -15,81 +15,25 @@ subcollection: secure-infrastructure-vpc
 # Known issues with landing zone deployable architectures
 {: #known-issues}
 
-## Invalid index error in v6.6.0
-{: #ki-invlid-index-error}
+## OpenShift VPC cluster deployed by landing zone in warning state
+{: #ki-ocp-cos-vpe-warning}
 
-In version 6.6.0 of all landing zones deployable architectures, the following error may be seen for advanced users who have set `override = true` or passing a value for `override_json_string`:
-```hcl
-╷
-│ Error: Invalid index
-│ 
-│   on outputs.tf line 22, in output "management_rg_id":
-│   22:   value       = module.vpc_landing_zone.resource_group_data[module.vpc_landing_zone.management_rg_name]
-│     ├────────────────
-│     │ module.vpc_landing_zone.management_rg_name is "example-management-rg"
-│     │ module.vpc_landing_zone.resource_group_data is object with 3 attributes
-│ 
-│ The given key does not identify an element in this collection value.
-╵
-╷
-│ Error: Invalid index
-│ 
-│   on outputs.tf line 32, in output "workload_rg_id":
-│   32:   value       = module.vpc_landing_zone.resource_group_data[module.vpc_landing_zone.workload_rg_name]
-│     ├────────────────
-│     │ module.vpc_landing_zone.resource_group_data is object with 3 attributes
-│     │ module.vpc_landing_zone.workload_rg_name is "example-workload-rg"
-│ 
-│ The given key does not identify an element in this collection value.
-╵
-╷
-│ Error: Invalid index
-│ 
-│   on module/outputs.tf line 22, in output "management_rg_id":
-│   22:   value       = module.landing_zone.resource_group_data[module.landing_zone.management_rg_name]
-│     ├────────────────
-│     │ module.landing_zone.management_rg_name is "example-management-rg"
-│     │ module.landing_zone.resource_group_data is object with 3 attributes
-│ 
-│ The given key does not identify an element in this collection value.
-╵
-╷
-│ Error: Invalid index
-│ 
-│   on module/outputs.tf line 32, in output "workload_rg_id":
-│   32:   value       = module.landing_zone.resource_group_data[module.landing_zone.workload_rg_name]
-│     ├────────────────
-│     │ module.landing_zone.resource_group_data is object with 3 attributes
-│     │ module.landing_zone.workload_rg_name is "example-workload-rg"
-│ 
-│ The given key does not identify an element in this collection value.
-╵
-╷
-│ Error: Invalid index
-│ 
-│   on ../../outputs.tf line 290, in output "management_rg_id":
-│  290:   value       = local.resource_groups_info["${var.prefix}-management-rg"]
-│     ├────────────────
-│     │ local.resource_groups_info is object with 3 attributes
-│     │ var.prefix is "example"
-│ 
-│ The given key does not identify an element in this collection value.
-╵
-╷
-│ Error: Invalid index
-│ 
-│   on ../../outputs.tf line 300, in output "workload_rg_id":
-│  300:   value       = local.resource_groups_info["${var.prefix}-workload-rg"]
-│     ├────────────────
-│     │ local.resource_groups_info is object with 3 attributes
-│     │ var.prefix is "example"
-│ 
-│ The given key does not identify an element in this collection value.
-╵
-```
+If you deployed an OpenShift VPC cluster using a landing zone deployable architecture version less than 7.2.2 and you notice the cluster has gone into a `Warning` state, it might be due to a known issue where the virtual private endpoint (VPE) for Cloud Object Storage that is created by the deployable architecture is conflicting with the ones automatically created by VPC clusters which results in worker nodes not being able to reach the Cloud Object Storage direct endpoint.
+
+To confirm this:
+1. Run the command `ibmcloud ks cluster get --cluster <cluster_name_or_id>`
+2. Confirm that the `Status` is: `Some Cluster Operators are down-level and need to be updated, see 'https://ibm.biz/rhos_clusterversion_ts'`
+3. Follow the steps in the link which will ask you to run the command `oc get clusterversion` on your cluster.
+4. If you have hit the issue due to the conflicting virtual private endpoints for Cloud Object Storage, you will see something following status:
+    ```
+    $ oc get clusterversion
+    NAME      VERSION   AVAILABLE   PROGRESSING   SINCE   STATUS
+    version             False       True          14h     Unable to apply 4.16.28: the cluster operator image-registry is not available
+   ```
+
 ### Workaround
-{: #ki-workaround-invlid-index-error}
-Upgrade to version 6.7.0 or later.
+{: #ki-workaround-ocp-cos-vpe-warning}
+Upgrade to version 7.2.2 or later where you will see the expected destroy of the landing zone created virtual private endpoint for Cloud Object Storage and its associated reserved IP.
 
 ## QuickStart variations fail projects validation
 {: #ki-vsiqs-validation-fail}

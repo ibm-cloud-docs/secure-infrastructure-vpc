@@ -33,10 +33,10 @@ Version 7.2.2 of the landing zone deployable architectures is available
     If you are upgrading from an older version, ensure to upgrade to version 6.8.1 before upgrading to this version. If you already selected this version from the IBM projects UI, and need to change it back to 6.8.1, follow these steps.
     {: important}
 
-    - Update to the service to service IAM authorization polcicies to comply with the principle of least privilege (PoLP):
-        - All of the Key Management Service (KMS) related service to service IAM authorization polcicies that are created by landing zone have been updated so that they are now scoped to the exact root key.
-        - All of the Cloud Object Storage (COS) related service to service IAM authorization polcicies that are created by landing zone.
-        - Plan accordingly if upgrading from an older version as these updates will cause current IAM authorization polcicies to be destroyed and recreated due to the nature of the refactoring.
+    - Update to the service to service IAM authorization policies to comply with the principle of least privilege (PoLP):
+        - All of the Key Management Service (KMS) related service to service IAM authorization policies that are created by landing zone have been updated so that they are now scoped to the exact root key.
+        - All of the Cloud Object Storage (COS) related service to service IAM authorization policies that are created by landing zone have been updated so that they are now scoped to the exact bucket name.
+        - Plan accordingly if upgrading from an older version as these updates will cause current IAM authorization policies to be destroyed and recreated due to the nature of the refactoring.
     - Removed the logic that creates a virtual private endpoint (VPE) for Cloud Object Storage since it was clashing with the one created by VPC clusters and breaking cluster communication from worker nodes to the Cloud Object Storage direct endpoint. When upgrading from an older version, you will see the expected destroy of the virtual private endpoint for Cloud Object Storage and its associated reserved IP.
     - Updated configuration to use the new [ibm_cos_bucket_lifecycle_configuration](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/cos_bucket_lifecycle_configuration) for managing lifecycle configuration for a Cloud Object Storage bucket since the legacy approach is now deprecated. Migrating to the new schema addresses the limitations where one cannot create a rule with same rule id that has transition, expiration and abort_incomplete simultaneously, and not being able to create multiple abort_incomplete_multipart_upload rules.
     - The IBM terraform provider has been updated to version 1.75.2.
