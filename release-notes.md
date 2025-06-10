@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-21"
+lastupdated: "2025-06-10"
 
 keywords:
 
@@ -19,6 +19,27 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## June 2025
+{: #landing-zone-2025-06}
+
+### 10 June 2025
+{: #secure-infrastructure-vpc-jun-1025}
+{: release-note}
+
+Version 8.2.0 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 8.2.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    If you are upgrading from an older version of the VSI on VPC landing zone deployable architecture, the upgrade is going to destroy and re-create all virtual network interfaces and virtual service instances. This is because there was a bug where they were incorrectly being created in the Default resource group. The upgrade will now re-create them in the correct resource group. Ensure to plan accordingly before upgrading.
+    {: important}
+
+    - Added support for Atracker regions `in-che`, `jp-osa`, `jp-tok`, `br-sao`, and `ca-tor`
+    - Added the ability to allow IP spoofing on the primary network interface by expsoing new boolean input `allow_ip_spoof` in the VSI on VPC landing zone deployable architecture.
+    - Fixed a bug where the virtual network interface (VNI) was always getting created in the Default resource group (see above important note on breaking change).
+    - Updated the scope of the KMS auth policy to now be scoped to the exact key. When upgrading from a previous version, the auth policy will be re-created, however the new policy will be created before the old one is destroyed so there will be no interruption to every day services.
+    - The logic for VPC naming has been refactored so that there will be no `-vpc` suffix in the VPC name anymore.
+    - The default virtual server image is updated to `ibm-ubuntu-24-04-6-minimal-amd64-1`. To avoid downtime and losing data, the image is not changed when you update to version 8.2.0. Update the image outside of the Terraform code.
+    - The IBM terraform provider has been updated to version 1.79.0.
 
 ## February 2025
 {: #landing-zone-2025-02}
@@ -89,6 +110,7 @@ Version 6.6.0 of the landing zone deployable architectures is available
     - A fix was added to the "Existing VPC" variation of the VSI on VPC landing zone deployable architecture that ensures virtual server instances are only deployed in the correct subnets. Previously instances were created in every subnet, including ones that were not designed for virtual server instances. If upgrading from a previous version, the plan will identify for those virtual server instances to be destroyed.
     - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.16. Versions 4.12, 4.13, and 4.14 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
     - The IBM terraform provider has been updated to version 1.71.3.
+    - The automation of adding client-to-site VPN is now available. The client-to-site VPN automation is ideal for scenarios where remote consumers need secure access to your private VPC network. In the catalog, there's a new Deployment Architecture (DA)called Cloud Automation for Client to Site VPN that makes it easier to extend your existing landing zone. It helps streamline the connection process, reducing setup time and minimizing the chances of errors.
 
 ## October 2024
 {: #landing-zone-2024-10}

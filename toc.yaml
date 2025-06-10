@@ -31,6 +31,7 @@ toc:
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
         navtitle: Red Hat OpenShift Container Platform on VPC landing zone
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp-quickstart.md
+      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpn.md
   - navgroup:
       id: plan
       topics:
