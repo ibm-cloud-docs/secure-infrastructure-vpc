@@ -32,7 +32,7 @@ Version 8.5.0 of the landing zone deployable architectures is available
 
     - The default virtual server image is updated to `ibm-ubuntu-24-04-2-minimal-amd64-5`. To avoid downtime and losing data, the image is not changed when you update to version 8.5.0. Update the image outside of the Terraform code.
     - The IBM Terraform provider version is now locked to 1.80.0.
-    - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.17. Versions 4.14, 4.15, 4.16 and 4.17 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code. The default operating system for the worker nodes is now Red Hat Enterprise Linux CoreOS (RHCOS).
+    - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.18. Versions 4.14, 4.15, 4.16 and 4.17 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code. The default operating system for the worker nodes is now Red Hat Enterprise Linux CoreOS (RHCOS).
 
 ## June 2025
 {: #landing-zone-2025-06}
