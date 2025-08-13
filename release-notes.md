@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-06-10"
+lastupdated: "2025-08-13"
 
 keywords:
 
@@ -19,6 +19,20 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## August 2025
+{: #landing-zone-2025-08}
+
+### 13 August 2025
+{: #secure-infrastructure-vpc-aug-1325}
+{: release-note}
+
+Version 8.5.0 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 8.5.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - The default virtual server image is updated to `ibm-ubuntu-24-04-2-minimal-amd64-5`. To avoid downtime and losing data, the image is not changed when you update to version 8.5.0. Update the image outside of the Terraform code.
+    - The IBM Terraform provider version is now locked to 1.80.0.
+    - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.17. Versions 4.14, 4.15, 4.16 and 4.17 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code. The default operating system for the worker nodes is now Red Hat Enterprise Linux CoreOS (RHCOS).
 
 ## June 2025
 {: #landing-zone-2025-06}
