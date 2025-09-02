@@ -50,7 +50,6 @@ Make sure that you have a clear understanding of the purpose of deployment to se
 
 ## Create a project for deployment
 {: #CreateAProject-ForQuickStartOCP-FC}
-
 { :step}
 
 1. Log in to your IBM Cloud account. Search for the **Cloud automation for {{site.data.keyword.redhat_openshift_notm}} Container platform on VPC** Deployment architecture product tile in the **Catalog** and click it.
