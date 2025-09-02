@@ -43,6 +43,8 @@ toc:
   - navgroup:
       id: tutorial
       topics:
+      - topic: deploy-OCP-Basic.md
+        navtitle: Deploy Red Hat OpenShift Container platform on IBM Cloud by QuickStart basic variation
       - topic: connect-landingzone-client-vpn.md
         navtitle: Connect by using a client-to-site VPN
       - topic: connect-landingzone-site-vpn.md
