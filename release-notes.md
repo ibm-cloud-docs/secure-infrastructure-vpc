@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-08-13"
+lastupdated: "2025-09-03"
 
 keywords:
 
@@ -17,7 +17,7 @@ content-type: release-note
 # Release notes for the landing zone deployable architecture
 {: #secure-infrastructure-vpc-relnotes}
 
-Use these release notes to learn about the latest updates to the landing zone deployable architectures: VPC landing zone, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
+Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
 
 ## August 2025
@@ -211,7 +211,7 @@ Version 6.0.0 of the landing zone deployable architectures is available
     - **BREAKING CHANGE:** VSI on VPC landing zone and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone:
         - When you upgrade to version 6.0.0, you might see some of your infrastructure marked for deletion and re-creation. To prevent this from occurring, you should upgrade to version 6.8.0 directly before upgrading to any later version as this version has some migration logic in them that will prevent the re-creation of resources.
         - VPC landing zone deployable architecture is not affected.
-    
+
     - Support added to pass an existing Context-based restriction (CBR) zone ID to allow all Virtual Private Clouds created to be added to the zone.
     - The IBM Terraform provider version is now locked to 1.69.2.
     - The Hashicorp external Terraform provider version is now locked to 2.3.4.
@@ -221,7 +221,7 @@ Version 6.0.0 of the landing zone deployable architectures is available
         - Refactored the logic to use the [base-ocp-vpc](https://registry.terraform.io/modules/terraform-ibm-modules/base-ocp-vpc/ibm/latest) module to create {{site.data.keyword.redhat_openshift_notm}} Container Platform clusters.
         - This module has some extra functionality which requires the runtime to have access to IBM Cloud private endpoints.
         - Support added to allow you to specify a Virtual Private Cloud (VPC) that you do not wish to create a cluster in. By default a cluster will be created in all of the VPCs specified in the `vpcs` input. Use new input `ignore_vpcs_for_cluster_deployment` to pass a list of VPCs to ignore.
-    
+
 ### 10 September 2024
 {: #secure-infrastructure-vpc-sep-1024}
 {: release-note}
