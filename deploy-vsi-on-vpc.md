@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2025-01-16"
+lastupdated: "2025-09-03"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: secure-infrastructure-vpc
 # Adding a VSI to your VPC landing zone deployable architecture
 {: #ext-with-vsi}
 
-You can add a VSI to a VPC landing zone deployable architecture that you already deployed. The deployable architecture adds a VSI in each VSI subnet of the landing zone VPC.
+You can add a VSI to a landing zone deployable architecture that you already deployed. The deployable architecture adds a VSI in each VSI subnet of the landing zone VPC.
 {: shortdesc}
 
 ## Before you begin

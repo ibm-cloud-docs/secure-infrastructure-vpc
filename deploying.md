@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-06-07"
+  years: 2023, 2025
+lastupdated: "2025-09-03"
 
 keywords:
 
@@ -27,7 +27,7 @@ To deploy a landing zone deployable architecture through the {{site.data.keyword
     - Verify access roles.
     - Create an SSH key.
 1.  Go to the {{site.data.keyword.cloud_notm}} [catalog](/catalog#reference_architecture){: external} and search for the architecture that you're interested in deploying:
-    - VPC landing zone
+    - Cloud foundation for VPC
     - VSI on VPC landing zone
     - Red Hat OpenShift Container Platform on VPC
 1.  Click the tile for the deployable architecture to open the details.

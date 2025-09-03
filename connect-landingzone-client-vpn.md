@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-12-17"
+  years: 2023, 2025
+lastupdated: "2025-09-03"
 lasttested: "2024-02-12"
 
 keywords:
@@ -15,7 +15,7 @@ account-plan: paid
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Connect to a VPC landing zone by using a client-to-site VPN
+# Connect to a landing zone by using a client-to-site VPN
 {: #connect-landingzone-client-vpn}
 {: toc-content-type="tutorial"}
 {: toc-services="vpc, openshift, secrets-manager, dl, schematics"}
@@ -36,7 +36,7 @@ Let's say that you deployed the [Red Hat OpenShift Container Platform on VPC lan
 
 > It is not possible to access the Red Hat OpenShift console because the cluster is accessible only on the management VPC’s private network, which is locked down and not accessible from the internet.
 
-You might also have connectivity issues to the VPC's private networks if you deploy the [VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vpc-9fc0fa64-27af-4fed-9dce-47b3640ba739-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external}, [VSI on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vsi-ef663980-4c71-4fac-af4f-4a510a9bcf68-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external}, or the [Red Hat OpenShift Container Platform on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external} deployable architecture.
+You might also have connectivity issues to the VPC's private networks if you deploy the [Cloud foundation for VPC](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vpc-9fc0fa64-27af-4fed-9dce-47b3640ba739-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external}, [VSI on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vsi-ef663980-4c71-4fac-af4f-4a510a9bcf68-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external}, or the [Red Hat OpenShift Container Platform on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external} deployable architecture.
 
 For example, you ping the network but it times out:
 
@@ -78,7 +78,7 @@ Establish secure connections to a private VPC network:
 1. Customize Cloud automation for Client to Site VPN by selecting optional add-on components as needed:
    - Red Hat OpenShift Container Platform on VPC landing zone
    - VSI on VPC landing zone
-   - VPC landing zone
+   - Cloud foundation for VPC
    - Cloud automation for Secrets Manager
 1. Complete the next steps depending on how you plan to use the [deployable architecture](#x10293733){: term}:
    - [Configure](/docs/secure-enterprise?topic=secure-enterprise-config-project) it in your project and [deploy](/docs/secure-enterprise?topic=secure-enterprise-deploy-project)

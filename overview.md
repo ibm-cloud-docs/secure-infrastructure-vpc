@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2024-09-24"
+lastupdated: "2025-09-03"
 
 keywords:
 
@@ -12,23 +12,23 @@ subcollection: secure-infrastructure-vpc
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Overview of VPC landing zone deployable architectures
+# Overview of landing zone deployable architectures
 {: #overview}
 
-The VPC landing zone [deployable architectures](#x10293733){: term} are a preconfigured set of infrastructure as code (IaC) assets that are based on the {{site.data.keyword.cloud_notm}} for Financial Services reference architecture.
+The Cloud foundation for VPC [deployable architectures](#x10293733){: term} are a preconfigured set of infrastructure as code (IaC) assets that are based on the {{site.data.keyword.cloud_notm}} for Financial Services reference architecture.
 {: shortdesc}
 
-Three deployable architectures are included: VPC landing zone, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. You can use the deployable architectures to create a secure and customizable [Virtual Private Cloud](#x4585403){: term} (VPC) environment.
+Three deployable architectures are included: Cloud foundation for VPC, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. You can use the deployable architectures to create a secure and customizable [Virtual Private Cloud](#x4585403){: term} (VPC) environment.
 
 The deployable architectures can help you meet the requirements and follow the best practices of {{site.data.keyword.cloud_notm}} Framework for Financial Services. For more information, see [Getting started with {{site.data.keyword.cloud_notm}} for Financial Services](/docs/framework-financial-services). For more information about deployable architectures, read about [infrastructure architectures](/docs/overview?topic=overview-secure-enterprise#define-architecture) in "Running secure enterprise workloads on {{site.data.keyword.cloud_notm}}".
 
-## VPC landing zone
+## Cloud foundation for VPC
 {: #overview-vpc}
 
 
-You can use the VPC landing zone to deploy a simple {{site.data.keyword.cloud_notm}} VPC infrastructure without any compute resources, such as Virtual Server Instances (VSIs) or Red Hat OpenShift clusters. You can also use it as a base on which to deploy your own compute resources.
+You can use the Cloud foundation for VPC to deploy a simple {{site.data.keyword.cloud_notm}} VPC infrastructure without any compute resources, such as Virtual Server Instances (VSIs) or Red Hat OpenShift clusters. You can also use it as a base on which to deploy your own compute resources.
 
-The VPC landing zone is also a modular solution. You can use this architecture as the base for your compute resources. In fact, the other landing zone deployable architectures use the VPC landing zone as the base for their resources.
+The Cloud foundation for VPC is also a modular solution. You can use this architecture as the base for your compute resources. In fact, the other landing zone deployable architectures use the Cloud foundation for VPC as the base for their resources.
 
 This deployable architecture supports these features:
 

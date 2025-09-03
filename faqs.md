@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2024-07-22"
+lastupdated: "2025-09-03"
 
 keywords:
 
@@ -16,7 +16,7 @@ content-type: faq
 
 
 
-# FAQs for VPC landing zone deployable architectures
+# FAQs for landing zone deployable architectures
 {: #faqs}
 
 FAQs for the VPC landing zone deployable architectures. To find all FAQs for {{site.data.keyword.cloud}}, see our [FAQ library](/docs/faqs).
@@ -34,7 +34,7 @@ A deployable architecture is a combination of capabilities from one or more tech
 
 Infrastructure as code (IaC) is code to manage and provision infrastructure (for example, networks, virtual machines, load-balancers, clusters, services, and connection topology) in a descriptive model rather than by using manual processes.
 
-With IaC, code defines your infrastructure, specifying your resources and their configuration. Your infrastructure code is treated the same as app code so that you can apply DevOps core practices such as version control, testing, and continuous monitoring. The VPC landing zone deployable architectures use [Terraform](https://www.terraform.io/){: external} to specify the infrastructure and [{{site.data.keyword.bplong_notm}}](/docs/schematics?topic=schematics-getting-started) to manage the deployment.
+With IaC, code defines your infrastructure, specifying your resources and their configuration. Your infrastructure code is treated the same as app code so that you can apply DevOps core practices such as version control, testing, and continuous monitoring. The landing zone deployable architectures use [Terraform](https://www.terraform.io/){: external} to specify the infrastructure and [{{site.data.keyword.bplong_notm}}](/docs/schematics?topic=schematics-getting-started) to manage the deployment.
 
 ## How do I estimate costs?
 {: #what-is-project-cost}
