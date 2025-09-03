@@ -23,7 +23,7 @@ toc:
       id: architecture
       topics:
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpc-standard.md
-        navtitle: VPC landing zone
+        navtitle: Cloud foundation for VPC
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
         navtitle: VSI on VPC landing zone
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-extension.md
