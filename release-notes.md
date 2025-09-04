@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-09-03"
+lastupdated: "2025-09-04"
 
 keywords:
 
@@ -19,6 +19,32 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## September 2025
+{: #landing-zone-2025-09}
+
+### 4 September 2025
+{: #secure-infrastructure-vpc-sep-0425}
+{: release-note}
+
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    The name of the VPC deployable architectures has been renamed from "VPC landing zone" to "Cloud foundation for VPC"
+    {: important}
+
+    - Version 8.5.11 of the `Standard - Financial Services edition` (previously named `Standard`) variation is available.
+        - The IBM Terraform provider version is now locked to 1.81.1
+    - Version 8.2.0 of the new `Standard - Integrated setup with configurable services` variation is available.
+        - Ideal for users who want flexibility with a reliable starting point.
+        - Offers full control over architecture parameters, with well-chosen defaults that enable a functional Virtual Private Cloud (VPC) environment and integrated IBM Cloud services without requiring manual adjustments.
+
+Version 8.5.0 of the landing zone deployable architectures is available
+:   All landing zone deployable architectures are released at version 8.5.0 in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - The default virtual server image is updated to `ibm-ubuntu-24-04-2-minimal-amd64-5`. To avoid downtime and losing data, the image is not changed when you update to version 8.5.0. Update the image outside of the Terraform code.
+    - The IBM Terraform provider version is now locked to 1.80.0.
+    - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.18. Versions 4.14, 4.15, 4.16 and 4.17 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code. The default operating system for the worker nodes is now Red Hat Enterprise Linux CoreOS (RHCOS).
+
 
 ## August 2025
 {: #landing-zone-2025-08}
