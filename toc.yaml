@@ -24,13 +24,10 @@ toc:
       topics:
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vpc/deploy-arch-ibm-vpc-fully-configurable.md
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpc-standard.md
-        navtitle: Cloud foundation for VPC
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
-        navtitle: VSI on VPC landing zone
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-extension.md
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
-        navtitle: Red Hat OpenShift Container Platform on VPC landing zone
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp-quickstart.md
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpn.md
   - navgroup:
