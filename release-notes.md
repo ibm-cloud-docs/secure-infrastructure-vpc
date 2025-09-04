@@ -27,19 +27,16 @@ Use these release notes to learn about the latest updates to the landing zone de
 {: #secure-infrastructure-vpc-sep-0425}
 {: release-note}
 
-New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
-The name of the VPC deployable architectures has been renamed from "VPC landing zone" to "Cloud foundation for VPC"
-{: important}
+    The name of the VPC deployable architectures has been renamed from "VPC landing zone" to "Cloud foundation for VPC"
+    {: important}
 
-:   Version 8.5.11 of the `Standard - Financial Services edition` (previously named `Standard`) variation is available.
-
-    - The IBM Terraform provider version is now locked to 1.81.1
-
-:   Version 8.2.0 of the new `Standard - Integrated setup with configurable services` variation is available.
-
-    - Ideal for users who want flexibility with a reliable starting point.
-    - Offers full control over architecture parameters, with well-chosen defaults that enable a functional Virtual Private Cloud (VPC) environment and integrated IBM Cloud services without requiring manual adjustments.
+    - Version 8.5.11 of the `Standard - Financial Services edition` (previously named `Standard`) variation is available.
+        - The IBM Terraform provider version is now locked to 1.81.1
+    - Version 8.2.0 of the new `Standard - Integrated setup with configurable services` variation is available.
+        - Ideal for users who want flexibility with a reliable starting point.
+        - Offers full control over architecture parameters, with well-chosen defaults that enable a functional Virtual Private Cloud (VPC) environment and integrated IBM Cloud services without requiring manual adjustments.
 
 ## August 2025
 {: #landing-zone-2025-08}
