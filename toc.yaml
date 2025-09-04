@@ -22,6 +22,7 @@ toc:
   - navgroup:
       id: architecture
       topics:
+      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vpc/deploy-arch-ibm-vpc-fully-configurable.md
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpc-standard.md
         navtitle: Cloud foundation for VPC
       - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
