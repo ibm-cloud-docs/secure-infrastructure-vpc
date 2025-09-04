@@ -27,6 +27,7 @@ Use these release notes to learn about the latest updates to the landing zone de
 {: #secure-infrastructure-vpc-sep-0425}
 {: release-note}
 
+New versions of the Cloud foundation for VPC deployable architectures are available
 :   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     The name of the VPC deployable architectures has been renamed from "VPC landing zone" to "Cloud foundation for VPC"
