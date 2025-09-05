@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-05"
 
 keywords:
 
@@ -22,6 +22,28 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## September 2025
 {: #landing-zone-2025-09}
+
+### 5 September 2025
+{: #secure-infrastructure-vpc-sep-0525}
+{: release-note}
+
+A new version of the Cloud foundation for VPC deployable architecture is available
+:   A new version of the Cloud foundation for VPC deployable architecture is released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.2.1 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Bug fix in the `Cloud automation for Activity Tracker Event Routing` dependant DA.
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    The name of the VPC deployable architectures has been renamed from "VPC landing zone" to "Cloud foundation for VPC"
+    {: important}
+
+    - Version 8.5.11 of the `Standard - Financial Services edition` (previously named `Standard`) variation is available.
+        - The IBM Terraform provider version is now locked to 1.81.1
+    - Version 8.2.0 of the new `Standard - Integrated setup with configurable services` variation is available.
+        - Ideal for users who want flexibility with a reliable starting point.
+        - Offers full control over architecture parameters, with well-chosen defaults that enable a functional Virtual Private Cloud (VPC) environment and integrated IBM Cloud services without requiring manual adjustments.
 
 ### 4 September 2025
 {: #secure-infrastructure-vpc-sep-0425}
