@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2025-09-03"
+lastupdated: "2025-09-09"
 
 keywords:
 
@@ -15,70 +15,62 @@ subcollection: secure-infrastructure-vpc
 # Overview of landing zone deployable architectures
 {: #overview}
 
-The Cloud foundation for VPC [deployable architectures](#x10293733){: term} are a preconfigured set of infrastructure as code (IaC) assets that are based on the {{site.data.keyword.cloud_notm}} for Financial Services reference architecture.
+The [deployable architectures](#x10293733){: term} are a preconfigured set of infrastructure as code (IaC) assets that are based on the {{site.data.keyword.cloud_notm}} for Financial Services reference architecture.
 {: shortdesc}
 
-Three deployable architectures are included: Cloud foundation for VPC, VSI on VPC landing zone, and Red Hat OpenShift Container Platform on VPC landing zone. You can use the deployable architectures to create a secure and customizable [Virtual Private Cloud](#x4585403){: term} (VPC) environment.
+The landing zone deployable architectures include Cloud foundation for VPC, Landing zone for containerized applications with OpenShift and Landing zone for applications with virtual servers. You can use the deployable architectures to create a secure and customizable [Virtual Private Cloud](#x4585403){: term} (VPC) environment.
 
-The deployable architectures can help you meet the requirements and follow the best practices of {{site.data.keyword.cloud_notm}} Framework for Financial Services. For more information, see [Getting started with {{site.data.keyword.cloud_notm}} for Financial Services](/docs/framework-financial-services). For more information about deployable architectures, read about [infrastructure architectures](/docs/overview?topic=overview-secure-enterprise#define-architecture) in "Running secure enterprise workloads on {{site.data.keyword.cloud_notm}}".
+For more information about deployable architectures, read about [infrastructure architectures](/docs/overview?topic=overview-secure-enterprise#define-architecture) in "Running secure enterprise workloads on {{site.data.keyword.cloud_notm}}".
+
 
 ## Cloud foundation for VPC
 {: #overview-vpc}
 
+The Cloud foundation for VPC deploys a simple {{site.data.keyword.cloud_notm}} VPC infrastructure without any compute resources, such as Virtual Server Instances (VSIs) or Red Hat OpenShift clusters.
 
-You can use the Cloud foundation for VPC to deploy a simple {{site.data.keyword.cloud_notm}} VPC infrastructure without any compute resources, such as Virtual Server Instances (VSIs) or Red Hat OpenShift clusters. You can also use it as a base on which to deploy your own compute resources.
+You can use this architecture as the base for your compute resources. Other landing zone deployable architectures use the Cloud foundation for VPC as the base to deploy their resources.
 
-The Cloud foundation for VPC is also a modular solution. You can use this architecture as the base for your compute resources. In fact, the other landing zone deployable architectures use the Cloud foundation for VPC as the base for their resources.
+The Cloud foundation for VPC is also a modular solution. The Cloud foundation for VPC creates network topology that uses two default VPCs, each containing multiple subnets to organize resources and define IP ranges. A transit gateway connects these VPCs to facilitate communication. An optional edge VPC in a specific location isolates and accelerates public internet traffic. IBM Cloud Object Storage is employed for Flow Logs and Activity Tracker to help ensure infrastructure observability and auditing.
 
-This deployable architecture supports these features:
+You can deploy this architecture that uses various ways of configurations and thus can be employed for various use-cases. The following table outlines these **Variations** and use-cases they can suffice.
 
-- Compliance: Aligns with the [VPC reference architecture for {{site.data.keyword.cloud_notm}} for Financial Services](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about)
-- VPCs: Creates a VPC-based topology based on two VPCs by default
-- Subnets: Defines multiple subnets in the VPC to define IP ranges and organize resources within the network.
-- Public gateways: Includes public gateways that provide connectivity between resources in a VPC and the public internet.
-- Access control lists (ACLs): Creates ACLs and define rules for allowing or denying traffic between subnets within a VPC.
-- Transit gateways: Creates a transit gateway to connect the two default VPCs that the deployable architecture creates.
-- Security groups: Creates security groups to control inbound and outbound traffic to resources within the VPC.
-- Key management: Adds key management by integrating the {{site.data.keyword.keymanagementservicefull_notm}} service or the {{site.data.keyword.hscrypto}}. These key management services help you create, manage, and use encryption keys to protect your sensitive data.
-- Edge networking: Isolates and speeds traffic to the public internet by using an edge VPC in a specific location, if enabled
-- Flow Logs and Activity tracking: Integrates these services to enhance the observability and auditing of your VPC infrastructure.
-- Adds landing zone VPC CRNs to an existing CBR (Context-based restrictions) network zone if the existing CBR zone ID is specified.
+|Type of variation | Best suited for |
+|---------------|-------|
+|[Standard (Integrated setup with configurable services)](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vpc-fully-configurable)|Ideal for users who seek flexibility to provide a dependable foundation. It grants complete control over architecture parameters, featuring optimized defaults that facilitate a fully functional Virtual Private Cloud (VPC) environment along with seamless integration of IBM Cloud services, eliminating the need for manual configuration.|
+|[Standard - Financial Services edition](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vpc-ra) |Ideal for production workloads. It adheres to financial services compliance standards. It offers a validated configuration, which is designed to align with the IBM Cloud Framework for Financial Services, to help ensure all necessary regulatory requirements are met.|
+{: caption="Cloud foundation for VPC Variations"}
 
+For more information about Financial Services Framework, see [Getting started with {{site.data.keyword.cloud_notm}} for Financial Services](/docs/framework-financial-services).
 
-For more information about the components of VPCs, see [VPC concepts](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-concepts).
-For more information on how to create custom CBR (Context-based restrictions) zones and rules, see [CBR module](https://github.com/terraform-ibm-modules/terraform-ibm-cbr). Also refer [Pre-wired CBR configuration for FS Cloud](https://github.com/terraform-ibm-modules/terraform-ibm-cbr/tree/main/modules/fscloud) submodule to create default FSCloud compliant coarse-grained CBR rules.
-
-## VSI on VPC landing zone
-{: #overview-vsi}
-
-The VSI on VPC landing zone deployable architecture deploys Virtual Server Instances (VSIs) on {{site.data.keyword.cloud_notm}}. This deployable architecture provides you with secure and customizable compute resources for running your applications and services.
-
-This deployable architecture supports these features:
-
-- All the features of the VPC landing zone deployable architecture
-- VSIs: Creates and configures one or more virtual servers in an {{site.data.keyword.cloud_notm}} VPC for workloads.
-- Subnets for VSIs: Configures the subnets for the VSIs, and specifies which subnets the instances are deployed in.
-- Security groups: Associates security groups with the VSIs to control inbound and outbound traffic to instances.
-- SSH keys: Provisions and manages SSH keys for the VSIs so that you can securely administer the instances.
-
-
-
-For more information about the concepts of using the VSI on VPC landing zone deployable architecture, see this [reference architecture](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-detailed-vsi) from the {{site.data.keyword.cloud_notm}} for Financial Services docs.
-
-## Red Hat OpenShift Container Platform on VPC landing zone
+## Landing zone for containerized applications with OpenShift
 {: #overview-ocp}
 
-The Red Hat OpenShift Container Platform on VPC landing zone deployable architecture provides the tools to deploy a Red Hat OpenShift Container Platform cluster on {{site.data.keyword.cloud_notm}}.
+The Landing zone for containerized applications with OpenShift deployable architecture deploys a Red Hat OpenShift Container Platform cluster on {{site.data.keyword.cloud_notm}} in a VPC environment.
 
-The deployable architecture deploys a Red Hat OpenShift cluster in a single VPC that is used to manage the platform in a VPC on {{site.data.keyword.cloud_notm}}. The VPC is a multi-zoned, multi-subnet implementation that keeps your VPC secure and highly available. The deployable architecture provides the tools to deploy a Red Hat OpenShift Container Platform cluster on {{site.data.keyword.cloud_notm}}.
+This deployment architecture can create a customizable cluster, specifying its version and size. It offers features like worker pools for managing nodes with similar configurations, subnet configuration for worker node deployment, and endpoint settings for private and public access. Additionally, it includes ingress configuration to manage external traffic routing to internal services within the cluster.
 
-This deployable architecture supports these features:
+You can deploy this architecture that uses various ways of configurations and thus can be employed for various use-cases. The following table outlines these **Variations** and use-cases they can suffice.
 
-- All the features of the VPC landing zone deployable architecture
-- Red Hat OpenShift Container Platform: Create a cluster in an {{site.data.keyword.cloud_notm}} VPC. You can specify the version and cluster size.
-- Worker pools: Creates worker pools in a container platform. With worker pools, you can group and manage worker nodes with similar configurations, such as compute resources and availability zones.
-- Subnets for containers: Configures subnets for the cluster, and specifies the subnets to deploy the worker nodes in.
-- Private and public endpoints: Configures private and public endpoints for the cluster.
-- Ingress configuration: Configures the ingress controller for the cluster. The controller is responsible for routing external traffic to the appropriate services within the cluster.
+|Type of variation | Best suited for |
+|---------------|-------|
+|[Landing zone for containerized applications with OpenShift - QuickStart variation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ocp-ra)|Ideal for rapid deployment for demonstration and development purposes without extensive configuration. It offers a single Red Hat OpenShift cluster within a secure VPC, tailored for your workloads. |
+|[Landing zone for containerized applications with OpenShift](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-roks-ra-qs) |Ideal for production workloads. It can create secure and compliant Red Hat OpenShift Container Platform workload clusters within a Virtual Private Cloud (VPC) network that adhere to the Financial Services reference architecture.|
+{: caption="Landing zone for containerized applications with OpenShift variations"}
 
 For more information about the concepts of using Red Hat OpenShift Container Platform on VPC, see this [reference architecture](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-detailed-openshift) from the {{site.data.keyword.cloud_notm}} for Financial Services docs.
+
+## Landing zone for applications with virtual servers
+{: #overview-vsi}
+
+The Landing zone for applications with virtual servers deployment architecture  deploys Virtual Server Instances (VSIs) on {{site.data.keyword.cloud_notm}}. This deployable architecture provides you with secure and customizable compute resources for running your applications and services.
+
+You can deploy this architecture that uses various ways of configurations and thus can be employed for various use-cases. The following table outlines these **Variations** and use-cases they can suffice.
+
+|Type of variation | Best suited for |
+|---------------|-------|
+|[Landing zone for applications with virtual servers - QuickStart variation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra-qs) |Ideal for rapid deployment for demonstration and development purposes without extensive configuration. It sets up a fully customizable Virtual Private Cloud (VPC) environment in a single region.|
+|[Landing zone for applications with virtual servers - Standard variation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra) |Ideal for users who seek a robust, secure, and customizable infrastructure based on the Financial Services reference architecture. It sets up virtual servers within a Virtual Private Cloud (VPC) across multiple zones to deploy workloads in a compliant, and scalable environment.|
+|[Landing zone for applications with virtual servers - Extension](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ext-ra) |Ideal for extending an existing VPC setup by generating virtual server instances (VSI) within one or multiple subnets of an existing landing zone VPC deployable architecture.|
+{: caption="Landing zone for applications with virtual servers variations"}
+
+For more information about the concepts of using this deployment architecture, see this [reference architecture](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-detailed-vsi) from the {{site.data.keyword.cloud_notm}} for Financial Services docs.
