@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-09-05"
+lastupdated: "2025-09-11"
 
 keywords:
 
@@ -22,6 +22,27 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## September 2025
 {: #landing-zone-2025-09}
+
+### 11 September 2025
+{: #secure-infrastructure-vpc-sep-1125}
+{: release-note}
+
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    The name of the {{site.data.keyword.redhat_openshift_notm}} deployable architectures has been renamed from "{{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone" to "Landing zone for containerized applications with OpenShift"
+    {: important}
+
+    - Version 8.5.17 of the `Standard - Financial Services edition` (previously named `Standard`) variation is available.
+        - The IBM Terraform provider version is now locked to 1.82.1
+    - Version 8.5.17 of the `QuickStart - Financial Services edition` (previously named `QuickStart`) variation is available.
+        - The IBM Terraform provider version is now locked to 1.82.1
+    - Version 3.58.2 of the new `Standard - Integrated setup with configurable services` variation is available.
+        - Ideal for users who want flexibility with a reliable starting point.
+        - Offers full control over architecture parameters, with well-chosen defaults that enable a functional OpenShift cluster and integrated IBM Cloud services without requiring manual adjustments.
+    - Version 3.58.2 of the new `QuickStart - Basic and simple` variation is available.
+        - Ideal for users new to IBM Cloud or OpenShift who want to get started without configuring underlying infrastructure.
+        - A lightweight, experimental configuration for quickly provisioning an OpenShift cluster on IBM Cloud VPC. Not certified and not intended for production use.
 
 ### 5 September 2025
 {: #secure-infrastructure-vpc-sep-0525}
