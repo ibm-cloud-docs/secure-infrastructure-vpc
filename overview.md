@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2025-09-09"
+lastupdated: "2025-09-12"
 
 keywords:
 
@@ -53,8 +53,10 @@ You can deploy this architecture that uses various ways of configurations and th
 
 |Type of variation | Best suited for |
 |---------------|-------|
-|[Landing zone for containerized applications with OpenShift - QuickStart variation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ocp-ra)|Ideal for rapid deployment for demonstration and development purposes without extensive configuration. It offers a single Red Hat OpenShift cluster within a secure VPC, tailored for your workloads. |
-|[Landing zone for containerized applications with OpenShift](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-roks-ra-qs) |Ideal for production workloads. It can create secure and compliant Red Hat OpenShift Container Platform workload clusters within a Virtual Private Cloud (VPC) network that adhere to the Financial Services reference architecture.|
+|[Landing zone for containerized applications with OpenShift - QuickStart (Basic and simple)](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ocp-ra-qs)|Ideal for rapid deployment for demonstration and development purposes without extensive configuration. It creates a fully customizable Virtual Private Cloud (VPC) environment in a single region.|
+|[Landing zone for containerized applications with OpenShift - Standard (Integrated setup with configurable services)](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ocp-fully-configurable)|Ideal for users seeking flexibility, providing a robust foundation to cater to production workloads. It grants complete control over architecture parameters, featuring optimized defaults that facilitate a fully functional OpenShift cluster and seamless integration with IBM Cloud services, eliminating the need for manual configuration|
+|[Landing zone for containerized applications with OpenShift - QuickStart (Financial Services edition)](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ocp-ra)|Ideal for rapid deployment for demonstration and development purposes without extensive configuration. It offers a single Red Hat OpenShift cluster within a secure VPC, tailored for your workloads that adheres to the Financial Services reference architecture.|
+|[Landing zone for containerized applications with OpenShift - Standard (Financial Services edition)](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-roks-ra-qs) |Ideal for production workloads. It can create secure and compliant Red Hat OpenShift Container Platform workload clusters within a Virtual Private Cloud (VPC) network that adheres to the Financial Services reference architecture.|
 {: caption="Landing zone for containerized applications with OpenShift variations"}
 
 For more information about the concepts of using Red Hat OpenShift Container Platform on VPC, see this [reference architecture](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-detailed-openshift) from the {{site.data.keyword.cloud_notm}} for Financial Services docs.
@@ -68,8 +70,8 @@ You can deploy this architecture that uses various ways of configurations and th
 
 |Type of variation | Best suited for |
 |---------------|-------|
-|[Landing zone for applications with virtual servers - QuickStart variation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra-qs) |Ideal for rapid deployment for demonstration and development purposes without extensive configuration. It sets up a fully customizable Virtual Private Cloud (VPC) environment in a single region.|
-|[Landing zone for applications with virtual servers - Standard variation](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra) |Ideal for users who seek a robust, secure, and customizable infrastructure based on the Financial Services reference architecture. It sets up virtual servers within a Virtual Private Cloud (VPC) across multiple zones to deploy workloads in a compliant, and scalable environment.|
+|[Landing zone for applications with virtual servers - QuickStart](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra-qs) |Ideal for rapid deployment for demonstration and development purposes without extensive configuration. It sets up a fully customizable Virtual Private Cloud (VPC) environment in a single region.|
+|[Landing zone for applications with virtual servers - Standard](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra) |Ideal for users who seek a robust, secure, and customizable infrastructure based on the Financial Services reference architecture. It sets up virtual servers within a Virtual Private Cloud (VPC) across multiple zones to deploy workloads in a compliant, and scalable environment.|
 |[Landing zone for applications with virtual servers - Extension](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ext-ra) |Ideal for extending an existing VPC setup by generating virtual server instances (VSI) within one or multiple subnets of an existing landing zone VPC deployable architecture.|
 {: caption="Landing zone for applications with virtual servers variations"}
 
