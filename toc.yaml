@@ -22,15 +22,24 @@ toc:
   - navgroup:
       id: architecture
       topics:
-      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vpc/deploy-arch-ibm-vpc-fully-configurable.md
-      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpc-standard.md
-      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
-      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-extension.md
-      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
-      - include: ../deployable-reference-architectures/terraform-ibm-base-ocp-vpc/deploy-arch-ibm-ocp-quickstart.md
-      - include: ../deployable-reference-architectures/terraform-ibm-base-ocp-vpc/deploy-arch-ibm-ocp-fully-configurable.md
-      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp-quickstart.md
-      - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
+      - topicgroup:
+          label: Cloud foundation for VPC
+          topics:
+              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vpc/deploy-arch-ibm-vpc-fully-configurable.md
+              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpc-standard.md
+      - topicgroup:
+          label: Landing zone for containerized applications with OpenShift
+          topics:
+              - include: ../deployable-reference-architectures/terraform-ibm-base-ocp-vpc/deploy-arch-ibm-ocp-quickstart.md
+              - include: ../deployable-reference-architectures/terraform-ibm-base-ocp-vpc/deploy-arch-ibm-ocp-fully-configurable.md
+              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp-quickstart.md
+              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
+      - topicgroup:
+          label: Landing zone for applications with virtual servers
+          topics:
+              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
+              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-extension.md
+              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
   - navgroup:
       id: plan
       topics:
