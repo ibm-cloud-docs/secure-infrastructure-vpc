@@ -30,7 +30,7 @@ Use these release notes to learn about the latest updates to the landing zone de
 New versions of the Landing zone for applications with virtual servers architectures are available
 :   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
-    The name of the VPC deployable architectures has been renamed from "VSI on VPC landing zone" to "Landing zone for applications with virtual servers"
+    The name of the VSI deployable architectures has been renamed from "VSI on VPC landing zone" to "Landing zone for applications with virtual servers"
     {: important}
 
     - Version 8.5.22 of the `Standard - Financial Services edition` (previously named `Standard`) variation is available.
