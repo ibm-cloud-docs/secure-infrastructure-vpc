@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-09-11"
+lastupdated: "2025-09-26"
 
 keywords:
 
@@ -22,6 +22,24 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## September 2025
 {: #landing-zone-2025-09}
+
+### 26 September 2025
+{: #secure-infrastructure-vpc-sep-2625}
+{: release-note}
+
+New versions of the Landing zone for applications with virtual servers architectures are available
+:   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    The name of the VPC deployable architectures has been renamed from "VSI on VPC landing zone" to "Landing zone for applications with virtual servers"
+    {: important}
+
+    - Version 8.5.22 of the `Standard - Financial Services edition` (previously named `Standard`) variation is available.
+        - The IBM Terraform provider version is now locked to 1.82.1
+    - Version 8.5.22 of the `QuickStart - Financial Services edition` (previously named `QuickStart`) variation is available.
+        - The IBM Terraform provider version is now locked to 1.82.1
+    - Version 5.8.1 of the new `Quickstart - Basic and simple` variation is available.
+        - Ideal for users new to IBM Cloud or Virtual Server Instance who want to get started without configuring underlying infrastructure.
+        - A lightweight, experimental configuration for quickly provisioning Virtual Server Instance on IBM Cloud VPC. Not certified and not intended for production use.
 
 ### 11 September 2025
 {: #secure-infrastructure-vpc-sep-1125}
