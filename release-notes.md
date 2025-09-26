@@ -35,8 +35,10 @@ New versions of the Landing zone for applications with virtual servers architect
 
     - Version 8.5.22 of the `Standard - Financial Services edition` (previously named `Standard`) variation is available.
         - The IBM Terraform provider version is now locked to 1.82.1
+        - The default virtual server image is updated to `ibm-ubuntu-24-04-3-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 8.5.22. Update the image outside of the Terraform code.
     - Version 8.5.22 of the `QuickStart - Financial Services edition` (previously named `QuickStart`) variation is available.
         - The IBM Terraform provider version is now locked to 1.82.1
+        - The default virtual server image is updated to `ibm-ubuntu-24-04-3-minimal-amd64-2`. To avoid downtime and losing data, the image is not changed when you update to version 8.5.22. Update the image outside of the Terraform code.
     - Version 5.8.1 of the new `Quickstart - Basic and simple` variation is available.
         - Ideal for users new to IBM Cloud or Virtual Server Instance who want to get started without configuring underlying infrastructure.
         - A lightweight, experimental configuration for quickly provisioning Virtual Server Instance on IBM Cloud VPC. Not certified and not intended for production use.
