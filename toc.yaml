@@ -25,32 +25,32 @@ toc:
       - topicgroup:
           label: Cloud foundation for VPC
           topics:
-              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vpc/deploy-arch-ibm-vpc-fully-configurable.md
-                navtitle: Integrated setup with configurable services
-              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpc-standard.md
-                navtitle: Financial Services edition
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vpc/deploy-arch-ibm-vpc-fully-configurable.md
+            navtitle: Integrated setup with configurable services
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vpc-standard.md
+            navtitle: Financial Services edition
       - topicgroup:
           label: Landing zone for containerized applications with OpenShift
           topics:
-              - include: ../deployable-reference-architectures/terraform-ibm-base-ocp-vpc/deploy-arch-ibm-ocp-quickstart.md
-                navtitle: Basic and simple
-              - include: ../deployable-reference-architectures/terraform-ibm-base-ocp-vpc/deploy-arch-ibm-ocp-fully-configurable.md
-                navtitle: Integrated setup with configurable services
-              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp-quickstart.md
-                navtitle: QuickStart - Financial Services edition
-              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
-                navtitle: Standard - Financial Services edition
+          - include: ../deployable-reference-architectures/terraform-ibm-base-ocp-vpc/deploy-arch-ibm-ocp-quickstart.md
+            navtitle: Basic and simple
+          - include: ../deployable-reference-architectures/terraform-ibm-base-ocp-vpc/deploy-arch-ibm-ocp-fully-configurable.md
+            navtitle: Integrated setup with configurable services
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp-quickstart.md
+            navtitle: QuickStart - Financial Services edition
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-ocp.md
+            navtitle: Standard - Financial Services edition
       - topicgroup:
           label: Landing zone for applications with virtual servers
           topics:
-              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vsi/deploy-arch-ibm-vsi-quickstart.md
-                navtitle: Basic and simple
-              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
-                navtitle: Standard - Financial Services edition
-              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-extension.md
-                navtitle: Extension
-              - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
-                navtitle: Quickstart - Basic and simple
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vsi/deploy-arch-ibm-vsi-quickstart.md
+            navtitle: Basic and simple
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
+            navtitle: Standard - Financial Services edition
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-extension.md
+            navtitle: Extension
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
+            navtitle: Quickstart - Basic and simple
   - navgroup:
       id: plan
       topics:
@@ -58,7 +58,9 @@ toc:
   - navgroup:
       id: deploy
       topics:
-      - deploying.md
+      - topic: deploying.md
+      - topic: deploy-OCP-Basic.md
+      - topic: deploy-OCP-fullyConfigurable.md
   - navgroup:
       id: tutorial
       topics:

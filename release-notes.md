@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-09-26"
+lastupdated: "2025-10-01"
 
 keywords:
 
@@ -19,6 +19,25 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## October 2025
+{: #landing-zone-2025-10}
+
+### 2 October 2025
+{: #secure-infrastructure-vpc-oct-0225}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.7.1 of the `Standard - Financial Services edition` variation is available.
+        - The `region` input now defaults to us-south.
+        - Real time validation has been added to the Projects user interface for inputs.
+        - The IBM Terraform provider version is now locked to 1.82.1.
+    - Version 8.5.0 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Public gateways are now created and attached to all 3 subnets by default. This can be configured using the `subnets` input.
+        - The versions of the optional deployable architectures that can be added or removed during initial set up have been updated to the latest.
+        - Real time validation has been added to the Projects user interface for inputs.
 
 ## September 2025
 {: #landing-zone-2025-09}
