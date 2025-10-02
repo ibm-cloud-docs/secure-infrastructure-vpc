@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-02"
 
 keywords:
 
@@ -26,6 +26,48 @@ Use these release notes to learn about the latest updates to the landing zone de
 ### 2 October 2025
 {: #secure-infrastructure-vpc-oct-0225}
 {: release-note}
+
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.7.1 of the `Standard - Financial Services edition` variation is available.
+        - Real time validation has been added to the Projects user interface for inputs.
+    - Version 8.7.1 of the `QuickStart - Financial Services edition` variation is available.
+        - Real time validation has been added to the Projects user interface for inputs.
+    - Version 3.63.1 of the new `Standard - Integrated setup with configurable services` variation is available.
+        - Public gateways now created and attached to subnets in all zones.
+        - Real time validation has been added to the Projects user interface for inputs.
+        - The following input has been renamed: `allow_public_access_to_cluster` -> `allow_public_access_to_cluster_management`.
+        - The default value of the `default_worker_pool_machine_type` input used to configure the machine type for worker nodes has been updated from `bx2.8x32` to `bx2.4x16`.
+        - The default value of the `default_worker_pool_workers_per_zone` input used to configure the number of worker nodes in each zone of the cluster has been updtaed from `2` to `1`.
+        - Updated object type inputs so they can be configured using the HCL editor in the Projects user interface.
+        - The `null_resource.reset_api_key` terraform resource has been replaced by `ibm_container_api_key_reset.reset_api_key` so when upgrading from a previous version you will see the expected destroy of the `null_resource.reset_api_key` resource.
+        - Updated the hashicorp/helm provider version to `3.0.0`
+        - Removed the ability to set `cluster_ready_when`. This will always default to "IngressReady".
+        - Removed the ability to set `manage_all_addons`. This will always default to true.
+        - Removed the ability to set `worker_pools_taints`. No taints are added by default.
+        - Removed the ability to set `ignore_worker_pool_size_changes`. This will always default to false.
+        - Removed the ability to set `allow_default_worker_pool_replacement`. This will always default to false.
+        - Removed the ability to set `enable_autoscaling_for_default_pool`. This will always default to false.
+        - Removed the ability to set `existing_subnet_ids`.
+        - Removed the ability to set `cluster_config_endpoint_type`. This will always default to `default`.
+        - Removed the ability to set `verify_worker_network_readiness`. This will always default to true.
+        - Removed the ability to set `pod_subnet_cidr`. This will always default to `172.30.0.0/16`.
+        - Removed the ability to set `service_subnet_cidr`. This will always default to `172.21.0.0/16`.
+        - Removed the ability to set `attach_ibm_managed_security_group`. This will always default to true.
+        - Removed the ability to set `attach_ibm_managed_security_group`. This will always default to true.
+        - Removed the ability to set `boot_volume_kms_key_name`. This will always default to `boot-volume-key`.
+        - Removed the ability to set `boot_volume_kms_key_ring_name`. This will always default to `boot-volume-key-ring`.
+        - Removed the ability to set `cbr_rules`. No CBR rules will be created by default.
+        - Removed the ability to set `audit_deployment_name`. This will always default to `ibmcloud-kube-audit`.
+        - Removed the ability to set `audit_log_policy`. This will always default to `default`.
+        - Removed the ability to set `audit_namespace`. This will always default to `ibm-kube-audit`.
+        - Removed the ability to set `audit_webhook_listener_image`. This will always default to `icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs`.
+        - Removed the ability to set `audit_webhook_listener_image_tag_digest`. This will always default to a specific image tag digest that will be updated in new versions of the deplyable architecure.
+        - The versions of the optional deployable architectures that can be added or removed during initial set up have been updated to the latest.
+    - Version 3.63.1 of the new `QuickStart - Basic and simple` variation is available.
+        - The following input has been renamed: `allow_public_access_to_cluster` -> `allow_public_access_to_cluster_management`.
+        - The `null_resource.reset_api_key` terraform resource has been replaced by `ibm_container_api_key_reset.reset_api_key` so when upgrading from a previous version you will see the expected destroy of the `null_resource.reset_api_key` resource.
 
 New versions of the Cloud foundation for VPC deployable architectures are available
 :   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
