@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-10-02"
+lastupdated: "2025-10-16"
 
 keywords:
 
@@ -22,6 +22,17 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## October 2025
 {: #landing-zone-2025-10}
+
+### 16 October 2025
+{: #secure-infrastructure-vpc-oct-1625}
+{: release-note}
+
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 3.64.1 of the following variations are available with improved user experience:
+        - [Experimental] Standard - Integrated setup with configurable services
+        - QuickStart - Basic and simple
 
 ### 2 October 2025
 {: #secure-infrastructure-vpc-oct-0225}
