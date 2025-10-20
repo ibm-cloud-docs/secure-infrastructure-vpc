@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-10-16"
+lastupdated: "2025-10-20"
 
 keywords:
 
@@ -22,6 +22,19 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## October 2025
 {: #landing-zone-2025-10}
+
+### 20 October 2025
+{: #secure-infrastructure-vpc-oct-2025}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.8.0 of the `Standard - Financial Services edition` variation is available.
+        - The `prefix` input now has a default value using a random string affix.
+    - Version 8.7.0 of the `Standard - Integrated setup with configurable services` variation is available.
+        - The `prefix` input now has a default value using a random string affix.
+        - A "Next steps" section has been added to the user interface that will link to the newly created and VPC and the VPC overview page.
 
 ### 16 October 2025
 {: #secure-infrastructure-vpc-oct-1625}
