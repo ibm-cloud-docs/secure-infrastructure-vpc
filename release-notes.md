@@ -27,6 +27,24 @@ Use these release notes to learn about the latest updates to the landing zone de
 {: #secure-infrastructure-vpc-oct-2025}
 {: release-note}
 
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.8.0 of the `Standard - Financial Services edition` variation is available.
+        - The `prefix` input now has a default value using a random string affix.
+    - Version 8.8.0 of the `QuickStart - Financial Services edition` variation is available.
+        - The `prefix` input now has a default value using a random string affix.
+    - Version 3.66.0 of the `[Experimental] Standard - Integrated setup with configurable services` variation is available.
+        - The `prefix` input now has a default value using a random string affix.
+        - The Account Configuration deployable architectures has been removed from the customize flow.
+        - Updated the IBM terraform provider version to `1.84.1`
+        - The `allow_public_access_to_cluster_management` input now defaults to true, meaning by default the cluster will be created with a public endpoint enabled.
+        - The `allow_outbound_traffic` input now defaults to true, meaning outbound traffic will be allowed by default.
+        - The following inputs are no longer available to set: `enable_platform_metrics`, `logs_routing_tenant_regions`, `enable_ocp_console`, `addons`, `additional_worker_pools`, `default_worker_pool_labels`, `default_pool_minimum_number_of_nodes`, `default_pool_maximum_number_of_nodes`, `additional_security_group_ids`, `use_private_endpoint`, `custom_security_group_ids`, `additional_lb_security_group_ids`, `additional_vpe_security_group_ids`, `ibmcloud_kms_api_key`, `kms_encryption_enabled_cluster`, `existing_kms_instance_crn`, `existing_cluster_kms_key_crn`, `cluster_kms_key_name`, `cluster_kms_key_ring_name`, `kms_encryption_enabled_boot_volume`, `existing_boot_volume_kms_key_crn`, `enable_secrets_manager_integration`, `existing_secrets_manager_instance_crn`, `skip_ocp_secrets_manager_iam_auth_policy`, `subnets`, `network_acls`, `enable_kube_audit`.
+    - Version 3.66.0 of the  `QuickStart - Basic and simple` variation is available.
+        - The `prefix` input now has a default value using a random string affix.
+        - Updated the IBM terraform provider version to `1.84.1`
+
 New versions of the Cloud foundation for VPC deployable architectures are available
 :   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
