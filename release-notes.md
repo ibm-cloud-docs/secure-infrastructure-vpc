@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-10-24"
+lastupdated: "2025-10-27"
 
 keywords:
 
@@ -22,6 +22,22 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## October 2025
 {: #landing-zone-2025-10}
+
+### 27 October 2025
+{: #secure-infrastructure-vpc-oct-2425}
+{: release-note}
+
+New versions of the Landing zone for applications with virtual servers deployable architectures are available
+:   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 5.15.1 of the `Quickstart - Basic and simple` variation is available.
+        - Updated the IBM terraform provider version to `1.84.3`
+        - A "Next steps" section has been added to the user interface that will link to the newly created and VSI and an SSH connection guide.
+        - The `prefix` input now has a default value using a random string affix.
+        - Real time validation has been added to the Projects user interface for inputs.
+    - Version v8.8.0 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - The `prefix` input now has a default value using a random string affix.
+        - Real time validation has been added to the Projects user interface for inputs.
 
 ### 24 October 2025
 {: #secure-infrastructure-vpc-oct-2425}
