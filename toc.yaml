@@ -81,6 +81,8 @@ toc:
         navtitle: Overriding key management
       - topic: user-data.md
         navtitle: Adding user data to your VSI
+      - topic: vsi-quickstart-ssh-connection-guide.md
+        navtitle: Connect to a Virtual Server Instance (VSI) Using SSH
   - navgroup:
       id: reference
       topics:
