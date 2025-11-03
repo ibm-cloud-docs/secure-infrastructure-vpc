@@ -38,7 +38,7 @@ To connect to IBM Cloud VSI using SSH, execute the following steps:
       ```bash
       # Set your workspace ID
       WORKSPACE_ID="<YOUR_WORKSPACE_ID_HERE>"  # example: "us-south.workspace.projects-service.8f617fb9"
-        ```
+      ```
 
 1. Run the following command to extract the VSI name and `floating_ip` address.
 
@@ -93,7 +93,6 @@ To connect to IBM Cloud VSI using SSH, execute the following steps:
         The authenticity of host '150.240.160.54 (150.240.160.54)' can't be established.
         ECDSA key fingerprint is SHA256:...
         Are you sure you want to continue connecting (yes/no)?
-        ```
 
         Type `yes` and press Enter to continue.
 
