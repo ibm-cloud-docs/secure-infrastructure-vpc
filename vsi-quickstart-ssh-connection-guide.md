@@ -89,24 +89,24 @@ To connect to IBM Cloud VSI using SSH, execute the following steps:
 
 1. When you connect for the first time you will see the following message about host authenticity.
 
-    ```bash
-        The authenticity of host '150.240.160.54 (150.240.160.54)' can't be established.
-        ECDSA key fingerprint is SHA256:...
-        Are you sure you want to continue connecting (yes/no)?
+      ```bash 
+      The authenticity of host '150.240.160.54 (150.240.160.54)' can't be established.
+      ECDSA key fingerprint is SHA256:...
+      Are you sure you want to continue connecting (yes/no)?
+      ```
 
-        Type `yes` and press Enter to continue.
+      Type `yes` and press Enter to continue.
+      
+      Now you should be successfully connected to your IBM Cloud VSI with the welcome message:
 
-        Now you should be successfully connected to your IBM Cloud VSI with the welcome message:
-
-
-        ==========================================
-        Welcome to Your IBM Cloud VSI!
-        ==========================================
-        Server Information:
-        - Hostname: sky-da-qs-vsi-69f8-001
-        - IP Address: 10.10.10.4
-        - OS: Debian GNU/Linux 13 (trixie)
-
-    ```
+      ```bash
+      ==========================================
+      Welcome to Your IBM Cloud VSI!
+      ==========================================
+      Server Information:
+      - Hostname: sky-da-qs-vsi-69f8-001
+      - IP Address: 10.10.10.4
+      - OS: Debian GNU/Linux 13 (trixie)
+      ```
 
 Your Virtual Server Instance (VSI) is now connected and ready for use. You can utilize this virtual machine for development, hosting applications, running services, or any other workload based on your requirements.

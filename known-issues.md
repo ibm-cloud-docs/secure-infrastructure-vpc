@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-21"
+lastupdated: "2025-11-04"
 
 keywords:
 
@@ -14,6 +14,17 @@ subcollection: secure-infrastructure-vpc
 
 # Known issues with landing zone deployable architectures
 {: #known-issues}
+
+## OpenShift creation fails with "The specified API key could not be found"
+{: #ki-ocp-apikey-error}
+
+During cluster provisioning a containers apikey is created if one does not already exist for the given resource group and region ([learn more](https://cloud.ibm.com/docs/containers?topic=containers-access-creds)). Occasionally replication of the newly created apikey can be delayed causing the cluster creation to fail with an error like this:
+
+`Error: Request failed with status code: 404, ServerErrorResponse: {"incidentID":"c5caf83e-5f08-48c9-9778-6f3eb0ce1d16,c5caf83e-5f08-48c9-9778-6f3eb0ce1d16","code":"E06f9","description":"The specified API key could not be found.","type":""}`
+
+### Workaround
+{: #ki-ocp-apikey-error-workaround}
+To workaround the issue simply attempt a re-apply of the terraform and it should pass on second attempt. If you still face issues, an IBM Cloud support case should be created with the `Kubernetes service` and include the `incidentID` from the error.
 
 ## OpenShift VPC cluster deployed by landing zone in warning state
 {: #ki-ocp-cos-vpe-warning}
