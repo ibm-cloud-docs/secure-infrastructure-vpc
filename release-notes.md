@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-10-27"
+lastupdated: "2025-11-04"
 
 keywords:
 
@@ -22,6 +22,20 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## October 2025
 {: #landing-zone-2025-10}
+
+### 4 November 2025
+{: #secure-infrastructure-vpc-nov-0425}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.11.1 of the `Standard - Financial Services edition` variation is available.
+        - updated the Cloud Object Storage endpoint to default to "direct" endpoint
+        - updated the solution to run on terraform v1.12.2
+    - Version 8.8.3 of the `Standard - Integrated setup with configurable services` variation is available.
+        - updated the deployable architecture versions showing in the customize flow to the latest
+        - updated the solution to run on terraform v1.12.2
 
 ### 27 October 2025
 {: #secure-infrastructure-vpc-oct-2425}
