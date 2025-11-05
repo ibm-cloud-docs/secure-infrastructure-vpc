@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-11-05"
 
 keywords:
 
@@ -20,8 +20,27 @@ content-type: release-note
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
 
-## October 2025
-{: #landing-zone-2025-10}
+## November 2025
+{: #landing-zone-2025-11}
+
+### 5 November 2025
+{: #secure-infrastructure-vpc-nov-0525}
+{: release-note}
+
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 3.71.3 of the `Standard - Integrated setup with configurable services` and `QuickStart - Basic and simple` variations are available.
+        - The solution will no longer explicitly create a containers apikey before creating the cluster to avoid duplicate apikeys being created in the account which can cause the apikey limit to be met. Instead the containers apikey creation will occur by the cluster creation process. This process checks if an existing apikey exists in the given region and resource group and will not create a duplicate if it does. Please note that there is a rare race condition which can case the 404 error "The specified API key could not be found". [Learn more](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-known-issues#ki-ocp-apikey-error) about how to workaround this.
+        - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.19. Versions 4.14, 4.15, 4.16, 4.17, and 4.18 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+        - The default ACL rules have been updated to ensure the cluster ingress status reports as healthy once cluster is up.
+        - Updated the IBM terraform provider version to `1.84.3`.
+        - Updated the solution to run on terraform v1.12.2.
+        - The default operating system for workers has been updated to `RHCOS` (Red Hat CoreOS) in the `QuickStart - Basic and simple`variation and is no longer configurable.
+    - Version 8.11.2 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - The initial version of {{site.data.keyword.redhat_openshift_notm}} is now set to 4.19. Versions 4.14, 4.15, 4.16, 4.17, and 4.18 are also supported. To avoid downtime and losing data, the cluster version is not changed when you update your deployable architecture. Update the cluster outside of the Terraform code.
+        - Updated the Cloud Object Storage endpoint to default to the "direct" endpoint.
+        - Updated the solution to run on terraform v1.12.2.
 
 ### 4 November 2025
 {: #secure-infrastructure-vpc-nov-0425}
@@ -31,11 +50,14 @@ New versions of the Cloud foundation for VPC deployable architectures are availa
 :   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - Version 8.11.1 of the `Standard - Financial Services edition` variation is available.
-        - updated the Cloud Object Storage endpoint to default to "direct" endpoint
+        - updated the Cloud Object Storage endpoint to default to the "direct" endpoint
         - updated the solution to run on terraform v1.12.2
     - Version 8.8.3 of the `Standard - Integrated setup with configurable services` variation is available.
         - updated the deployable architecture versions showing in the customize flow to the latest
         - updated the solution to run on terraform v1.12.2
+
+## October 2025
+{: #landing-zone-2025-10}
 
 ### 27 October 2025
 {: #secure-infrastructure-vpc-oct-2425}
