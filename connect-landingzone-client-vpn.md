@@ -2,8 +2,8 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-09-03"
-lasttested: "2024-02-12"
+lastupdated: "2025-11-07"
+lasttested: "2025-10-31"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -71,18 +71,14 @@ Establish secure connections to a private VPC network:
 {: step}
 
 1. From the Community registry, search for Cloud automation for Client to Site VPN.
-1. You can chose between two different variations:
-   - **quickstart**: Designed for quick testing and seamless access to a private VPC network via a VPN client. The VPN is fully open, with ACL rules and security groups granting unrestricted access and allowing all incoming requests from any source.
-   - **standard**: A fully customizable solution. By default, all incoming requests to private VPC networks are denied and must be authorized by configuring ACL rules and security groups. The VPN has two separate VPC subnets for the VPN server, ensuring high availability.
+1. Choose Fully Configurable Variation which allows you to either use existing VPC and Secrets Manager or you can use addons and     create them before deploying VPN Server:
 1. Add it to an existing project or create a project.
 1. Customize Cloud automation for Client to Site VPN by selecting optional add-on components as needed:
-   - Red Hat OpenShift Container Platform on VPC landing zone
-   - VSI on VPC landing zone
-   - Cloud foundation for VPC
-   - Cloud automation for Secrets Manager
+   - Cloud foundation for VPC (If you want to deploy the VPN Server in an existing VPC you will have to deselect this addon and pass the existing_subnet_ids field while setting inputs for the configuration. If you want to deploy the VPN server in newly created subnet you can leave `existing_subnet_ids` field empty and use `vpn_subnet_cidr_zone_1` and optionally edit `vpn_subnet_cidr_zone_2` also if you want high availability for VPN Server)
+   - Cloud automation for Secrets Manager Private Certificate (If you already have a secrets manager instance configured with private certificate engine and private certificate you have to deselect Secrets Manager Private Certificate and it will automatically deselect Secrets Manager and Private Certificate Engine addons otherwise these 3 components should be left enabled. Only Server Certificate is configured if you choose this addon. Client certificate is optional and if you want to use it you will have to configure your server and client certificate set up separately
+   )
 1. Complete the next steps depending on how you plan to use the [deployable architecture](#x10293733){: term}:
    - [Configure](/docs/secure-enterprise?topic=secure-enterprise-config-project) it in your project and [deploy](/docs/secure-enterprise?topic=secure-enterprise-deploy-project)
-   - You can [stack deployable architectures](/docs/secure-enterprise?topic=secure-enterprise-config-stack) together in a project to create a robust end-to-end solution architecture. You don't need to code Terraform to connect the member deployable architectures within the stack. As you configure input values in a member deployable architecture, you can reference inputs or outputs from another member to link the deployable architectures together. After you deploy the deployable architectures in your stack, you can add the stack to a private catalog to easily share it with others in your organization.
 
 A [deployable architecture](#x10293733){: term} is infrastructure as code (IaC) that's designed for easy deployment, scalability, and modularity. In this case, the [deployable architecture](#x10293733){: term} represents a repeatable way to create client-to-site VPN connections for more than one landing zone in your org. It also simplifies how others in your company can set up more VPN connections for their landing zones.
 
@@ -118,12 +114,19 @@ After the VPN server cloud resources are deployed, set up the OpenVPN client on 
     1.  Open the OpenVPN client application, and import the `client2site-vpn.ovpn` file.
     1.  Enter one of the {{site.data.keyword.cloud_notm}} email addresses that was configured to access the VPN as the user ID.
 1.  Go to [https://iam.cloud.ibm.com/identity/passcode](https://iam.cloud.ibm.com/identity/passcode) in your browser to generate a passcode. Copy the passcode.
-1.  Return to the OpenVPN client application and paste the one-time passcode. Then, import the `client2site-vpn.ovpn` certificate file.
+1.  Return to the OpenVPN client application and paste the one-time passcode. You might be prompted to select client certificate in case it was not configured. You can click **Continue**. You are connected to the VPN Server now.
 
-### Using client certificates rather than one-time passcodes
+## (Optional) Using client certificates
 {: #connect-client-vpn-certs}
+{: step}
 
-If you want to configure client certs on the VPN rather than using a one-time-passcode, follow the instructions in the [Managing VPN server and client certifications](/docs/vpc?topic=vpc-client-to-site-authentication#creating-cert-manager-instance-import) section of the client-to-site documentation.
+To use client certificates follow these steps:
+
+1. Set `enable_certificate_auth` to true and pass values of `client_cert_crns` when you deploy this architecture.
+
+1. To generate certificate you must configure private certificate engine which issues private certificates. You can use [Cloud automation for Secrets Manager private certificates engine](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-secrets-manager-private-cert-engine-571d2eb7-e416-40a4-aa95-be05e6155af8-global) deployable architecture to configure private certificate engine.
+
+1. To generate certificates for VPN Server and Clients use [Cloud automation for Secrets Manager private certificate](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-secrets-manager-private-cert-422283a7-9cb2-4149-8093-a36a799e1d27-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjYWxsX3Byb2R1Y3Rz) deployable architecture. You will have to do multiple runs as the architecture only generates a single certificate at a time.
 
 ## Test access to the Red Hat OpenShift web console
 {: #connect-client-vpn-rh}
