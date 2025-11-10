@@ -73,7 +73,7 @@ toc:
       - topic: access-slz-cis.md
         navtitle: Configure access through CIS
       - topic: deploy-app-openshift.md
-        navtitle: Deploy sample application on OpenShift Cluster
+        navtitle: Deploy application on OpenShift Cluster
   - navgroup:
       id: howto
       topics:

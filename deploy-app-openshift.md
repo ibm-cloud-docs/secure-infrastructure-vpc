@@ -2,7 +2,7 @@
 
 Copyright:
    years: 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-11-10"
 
 keywords: secure-infrastructure-vpc
 subcollection: secure-infrastructure-vpc
@@ -13,30 +13,38 @@ completion-time: 30m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying demo application on {{site.data.keyword.redhat_openshift_full}} Cluster on {{site.data.keyword.cloud}}
+# Deploy application on {{site.data.keyword.redhat_openshift_notm}} cluster on {{site.data.keyword.cloud}}
 {: #tutorialDeployAppOpenShift}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="30m"}
 
-This document provides step-by-step instructions to deploy an application to a {{site.data.keyword.redhat_openshift_notm}} cluster running on {{site.data.keyword.cloud_notm}}. You can use [Landing zone for containerized applications with OpenShift deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ocp-ra-qs) to deploy the cluster if you don't have an existing cluster.
+This tutorial provides step-by-step instructions to deploy an application to a {{site.data.keyword.redhat_openshift_notm}} cluster running on {{site.data.keyword.cloud_notm}}. You can use [Landing zone for containerized applications with OpenShift deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-ocp-ra-qs) to deploy the cluster if you don't have an existing cluster.
 
-## Before you deploy the sample application, you must meet the following prerequisites:
+## Before you begin
 {: #beforeDeployAppOpenShift}
+
+Before you deploy the application, you must meet the following prerequisites:
 
 1. A {{site.data.keyword.redhat_openshift_notm}} cluster provisioned on {{site.data.keyword.cloud_notm}}.
 
-1. {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`) installed locally. To learn how to install `oc` locally, [see](/docs/openshift?topic=openshift-cli-install).
+1. Install {{site.data.keyword.redhat_openshift_notm}} CLI (`oc`). Refer the instructions [here](/docs/openshift?topic=openshift-cli-install).
 
-1. Use https://github.com/IBM-Cloud/openshift-node-app repository for the sake of this tutorial. You can also use your own repository, but make sure that you have a `Dockerfile` created in the root of your repository to containerise your application.
+1. An application to deploy. This tutorial uses a sample [Node.js app](https://github.com/IBM-Cloud/openshift-node-app), but you can use any other application in your preferred language, as long as you have a `Dockerfile` in the root of your repository to containerize it.
 
 
-## Check Cluster connectivity
+## Check cluster connectivity
 {: #checkClusterConnectivity}
 {: step}
 
-Check if the Public endpoint checkbox is enabled on the Networking section, of the Overview tab of your cluster instance page.
+Ensure cluster connectivity for both public and private endpoints.
 
-If public endpoint is not enabled then deploy a client-to-site-vpn server in the same VPC as the cluster and then connect to it using OpenVPN Client . To access the cluster, [see](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-connect-landingzone-client-vpn).
+Check if the **Public endpoint** is enabled on the Networking section of the Overview tab of your cluster instance page.
+
+### Public endpoint enabled
+If the public endpoint is enabled you can now proceed to the next step else execute the following steps for Private-only cluster.
+
+### Private-only cluster
+If the cluster has only private endpoint enabled, you won't be able to run `oc` or `kubectl` commands on your cluster directly without deploying a client-to-site [VPN Server](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-client-to-site-overview) in the same VPC as the cluster. Refer this document for deploying the [client-to-site-vpn server](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-connect-landingzone-client-vpn).
 
 
 
@@ -44,7 +52,7 @@ If public endpoint is not enabled then deploy a client-to-site-vpn server in the
 {: #accessClusterForDemoApp}
 {: step}
 
-To access the cluster for sample application,
+Connect with your cluster via CLI to deploy the application.
 
 1. From the Cluster Overview page, open the OpenShift web console.
 
@@ -57,9 +65,8 @@ To access the cluster for sample application,
 {: #deployDemoApp}
 {: step}
 
-Use the sample repository https://github.com/IBM-Cloud/openshift-node-app/ to deploy the sample application on the {{site.data.keyword.redhat_openshift_notm}} cluster.
 
-To deploy the sample application, execute the following steps:
+To deploy the application, execute the following steps:
 
 1. To define a project name, run the following command:
    ```bash
@@ -71,7 +78,7 @@ To deploy the sample application, execute the following steps:
    oc new-project $MYPROJECT
    ```
 
-1. To create a sample application using Docker build strategy, run the following command:
+1. To deploy application using Docker build strategy, run the following command:
    ```bash
    oc new-app https://github.com/IBM-Cloud/openshift-node-app --name=$MYPROJECT --strategy=docker --as-deployment-config
    ```
@@ -89,12 +96,12 @@ To deploy the sample application, execute the following steps:
 
    You might see two additional pods with `build` and `deploy` at the end of their name. They are OpenShift internal pods used to build and start your application pod.
 
-1. To expose the service externally with an HTTP route, execute following command:
+1. To expose the service externally with an `HTTP` route, execute following command:
    ```bash
    oc expose service/$MYPROJECT
    ```
 
-   This creates a http route for your application service.
+   This creates a `http` route for your application service.
 
 1. To get the route hostname run the following command:
    ```bash
@@ -105,18 +112,18 @@ To deploy the sample application, execute the following steps:
 
 1. To access your application, visit `http://<hosting_route>:80` in your browser.
 
-1. To create an HTTPS route, run the following command:
+1. To create an `HTTPS` route, run the following command:
    ```bash
    oc create route edge $MYPROJECT-https --service=$MYPROJECT --port=3000
    ```
 
-1. To fetch the HTTPS route, run the following command:
+1. To fetch the `HTTPS` route, run the following command:
    ```bash
    oc get route/$MYPROJECT-https
    ```
    This is the secure hosting route to access your application in the browser.
 
-1. Access your application over https by visiting `https://secure_hosting_route` in your browser.
+1. Access your application securely over `https` by visiting `https://secure_hosting_route` in your browser.
 
 ## Clean up resources
 {: #deleteDemoProjectResources}
@@ -124,12 +131,12 @@ To deploy the sample application, execute the following steps:
 
 To clean up the resources used to deploy the application, run the following commands:
 
-1. Delete all resource objects created for the application:
+1. Delete all resource objects created for the application.
    ```bash
    oc delete all --selector app=$MYPROJECT
    ```
 
-1. Delete the Project:
+1. Delete the Project.
    ```bash
    oc delete project $MYPROJECT
    ```
