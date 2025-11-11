@@ -2,7 +2,7 @@
 
 Copyright:
    years: 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-11-11"
 
 keywords: secure-infrastructure-vpc
 subcollection: secure-infrastructure-vpc
@@ -36,19 +36,17 @@ Before you deploy the application, you must meet the following prerequisites:
 {: #checkClusterConnectivity}
 {: step}
 
-Ensure cluster connectivity for both public and private endpoints.
+Navigate to your cluster’s Overview tab in the Cloud Console and go to the Networking section to verify which endpoints are enabled.
 
-Check if the **Public endpoint** is enabled on the Networking section of the Overview tab of your cluster instance page.
 
 ### Public endpoint enabled
-If the public endpoint is enabled you can now proceed to the next step else execute the following steps for Private-only cluster.
+If the public endpoint is enabled, proceed to step 2.
 
 ### Private-only cluster
-If the cluster has only private endpoint enabled, you won't be able to run `oc` or `kubectl` commands on your cluster directly without deploying a client-to-site [VPN Server](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-client-to-site-overview) in the same VPC as the cluster. Refer this document for deploying the [client-to-site-vpn server](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-connect-landingzone-client-vpn).
+If your cluster has only private endpoint enabled, you won’t be able to access it directly via the CLI. To connect securely, deploy a  [client-to-site VPN Server](https://cloud.ibm.com/docs/vpc?topic=vpc-vpn-client-to-site-overview) in the same VPC as the cluster. This setup allows your local device to connect to the VPC network using an OpenVPN client. For deployment instructions refer this tutorial [client-to-site-vpn server](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-connect-landingzone-client-vpn). Once the VPN connection is established, proceed to step 2.
 
 
-
-## Access cluster using CLI
+## Access cluster using oc CLI
 {: #accessClusterForDemoApp}
 {: step}
 
