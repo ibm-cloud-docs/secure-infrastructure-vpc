@@ -2,7 +2,7 @@
 
 Copyright:
    years: 2025
-lastupdated: "2025-11-11"
+lastupdated: "2025-11-14"
 
 keywords: secure-infrastructure-vpc
 subcollection: secure-infrastructure-vpc
@@ -13,7 +13,7 @@ completion-time: 30m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploy application on {{site.data.keyword.redhat_openshift_notm}} cluster on {{site.data.keyword.cloud}}
+# Deploy an application on a {{site.data.keyword.redhat_openshift_notm}} cluster on {{site.data.keyword.cloud}}
 {: #tutorialDeployAppOpenShift}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="30m"}
