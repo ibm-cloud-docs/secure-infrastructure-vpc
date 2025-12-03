@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-11-05"
+lastupdated: "2025-12-03"
 
 keywords:
 
@@ -19,6 +19,21 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## December 2025
+{: #landing-zone-2025-12}
+
+### 3 December 2025
+{: #secure-infrastructure-vpc-dec-0325}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.13.1 of the `Standard - Financial Services edition` variation is available.
+        - Updated the IBM terraform provider version to `1.85.0`
+    - Version 8.9.3 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Added a fix which was causing Flow Logs to be enbled if the Key Protect DA was enabled in the customze flow. Flow Logs will now only be anbeld if the Object Storage DA is enabled.
 
 ## November 2025
 {: #landing-zone-2025-11}
