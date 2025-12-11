@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-11"
 
 keywords:
 
@@ -22,6 +22,22 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## December 2025
 {: #landing-zone-2025-12}
+
+### 11 December 2025
+{: #secure-infrastructure-vpc-dec-1125}
+{: release-note}
+
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 3.75.0 of the `Standard - Integrated setup with configurable services` and `QuickStart - Basic and simple` variations are available.
+        - Updated the IBM terraform provider version to `1.86.0`.
+        - Updated the kubernetes terraform provider version to `3.0.0`.
+        - Updated the helm terraform provider version to `3.1.1`.
+        - Improved UI experience for several inputs.
+    - Version 8.14.0 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - The default value for the `prefix` input now starts with "ocp-".
+        - Improved UI experience for several inputs.
 
 ### 3 December 2025
 {: #secure-infrastructure-vpc-dec-0325}
