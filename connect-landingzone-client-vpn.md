@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-11-07"
+lastupdated: "2025-12-12"
 lasttested: "2025-10-31"
 
 keywords:
@@ -21,22 +21,22 @@ account-plan: paid
 {: toc-services="vpc, openshift, secrets-manager, dl, schematics"}
 {: toc-completion-time="1h"}
 
-This tutorial dives into the fastest option to get up and running with a [client VPN for VPC](/docs/vpc?topic=vpc-vpn-client-to-site-overview) connectivity. Rather than doing manual steps, you set up an automated way to create a client-to-site VPN connection to one or more landing zones in your account by using Cloud automation for Client to Site VPN [deployable architecture](#x10293733){: term} from the Community registry.
+This tutorial dives into the fastest option to get up and running with a [client VPN for VPC](/docs/vpc?topic=vpc-vpn-client-to-site-overview) connectivity. Rather than doing manual steps, you set up an automated way to create a client-to-site VPN connection to one or more landing zones in your account by using the [Cloud automation for Client to Site VPN](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-client-to-site-vpn-1b824983-263f-4191-bfcd-c1d1b2220aa3-global) [deployable architecture](#x10293733){: term} from the Community registry.
 {: shortdesc}
 
 ## Objectives
 {: #solution-connect-client-vpn-objectives}
 
-- Create a client-to-site VPN connection between the private VPC network and clients by using Cloud automation for Client to Site VPN [deployable architecture](#x10293733){: term} from the Community registry.
+- Create a client-to-site VPN connection between the private VPC network and clients by using [Cloud automation for Client to Site VPN](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/deploy-arch-ibm-client-to-site-vpn-1b824983-263f-4191-bfcd-c1d1b2220aa3-global) [deployable architecture](#x10293733){: term} from the Community registry.
 
 ### Problem
 {: #solution-connect-client-vpn-problem}
 
-Let's say that you deployed the [Red Hat OpenShift Container Platform on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external} [deployable architecture](#x10293733){: term}. In the {{site.data.keyword.cloud_notm}} console, you can see that the cluster is created and working correctly. When you try to access the Red Hat OpenShift web console on the management cluster, you see this error:
+Let's say that you deployed the [Landing zone for containerized applications with OpenShift](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global){: external} [deployable architecture](#x10293733){: term}. In the {{site.data.keyword.cloud_notm}} console, you can see that the cluster is created and working correctly. When you try to access the Red Hat OpenShift web console on the management cluster, you see this error:
 
 > It is not possible to access the Red Hat OpenShift console because the cluster is accessible only on the management VPC’s private network, which is locked down and not accessible from the internet.
 
-You might also have connectivity issues to the VPC's private networks if you deploy the [Cloud foundation for VPC](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vpc-9fc0fa64-27af-4fed-9dce-47b3640ba739-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external}, [VSI on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vsi-ef663980-4c71-4fac-af4f-4a510a9bcf68-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external}, or the [Red Hat OpenShift Container Platform on VPC landing zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D){: external} deployable architecture.
+You might also have connectivity issues to the VPC's private networks if you deploy the [Cloud foundation for VPC](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vpc-9fc0fa64-27af-4fed-9dce-47b3640ba739-global){: external}, [Landing zone for applications with virtual servers](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-vsi-ef663980-4c71-4fac-af4f-4a510a9bcf68-global){: external}, or the [Landing zone for containerized applications with OpenShift](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global){: external} deployable architecture.
 
 For example, you ping the network but it times out:
 
@@ -66,19 +66,17 @@ Establish secure connections to a private VPC network:
 
 - [Client-to-site VPN server and VPN Client](/docs/vpc?topic=vpc-vpn-client-to-site-overview) - Configure a VPN client application on your device to create a secure connection to your VPC network that uses {{site.data.keyword.cloud_notm}} VPN for VPC. The {{site.data.keyword.cloud_notm}} VPN server service has high availability mode for production use and is managed by {{site.data.keyword.IBM_notm}}.
 
-## Deploying Cloud automation for Client to Site VPN with projects
+## Deploying Cloud automation for Client to Site VPN with IBM projects
 {: #deploy-client-to-site-vpn}
 {: step}
 
-1. From the Community registry, search for Cloud automation for Client to Site VPN.
-1. Choose Fully Configurable Variation which allows you to either use existing VPC and Secrets Manager or you can use addons and     create them before deploying VPN Server:
-1. Add it to an existing project or create a project.
-1. Customize Cloud automation for Client to Site VPN by selecting optional add-on components as needed:
-   - Cloud foundation for VPC (If you want to deploy the VPN Server in an existing VPC you will have to deselect this addon and pass the existing_subnet_ids field while setting inputs for the configuration. If you want to deploy the VPN server in newly created subnet you can leave `existing_subnet_ids` field empty and use `vpn_subnet_cidr_zone_1` and optionally edit `vpn_subnet_cidr_zone_2` also if you want high availability for VPN Server)
-   - Cloud automation for Secrets Manager Private Certificate (If you already have a secrets manager instance configured with private certificate engine and private certificate you have to deselect Secrets Manager Private Certificate and it will automatically deselect Secrets Manager and Private Certificate Engine addons otherwise these 3 components should be left enabled. Only Server Certificate is configured if you choose this addon. Client certificate is optional and if you want to use it you will have to configure your server and client certificate set up separately
-   )
-1. Complete the next steps depending on how you plan to use the [deployable architecture](#x10293733){: term}:
-   - [Configure](/docs/secure-enterprise?topic=secure-enterprise-config-project) it in your project and [deploy](/docs/secure-enterprise?topic=secure-enterprise-deploy-project)
+1.  Navigate to the Cloud automation for Client to Site VPN deployable architecture in the community registry.
+1.  Choose the **Fully configurable** variation. By default, this variation will include all dependant deployable architectures, including all of the best practise security and observability services. This however can be changed by clicking the **Customize** button and customizing to meet your needs. For example, you may wish to de-select the Cloud foundation for VPC deployable architecture if you already have your VPC deployed.
+1.  When you finish customizing, choose the project you wish to use, or choose the option to create a new one, and click **Configure and deploy**.
+1. Optional configurations:
+   - If you de-selected the Cloud foundation for VPC or Cloud automation for Secrets Manager deployable architectures, you will need to enter a value for the `existing_vpc_crn` and / or `existing_secrets_manager_instance_crn` inputs.
+   - By default the deployable architecture will create a new subnet for the VPN using the value of `vpn_subnet_cidr_zone_1`. You can enable high availability by creating a second subnet using the `vpn_subnet_cidr_zone_2` input. If you want to use existing subnet, you can pass a list of subnets using the `existing_subnet_ids` input.
+1. Once you are hapopy with all of the input values, proceed to [validate and deploy](/docs/secure-enterprise?topic=secure-enterprise-deploy-project).
 
 A [deployable architecture](#x10293733){: term} is infrastructure as code (IaC) that's designed for easy deployment, scalability, and modularity. In this case, the [deployable architecture](#x10293733){: term} represents a repeatable way to create client-to-site VPN connections for more than one landing zone in your org. It also simplifies how others in your company can set up more VPN connections for their landing zones.
 

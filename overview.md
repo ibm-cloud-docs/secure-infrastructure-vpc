@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2025-09-12"
+lastupdated: "2025-12-12"
 
 keywords:
 
@@ -71,8 +71,8 @@ You can deploy this architecture that uses various ways of configurations and th
 |Type of variation | Best suited for |
 |---------------|-------|
 |[Landing zone for applications with virtual servers - QuickStart](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra-qs) |Ideal for rapid deployment for demonstration and development purposes without extensive configuration. It sets up a fully customizable Virtual Private Cloud (VPC) environment in a single region.|
+|[Landing zone for applications with virtual servers - QuickStart - Standard (Integrated setup with configurable services)](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-lz-vsi-fully-configurable-ra)|Ideal for users seeking flexibility, providing a robust foundation to cater to production workloads. It grants complete control over architecture parameters, featuring optimized defaults that facilitate a fully functional virtual server instance and seamless integration with IBM Cloud services, eliminating the need for manual configuration|
 |[Landing zone for applications with virtual servers - Standard](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ra) |Ideal for users who seek a robust, secure, and customizable infrastructure based on the Financial Services reference architecture. It sets up virtual servers within a Virtual Private Cloud (VPC) across multiple zones to deploy workloads in a compliant, and scalable environment.|
-|[Landing zone for applications with virtual servers - Extension](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vsi-ext-ra) |Ideal for extending an existing VPC setup by generating virtual server instances (VSI) within one or multiple subnets of an existing landing zone VPC deployable architecture.|
 {: caption="Landing zone for applications with virtual servers variations"}
 
 For more information about the concepts of using this deployment architecture, see this [reference architecture](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-detailed-vsi) from the {{site.data.keyword.cloud_notm}} for Financial Services docs.

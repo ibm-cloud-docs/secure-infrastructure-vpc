@@ -45,10 +45,10 @@ toc:
           topics:
           - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vsi/deploy-arch-ibm-vsi-quickstart.md
             navtitle: Basic and simple
+          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone-vsi/deploy-arch-ibm-vsi-fully-configurable.md
+            navtitle: Integrated setup with configurable services
           - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-standard.md
             navtitle: Standard - Financial Services edition
-          - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-extension.md
-            navtitle: Extension
           - include: ../deployable-reference-architectures/terraform-ibm-landing-zone/deploy-arch-ibm-slz-vsi-quickstart.md
             navtitle: Quickstart - Basic and simple
   - navgroup:
@@ -77,8 +77,6 @@ toc:
   - navgroup:
       id: howto
       topics:
-      - topic: deploy-vsi-on-vpc.md
-        navtitle: Adding a VSI to your deployable architecture
       - topic: override-kms.md
         navtitle: Overriding key management
       - topic: user-data.md

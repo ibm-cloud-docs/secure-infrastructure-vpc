@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2024-06-07"
+lastupdated: "2025-12-12"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -21,7 +21,7 @@ completion-time: 1h
 {: toc-services="vpc, security-groups"}
 {: toc-completion-time="1h"}
 
-In this tutorial, you use a public {{site.data.keyword.cloud_notm}} {{site.data.keyword.alb_full}} to allow access over the public internet to an app that runs on your VSI on VPC landing zone deployable architecture.
+In this tutorial, you use a public {{site.data.keyword.cloud_notm}} {{site.data.keyword.alb_full}} to allow access over the public internet to an app that runs on your Landing zone for applications with virtual servers deployable architecture.
 {: shortdesc}
 
 The load balancer can distribute traffic among multiple application server instances that are running in the VPC (in the workload VSIs). It forwards traffic only to instances that respond correctly to periodic health checks. For more information about load balancing, see the [overview](/docs/vpc?topic=vpc-nlb-vs-elb) to Load balancers for VPC.
@@ -31,7 +31,7 @@ The load balancer can distribute traffic among multiple application server insta
 ## Before you begin
 {: #prereqs-public-app}
 
-- Deploy an instance of a VSI on VPC landing zone deployable architecture. For more information, see [Deploying a landing zone deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-deploy).
+- Deploy an instance of a Landing zone for applications with virtual servers deployable architecture. For more information, see [Deploying a landing zone deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-deploy).
 - Create a web application on a workload VSI in your deployable architecture.
 
 ## Create a load balancer
@@ -148,7 +148,7 @@ If you have connectivity issues through your load balancer, check out the troubl
 ## Summary
 {: #summary-public-app}
 
-You configured your VSI on VPC landing zone deployable architecture that hosts a web application to allow traffic from the public internet through the {{site.data.keyword.alb_full}}. Your app is now accessible from any browser on the public internet through the fully qualified domain name of the load balancer.
+You configured your Landing zone for applications with virtual servers deployable architecture that hosts a web application to allow traffic from the public internet through the {{site.data.keyword.alb_full}}. Your app is now accessible from any browser on the public internet through the fully qualified domain name of the load balancer.
 
 ## Next steps
 {: #next-steps-public-app}

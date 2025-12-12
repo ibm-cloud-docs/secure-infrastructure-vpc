@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-12-11"
+lastupdated: "2025-12-12"
 
 keywords:
 
@@ -22,6 +22,25 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## December 2025
 {: #landing-zone-2025-12}
+
+### 12 December 2025
+{: #secure-infrastructure-vpc-dec-1125}
+{: release-note}
+
+New versions of the Landing zone for applications with virtual servers deployable architectures are available
+:   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - A brand new variation has been released named `Standard - Integrated setup with configurable services`
+        - Ideal for users who want flexibility with a reliable starting point.
+        - Offers full control over architecture parameters, with well-chosen defaults that enables functional Virtual Server Instances on IBM Cloud VPC and seamless integration with IBM Cloud services without requiring manual adjustments.
+    - Version 5.20.0 of the `Quickstart - Basic and simple` variation is available.
+        - Updated the IBM terraform provider version to `1.86.0`.
+        - Update to run on terraform `v1.12.2`.
+        - Improved UI experience for several inputs.
+    - Version 8.14.0 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - The default virtual server image is updated to `ibm-ubuntu-24-04-3-minimal-amd64-3`. To avoid downtime and losing data, the image is not changed when you update to version 8.14.0. Update the image outside of the Terraform code.
+        - Updated the IBM terraform provider version to `1.85.0`.
+        - Update to run on terraform `v1.12.2`.
 
 ### 11 December 2025
 {: #secure-infrastructure-vpc-dec-1125}
