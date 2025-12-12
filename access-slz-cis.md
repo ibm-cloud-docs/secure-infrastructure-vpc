@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-06-07"
+  years: 2023, 2025
+lastupdated: "2025-12-12"
 
 keywords:
 subcollection: secure-infrastructure-vpc
@@ -21,7 +21,7 @@ completion-time: 1h
 {: toc-services="vpc, cis, secrets-manager, vsi"}
 {: toc-completion-time="1h"}
 
-In this tutorial, you use {{site.data.keyword.cis_full_notm}} ({{site.data.keyword.cis_short_notm}}) to access an application that is deployed on a VSI in a VPC landing zone deployable architecture over the internet. You set up the required infrastructure and learn how to configure {{site.data.keyword.cis_short_notm}} to access the application that is deployed in the deployable architecture.
+In this tutorial, you use {{site.data.keyword.cis_full_notm}} ({{site.data.keyword.cis_short_notm}}) to access an application that is deployed on a Landing zone for applications with virtual servers deployable architecture over the internet. You set up the required infrastructure and learn how to configure {{site.data.keyword.cis_short_notm}} to access the application that is deployed in the deployable architecture.
 {: shortdesc}
 
 {{site.data.keyword.cis_short_notm}} provides the global load balancer, caching, web application firewall, and page rules to secure your applications and enhance their reliability and performance.
@@ -38,8 +38,8 @@ In this tutorial, you use {{site.data.keyword.cis_full_notm}} ({{site.data.keywo
 ## Before you begin
 {: #prereqs-cis-app}
 
-- Deploy an instance of a VPC landing zone deployable architecture. For more information, see [Deploying a landing zone deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-deploy).
-- Make sure that your  landing zone deployable architecture has a working virtual server (VSI).
+- Deploy an instance of the Landing zone for applications with virtual servers deployable architecture. For more information, see [Deploying a landing zone deployable architecture](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-deploy).
+- Make sure that your landing zone deployable architecture has a working virtual server (VSI).
 - Create an instance of {{site.data.keyword.cis_short}} and configure it with an active domain name. You can use the {{site.data.keyword.cis_short_notm}} [Terraform module](https://github.com/terraform-ibm-modules/terraform-ibm-cis/) to create and configure the instance.
 
 ## Assign operator access
@@ -210,5 +210,3 @@ You can configure [more features](/docs/cis?topic=cis-manage-your-ibm-cis-for-op
 
 - [Managing {{site.data.keyword.cis_short_notm}} for optimal security](/docs/cis?topic=cis-manage-your-ibm-cis-for-optimal-security)
 - [Deploy and configure {{site.data.keyword.cis_short_notm}} using terraform](https://github.com/terraform-ibm-modules/terraform-ibm-cis/)
-
-
