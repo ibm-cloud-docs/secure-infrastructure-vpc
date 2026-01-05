@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-12-12"
+  years: 2023, 2026
+lastupdated: "2026-01-05"
 
 keywords:
 
@@ -19,6 +19,22 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## January 2026
+{: #landing-zone-2026-01}
+
+### 5 January 2026
+{: #secure-infrastructure-vpc-jan-0526}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.14.10 of the `Standard - Financial Services edition` variation is available.
+        - Updated the IBM terraform provider version to `1.86.1`.
+    - Version 8.10.4 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Improved UI experience for several inputs.
+        - Updated the deployable architecture versions showing in the customize flow to the latest
 
 ## December 2025
 {: #landing-zone-2025-12}
