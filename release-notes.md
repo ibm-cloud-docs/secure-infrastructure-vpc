@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-01-05"
+lastupdated: "2026-01-06"
 
 keywords:
 
@@ -22,6 +22,21 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## January 2026
 {: #landing-zone-2026-01}
+
+### 6 January 2026
+{: #secure-infrastructure-vpc-jan-0626}
+{: release-note}
+
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 3.76.4 of the `Standard - Integrated setup with configurable services` and `QuickStart - Basic and simple` variations are available.
+        - Updated the IBM terraform provider version to `1.86.1`.
+        - Updated the kubernetes terraform provider version to `3.0.1`.
+        - Updated the deployable architecture versions showing in the customize flow to the latest
+        - Update the default kube-audit image to a later version.
+    - Version 8.14.11 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - Updated the IBM terraform provider version to `1.86.1`.
 
 ### 5 January 2026
 {: #secure-infrastructure-vpc-jan-0526}
