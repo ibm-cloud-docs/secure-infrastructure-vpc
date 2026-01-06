@@ -27,13 +27,27 @@ Use these release notes to learn about the latest updates to the landing zone de
 {: #secure-infrastructure-vpc-jan-0626}
 {: release-note}
 
+New versions of the Landing zone for applications with virtual servers deployable architectures are available
+:   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 5.20.15 of the `QuickStart - Basic and simple` variation is available.
+        - Updated the IBM terraform provider version to `1.86.1`.
+    - Version 5.20.15 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Updated the IBM terraform provider version to `1.86.1`.
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
+        - Updated the monitoring agent image to default to icr.io/ext/sysdig/agent-slim version 14.3.1
+        - Updated the logging agent helm chart to default to icr.io/ibm-observe/logs-agent-helm version 1.7.1
+    - Version 8.14.11 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - Updated the IBM terraform provider version to `1.86.1`.
+        - The default virtual server image is updated to `ibm-ubuntu-24-04-3-minimal-amd64-4`. To avoid downtime and losing data, the image is not changed when you update to version 8.14.11. Update the image outside of the Terraform code.
+
 New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
 :   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
     - Version 3.76.4 of the `Standard - Integrated setup with configurable services` and `QuickStart - Basic and simple` variations are available.
         - Updated the IBM terraform provider version to `1.86.1`.
         - Updated the kubernetes terraform provider version to `3.0.1`.
-        - Updated the deployable architecture versions showing in the customize flow to the latest
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
         - Update the default kube-audit image to a later version.
     - Version 8.14.11 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
         - Updated the IBM terraform provider version to `1.86.1`.
