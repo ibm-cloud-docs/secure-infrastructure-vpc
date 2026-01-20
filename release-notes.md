@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-01-20"
 
 keywords:
 
@@ -22,6 +22,20 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## January 2026
 {: #landing-zone-2026-01}
+
+### 20 January 2026
+{: #secure-infrastructure-vpc-jan-2026}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - A brand new variation has been released named `QuickStart - Basic and simple`.
+        - Ideal for users new to IBM Cloud or Virtual Private Cloud (VPC) who want to get started without configuring underlying infrastructure.
+    - Version 8.11.0 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Updated the IBM terraform provider version to `1.87.1`.
+    - Version 8.14.15 of the `Standard - Financial Services edition` variation is available.
+        - Updated the IBM terraform provider version to `1.87.1`.
 
 ### 6 January 2026
 {: #secure-infrastructure-vpc-jan-0626}
