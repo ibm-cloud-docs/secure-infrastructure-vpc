@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2025-12-12"
+lastupdated: "2026-01-20"
 
 keywords:
 
@@ -36,6 +36,7 @@ You can deploy this architecture that uses various ways of configurations and th
 
 |Type of variation | Best suited for |
 |---------------|-------|
+|[QuickStart - Basic and simple)](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vpc-fully-configurable)|Ideal for users who need a basic VPC configuration with lightweight networking defaults and support for VPC Flow Logs. It provides a basic and simple Virtual Private Cloud (VPC) deployment that requires minimal configuration.|
 |[Standard (Integrated setup with configurable services)](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vpc-fully-configurable)|Ideal for users who seek flexibility to provide a dependable foundation. It grants complete control over architecture parameters, featuring optimized defaults that facilitate a fully functional Virtual Private Cloud (VPC) environment along with seamless integration of IBM Cloud services, eliminating the need for manual configuration.|
 |[Standard - Financial Services edition](/docs/secure-infrastructure-vpc?topic=secure-infrastructure-vpc-vpc-ra) |Ideal for production workloads. It adheres to financial services compliance standards. It offers a validated configuration, which is designed to align with the IBM Cloud Framework for Financial Services, to help ensure all necessary regulatory requirements are met.|
 {: caption="Cloud foundation for VPC Variations"}
