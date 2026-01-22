@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-01-22"
 
 keywords:
 
@@ -22,6 +22,17 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## January 2026
 {: #landing-zone-2026-01}
+
+### 22 January 2026
+{: #secure-infrastructure-vpc-jan-2226}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.12.1 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Fixed bug with default ACL rules where client side ports were restricted to the same as the server side port which is wrong as client side port is generated dynamically.
+        - If updating from a previous version you will see the expected update in place of the ACL rules like so: `module.vpc.ibm_is_network_acl.network_acl["vpc-acl"] will be updated in-place`.
 
 ### 20 January 2026
 {: #secure-infrastructure-vpc-jan-2026}
