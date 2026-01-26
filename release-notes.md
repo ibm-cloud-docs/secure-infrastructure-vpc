@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-01-22"
+lastupdated: "2026-01-26"
 
 keywords:
 
@@ -22,6 +22,27 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## January 2026
 {: #landing-zone-2026-01}
+
+### 26 January 2026
+{: #secure-infrastructure-vpc-jan-2626}
+{: release-note}
+
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 3.78.7 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Terraform `null_resource` has been replaced by `terraform_data` for installing required binaries. 
+            - Upgrading from a previous release will see the expected destroy of the `null_resource` and the creation of the `terraform_data` resources. There is no impact to day to day operations here.
+        - The default configuration for audit logs has been updated to use HTTPS encryption instead of unencrypted HTTP.
+            - A private key is created by default and the certificate approved by kubectl. For a full list of the steps that are executed by this DA, see [Manage updates, rotate certificates, and encrypt in transit with HTTPS](/docs/openshift?topic=openshift-health-audit#secure-setup).
+            - Users upgrading from a previous version will see an update in place which will re-create the kube secret and restart the kube-audit pods to apply the HTTPS configuration.
+        - Update the default kube-audit image to a later version.
+        - Updated the IBM terraform provider version to `1.87.2`.
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
+        
+    - Version 3.78.7 of the `QuickStart - Basic and simple` and `QuickStart - Basic and simple` variations are available.
+        - Updated the IBM terraform provider version to `1.87.2`.
+        - Upgrading from a previous release will see the expected destroy of the `null_resource` and the creation of the `terraform_data` resources. There is no impact to day to day operations here.
 
 ### 22 January 2026
 {: #secure-infrastructure-vpc-jan-2226}
