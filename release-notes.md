@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-01-26"
+lastupdated: "2026-01-27"
 
 keywords:
 
@@ -22,6 +22,24 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## January 2026
 {: #landing-zone-2026-01}
+
+### 27 January 2026
+{: #secure-infrastructure-vpc-jan-2726}
+{: release-note}
+
+New versions of the Landing zone for applications with virtual servers deployable architectures are available
+:   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    Upgrading the `Quickstart - Basic and simple` variation from v5.x.x to v6.x.x will destroy and re-create subnets, addresss prefixes, floating IPs, VSI, and VNI resources due to the prefix change. Resources such as SSH key names, ACLs, public gateway and the VPC name itself will be updated in place. Plan accordingly before you upgrade. This is not applicable to any of the other variations.
+    {: important}
+    
+    - Version 6.0.0 of the `QuickStart - Basic and simple` variation is available.
+        - Fixed a bug where the resources were being named with double dashes in the name. See above warning if upgrading from a previous version.
+        - Updated the IBM terraform provider version to `1.87.2`.
+    - Version 6.0.0 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Updated the IBM terraform provider version to `1.87.2`.
+        - Added support to deploy the logging agent on Ubuntu 24 images.
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
 
 ### 26 January 2026
 {: #secure-infrastructure-vpc-jan-2626}
