@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-11-04"
+  years: 2023, 2026
+lastupdated: "2026-02-13"
 
 keywords:
 
@@ -15,16 +15,8 @@ subcollection: secure-infrastructure-vpc
 # Known issues with landing zone deployable architectures
 {: #known-issues}
 
-## OpenShift creation fails with "The specified API key could not be found"
-{: #ki-ocp-apikey-error}
-
-During cluster provisioning a containers apikey is created if one does not already exist for the given resource group and region ([learn more](https://cloud.ibm.com/docs/containers?topic=containers-access-creds)). Occasionally replication of the newly created apikey can be delayed causing the cluster creation to fail with an error like this:
-
-`Error: Request failed with status code: 404, ServerErrorResponse: {"incidentID":"c5caf83e-5f08-48c9-9778-6f3eb0ce1d16,c5caf83e-5f08-48c9-9778-6f3eb0ce1d16","code":"E06f9","description":"The specified API key could not be found.","type":""}`
-
-### Workaround
-{: #ki-ocp-apikey-error-workaround}
-To workaround the issue simply attempt a re-apply of the terraform and it should pass on second attempt. If you still face issues, an IBM Cloud support case should be created with the `Kubernetes service` and include the `incidentID` from the error.
+For a list of common known issues see:
+- [Known issues with Red Hat OpenShift on IBM Cloud / IBM Cloud Kubernetes Service when using terraform](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-known-issues)
 
 ## OpenShift VPC cluster deployed by landing zone in warning state
 {: #ki-ocp-cos-vpe-warning}
@@ -45,30 +37,6 @@ To confirm this:
 ### Workaround
 {: #ki-workaround-ocp-cos-vpe-warning}
 Upgrade to version 7.2.2 or later where you will see the expected destroy of the landing zone created virtual private endpoint for Cloud Object Storage and its associated reserved IP.
-
-## QuickStart variations fail projects validation
-{: #ki-vsiqs-validation-fail}
-
-With the QuickStart variations of the landing zones (both VSI on VPC and Red Hat OpenShift Container Platform on VPC), the configuration fails validation during the the Code Risk Analyzer scan. QuickStart variations are designed to deploy quickly for demonstration and development and don't claim any controls for the scan.
-
-## Service ID API keys and {{site.data.keyword.redhat_openshift_notm}}
-{: #ki-svc-key-rhos}
-
-Service ID API keys are not supported for the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone deployable architecture. Use an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=terraform#create_user_key-api-terra). For more information, see [Ensuring that the API key or infrastructure credentials owner has the correct permissions](/docs/openshift?topic=openshift-access-creds) in the {{site.data.keyword.redhat_openshift_notm}} Cloud docs.
-
-## Authentication with trusted profiles not supported in some landing zones
-{: #ki-trusted-profile}
-
-When you deploy a deployable architecture with {{site.data.keyword.cloud_notm}} projects, you select an authentication method to deploy your configuration.
-
-Currently, the {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone supports authenticating only with an API key and not a service ID API key (see previous known issue). Trusted profile is not supported as an authentication method for this landing zone.
-
-## Supported {{site.data.keyword.compliance_short}} rules
-{: #ki-scc-goals}
-
-The deployable architectures support a set of security controls, and those controls are listed with the deployable architecture in the {{site.data.keyword.cloud_notm}} catalog.
-
-If you use {{site.data.keyword.compliance_short}} or the Code Risk Analyzer plug-in for {{site.data.keyword.cloud_notm}} to scan your deployed resources against another security profile, you might see failures in the results.
 
 ## Unsupported attribute error after interrupted apply or destroy
 {: #ki-unsupported-attribute}
@@ -95,4 +63,4 @@ The error occurs because the interrupted operation leaves key resources in a par
 To complete the `destroy` operation that is stuck in this state, try to decouple the resources that depend on the missing components. To decouple the resources, use the `override` feature, for example by setting the `override_json_string` input variable.
 
 - VSI on VPC landing zone deployable architectures that are missing their VPC components: `override_json_string` = `'{"vsi": []}'`
-- Red Hat OpenShift Container Platform on VPC landing zone deployable architectures:`override_json_string` = `'{"clusters": []}'`
+- Red Hat OpenShift Container Platform on VPC landing zone deployable architectures: `override_json_string` = `'{"clusters": []}'`
