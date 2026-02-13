@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-02-13"
 
 keywords:
 
@@ -19,6 +19,26 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## February 2026
+{: #landing-zone-2026-02}
+
+### 13 February 2026
+{: #secure-infrastructure-vpc-feb-1326}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.15.0 of the `Standard - Integrated setup with configurable services` variation is available.
+        - The format of the `vpe_gateway_cloud_services` and `vpe_gateway_cloud_service_by_crn` inputs have been updated in the DA:
+            - The `allow_dns_resolution_binding` attribute has been replaced by `dns_resolution_binding_mode`. [Learn more](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/blob/main/solutions/fully-configurable/DA-types.md#vpn-gateways-).
+        - Updated the IBM terraform provider version to `1.87.3`.
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
+    - Version 8.15.0 of the `QuickStart - Basic and simple` variation is available.
+        - Updated the IBM terraform provider version to `1.87.3`.
+    - Version 8.14.15 of the `Standard - Financial Services edition` variation is available.
+        - Updated the IBM terraform provider version to `1.87.3`.
 
 ## January 2026
 {: #landing-zone-2026-01}
