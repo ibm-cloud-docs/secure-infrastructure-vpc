@@ -37,7 +37,7 @@ New versions of the Cloud foundation for VPC deployable architectures are availa
         - Updated the deployable architecture versions showing in the customize flow to the latest.
     - Version 8.15.0 of the `QuickStart - Basic and simple` variation is available.
         - Updated the IBM terraform provider version to `1.87.3`.
-    - Version 8.14.15 of the `Standard - Financial Services edition` variation is available.
+    - Version 8.15.1 of the `Standard - Financial Services edition` variation is available.
         - Updated the IBM terraform provider version to `1.87.3`.
 
 ## January 2026
