@@ -27,6 +27,21 @@ Use these release notes to learn about the latest updates to the landing zone de
 {: #secure-infrastructure-vpc-feb-1726}
 {: release-note}
 
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 3.80.3 of the `Standard - Integrated setup with configurable services` and `QuickStart - Basic and simple` variations are available.
+        - Added support for Openshift 4.20. The default version is still 4.19.
+        - Removed support for Openshift 4.14 and 4.15.
+        - Update the default kube-audit image to a later version.
+        - Updated the IBM terraform provider version to `1.87.3`.
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
+        
+    - Version 8.15.1 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - Added support for Openshift 4.20. The default version is still 4.19.
+        - Removed support for Openshift 4.14 and 4.15.
+        - Updated the IBM terraform provider version to `1.87.3`.
+
 New versions of the Landing zone for applications with virtual servers deployable architectures are available
 :   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
 
@@ -97,7 +112,7 @@ New versions of the Landing zone for containerized applications with OpenShift d
         - Updated the IBM terraform provider version to `1.87.2`.
         - Updated the deployable architecture versions showing in the customize flow to the latest.
         
-    - Version 3.78.7 of the `QuickStart - Basic and simple` and `QuickStart - Basic and simple` variations are available.
+    - Version 3.78.7 of the `QuickStart - Basic and simple` variation is available.
         - Updated the IBM terraform provider version to `1.87.2`.
         - Upgrading from a previous release will see the expected destroy of the `null_resource` and the creation of the `terraform_data` resources. There is no impact to day to day operations here.
 
