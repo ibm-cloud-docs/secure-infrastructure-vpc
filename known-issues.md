@@ -64,3 +64,34 @@ To complete the `destroy` operation that is stuck in this state, try to decouple
 
 - VSI on VPC landing zone deployable architectures that are missing their VPC components: `override_json_string` = `'{"vsi": []}'`
 - Red Hat OpenShift Container Platform on VPC landing zone deployable architectures: `override_json_string` = `'{"clusters": []}'`
+
+## Changing prefix value recreates subnets and address prefixes
+{: #ki-vpc-prefix-change-recreate}
+
+If you deployed Landing Zone VPC infrastructure and later update the `prefix` input value, Terraform might plan to destroy and recreate subnet and VPC address prefix resources.
+
+This behavior occurs because Landing Zone VPC module use the `prefix` value as part of the internal Terraform resource keys. When the prefix changes, Terraform treats the existing resources as different objects and plans replacement instead of renaming them in place.
+
+You might notice output similar to:
+
+```text
+resource "ibm_is_vpc_address_prefix" will be destroyed
+(because key is not in for_each map)
+```
+{: screen}
+
+### Impact
+{: #ki-vpc-prefix-change-impact}
+
+Subnets and address prefixes can be recreated.
+
+Dependent resources might also be replaced depending on configuration.
+
+This affects all solutions that consume the Landing Zone VPC module.
+
+### Workaround
+{: #ki-vpc-prefix-change-workaround}
+
+Avoid changing the `prefix` value after the infrastructure is deployed. Treat the `prefix` as an immutable identifier for an existing environment when possible.
+
+If you change the `prefix` after deployment, Terraform can destroy and recreate address prefixes, subnets, and dependent resources. Proceed only if you are prepared for this disruptive update.
