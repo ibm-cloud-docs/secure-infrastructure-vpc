@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-02-13"
+lastupdated: "2026-02-17"
 
 keywords:
 
@@ -22,6 +22,25 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## February 2026
 {: #landing-zone-2026-02}
+
+### 17 February 2026
+{: #secure-infrastructure-vpc-feb-1726}
+{: release-note}
+
+New versions of the Landing zone for applications with virtual servers deployable architectures are available
+:   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 6.1.2 of the `QuickStart - Basic and simple` variation is available.
+        - Added support for more virtual server images.
+        - Updated the default virtual server image to "ibm-ubuntu-24-04-3-minimal-amd64-5".
+        - Updated the IBM terraform provider version to `1.87.3`.
+    - Version 6.1.2 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Updated the IBM terraform provider version to `1.87.3`.
+        - Updated the TLS terraform provider version to `4.2.1`.
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
+    - Version 8.15.1 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - Updated the IBM terraform provider version to `1.87.3`.
+        - Updated the default VSI image to "ibm-ubuntu-24-04-3-minimal-amd64-5".
 
 ### 13 February 2026
 {: #secure-infrastructure-vpc-feb-1326}
