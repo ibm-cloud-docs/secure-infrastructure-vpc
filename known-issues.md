@@ -92,6 +92,6 @@ This affects all solutions that consume the Landing Zone VPC module.
 ### Workaround
 {: #ki-vpc-prefix-change-workaround}
 
-Avoid changing the `prefix` value after the infrastructure is deployed. Treat the prefix as an immutable identifier for an existing environment.
+Avoid changing the `prefix` value after the infrastructure is deployed. Treat the prefix as an immutable identifier for an existing environment when possible.
 
-If a different prefix is required, deploy a new environment instead of modifying the existing one.
+If a different prefix is required, expect a disruptive update where Terraform can recreate address prefixes, subnets, and dependent resources. Plan maintenance windows and impact accordingly before applying the change.
