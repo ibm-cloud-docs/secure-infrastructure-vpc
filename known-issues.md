@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-02-17"
+lastupdated: "2026-03-06"
 
 keywords:
 
@@ -95,3 +95,10 @@ This affects all solutions that consume the Landing Zone VPC module.
 Avoid changing the `prefix` value after the infrastructure is deployed. Treat the `prefix` as an immutable identifier for an existing environment when possible.
 
 If you change the `prefix` after deployment, Terraform can destroy and recreate address prefixes, subnets, and dependent resources. Proceed only if you are prepared for this disruptive update.
+
+## Limitation: `cluster-autoscaler` add-on not supported in Landing Zone module
+{: #ki-ocp-cluster-autoscaler-addon}
+
+If you deploy the OpenShift Cluster using the [Landing Zone](https://registry.terraform.io/modules/terraform-ibm-modules/landing-zone/ibm/latest) module, the configuration of `cluster-autoscaler` add-on is not supported.
+
+To set the `cluster‑autoscaler` add-on config, we need to set the cluster-context by initializing the Kubernetes provider. Since the number of clusters is dynamic, and provider initialization can’t be dynamic. Due to this limitation, this set up isn’t supported.
