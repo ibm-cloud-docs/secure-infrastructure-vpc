@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-02-17"
+lastupdated: "2026-08-17"
 
 keywords:
 
@@ -19,6 +19,31 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## August 2026
+{: #landing-zone-2026-08}
+
+### 17 August 2026
+{: #secure-infrastructure-vpc-aug-1726}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version `10.0.0` of the `Standard - Integrated setup with configurable services` variation is available.
+      - Removed all references to `Hyper Protect Crypto Services` (HPCS / hs-crypto). [Learn More](https://github.com/terraform-ibm-modules/terraform-ibm-landing-zone-vpc/releases/tag/v10.0.0#migration-guide)
+      - Updated the IBM terraform provider version to `2.5.0`.
+      - Added support for update inline rule logic on `ibm_is_network_acl` resources via the new optional boolean variable `incremental_rule_update`.
+      - Standardized the `resource_tags` variable, updated variable descriptions, and added access tag validation.
+      - Replaced direct `ibm_is_vpn_gateway` resource creation with the `terraform-ibm-modules/site-to-site-vpn/ibm module` for managing VPN gateways.
+      - Updated `network_acls` and `security_group_rules` variable schemas to the flat attribute format.
+      - Added new outputs `default_routing_table`, `routing_table_ids`, and `routing_table_routes`.
+
+    - Version `10.0.0` of the `QuickStart - Basic and simple` variation is available.
+        - Updated the IBM terraform provider version to `2.5.0`.
+        - Added support for update inline rule logic on `ibm_is_network_acl` resources via the new optional boolean variable `incremental_rule_update`.
+        - Standardized the `resource_tags` variable, updated variable descriptions, and added access tag validation.
+        - Updated `network_acls` and `security_group_rules` variable schemas to the flat attribute format.
 
 ## February 2026
 {: #landing-zone-2026-02}
