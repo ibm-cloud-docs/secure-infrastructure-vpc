@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-10-27"
 
 keywords:
 
@@ -19,6 +19,38 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## October 2026
+{: #landing-zone-2026-10}
+
+### 27 October 2026
+{: #secure-infrastructure-vpc-oct-2726}
+{: release-note}
+
+New versions of the Landing zone for applications with virtual servers deployable architectures are available
+:   New versions of the Landing zone for applications with virtual servers deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 8.3.5 of the `QuickStart - Basic and simple` variation is available.
+        - Updated the default virtual server image to "ibm-ubuntu-26-04-minimal-amd64-2".
+        - Added support for more virtual server images and updated the list of supported images to the latest.
+        - Added outbound HTTP, HTTPS, and DNS rules to the network ACL and security group so that the virtual server can reach package repositories and other services.
+        - Changed the default value of the `user_data` input to `null`. The default welcome message script is no longer applied.
+        - Added the `primary_vni` output.
+        - Updated the IBM terraform provider version to `2.8.0`.
+        - Updated the TLS terraform provider version to `4.4.1`.
+        
+    - Version 8.3.5 of the `Standard - Integrated setup with configurable services` variation is available.
+        - Added a warning when a Hyper Protect Crypto Services key is used, because the service is deprecated.
+        - **Breaking change:** Changed how subnets are selected. Previously, one subnet was selected automatically from the VPC. You must now specify the subnets to deploy into by using the `existing_subnet_ids` or `vsi_subnet_names` input. The `existing_subnet_id` input is replaced by `existing_subnet_ids`.
+        - **Breaking change:** Changed the naming of virtual servers and virtual network interfaces. On the first apply after you upgrade, existing resources are renamed in place, from `<prefix>-vsi` to `<prefix>-vsi-<subnet-hash>-<number>`. The resources are not re-created.
+        - Added support for deploying virtual servers across multiple subnets, including for the secondary network interface. Added the `vsi_subnet_names`, `existing_subnet_ids`, `vsi_per_subnet`, and `custom_vsi_volume_names` inputs.
+        - Added support for the IBM Cloud Logs and IBM Cloud Monitoring agents on Windows virtual servers. For Windows virtual servers, set the `monitoring_access_key` input to the Prometheus Remote Write (PRWS) API token of your monitoring instance.
+        - Added support for restoring volumes from a snapshot CRN, including snapshots from another account. The `snapshot_id` attribute in `block_storage_volumes` is replaced by `snapshot_crn`, and the `boot_volume_snapshot_id` input is replaced by `boot_volume_snapshot_crn`.
+        - Added support for configuring the throughput of block storage volumes with the `bandwidth` attribute, and the storage profile of the boot volume with the `boot_volume_profile` input. Removed the 250 GB limit on the `boot_volume_size` input so that you can expand the boot volume after deployment.
+        - Updated the security group rules in the `security_group` and `load_balancers` inputs to use the flat attributes `protocol`, `port_min`, `port_max`, `type`, and `code` instead of the deprecated `tcp`, `udp`, and `icmp` blocks. The IBM terraform provider migrates the resources automatically, but you must update your input values to the new format.
+        - Added the `primary_vni` and `secondary_vni` outputs.
+        - Updated the IBM terraform provider version to `2.8.0`, the TLS terraform provider version to `4.4.1`, and the time terraform provider version to `0.14.2`.
+
 
 ## August 2026
 {: #landing-zone-2026-08}
