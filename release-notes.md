@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-10-27"
+lastupdated: "2026-11-03"
 
 keywords:
 
@@ -19,6 +19,26 @@ content-type: release-note
 
 Use these release notes to learn about the latest updates to the landing zone deployable architectures: Cloud foundation for VPC, VSI on VPC landing zone, and {{site.data.keyword.redhat_openshift_notm}} Container Platform on VPC landing zone. The entries are grouped by date.
 {: shortdesc}
+
+## November 2026
+{: #landing-zone-2026-11}
+
+### 03 November 2026
+{: #secure-infrastructure-vpc-nov-0326}
+{: release-note}
+
+New versions of the Cloud foundation for VPC deployable architectures are available
+:   New versions of the Cloud foundation for VPC deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 10.1.7 of the `Standard - Integrated setup with configurable services` variation is available.
+      - Updated the deployable architecture versions showing in the customize flow to the latest.
+      - Updated the IBM terraform provider version to 2.8.0
+      - Added a non-fatal deprecation warning when a `Hyper Protect Crypto Services` (HPCS / hs-crypto) instance or key CRN is provided in the `existing_kms_instance_crn` or `existing_flow_logs_bucket_kms_key_crn` input variables. Plan your migration to a supported key management service ahead of the end of support.
+      - Updated the validation of the `existing_kms_instance_crn` and `existing_flow_logs_bucket_kms_key_crn` input variables to accept `hs-crypto` CRNs.
+
+    - Version 10.1.7 of the `QuickStart - Basic and simple` variation is available.
+      - Updated the deployable architecture versions showing in the customize flow to the latest.
+      - Updated the IBM terraform provider version to 2.8.0.
 
 ## October 2026
 {: #landing-zone-2026-10}
