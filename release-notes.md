@@ -40,6 +40,17 @@ New versions of the Cloud foundation for VPC deployable architectures are availa
       - Updated the deployable architecture versions showing in the customize flow to the latest.
       - Updated the IBM terraform provider version to 2.8.0.
 
+    - Version 8.23.8 of the `Standard - Financial Services edition` variation is available.
+      - Added support for update inline rule logic on `ibm_is_network_acl` resources via the new optional boolean variable `incremental_rule_update`. When `true` (default), only the changed rules are updated. When `false`, all rules are destroyed and recreated.
+      - Added the `provider_visibility` variable to control the IBM provider network visibility (`public`, `private`, or `public-and-private`). The default is `private`.
+      - Added the `kms_endpoint_type` variable to set the endpoint type (`public` or `private`) used for keys, key rings, and key policies in the Key Management Service instance. The default is `private`.
+      - Added support for using an existing Object Storage instance through the new optional variables `existing_cos_instance_name`, `existing_cos_resource_group`, `existing_cos_endpoint_type`, `use_existing_cos_for_vpc_flowlogs`, and `use_existing_cos_for_atracker`.
+      - Updated the IBM terraform provider version to `2.8.2`.
+      - Updated the `hashicorp/external` provider version to `2.4.2`.
+      - Updated the provider range strategy to support IBM provider v2.
+      - Updated the default value of the `teleport_vsi_image_name` variable to `ibm-ubuntu-26-04-1-minimal-amd64-1`.
+      - Updated the `prefix` variable description with a note that changing the prefix after deployment recreates resources.
+
 ## October 2026
 {: #landing-zone-2026-10}
 
