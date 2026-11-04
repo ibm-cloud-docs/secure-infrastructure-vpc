@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-11-03"
+lastupdated: "2026-11-04"
 
 keywords:
 
@@ -22,6 +22,40 @@ Use these release notes to learn about the latest updates to the landing zone de
 
 ## November 2026
 {: #landing-zone-2026-11}
+
+### 04 November 2026
+{: #secure-infrastructure-vpc-nov-0426}
+{: release-note}
+
+New versions of the Landing zone for containerized applications with OpenShift deployable architectures are available
+:   New versions of the Landing zone for containerized applications with OpenShift deployable architectures are released in the {{site.data.keyword.cloud_notm}} [catalog](/catalog#deployable_architecture){: external}.
+
+    - Version 4.1.2 of the `Standard - Integrated setup with configurable services` variation is available.
+        - **Breaking change:** Removed all references to `Hyper Protect Crypto Services` (HPCS / hs-crypto).
+        - Updated the IBM terraform provider version to `2.8.2`.
+        - Added support for update inline rule logic on `ibm_is_network_acl` resources via the new optional boolean variable `incremental_rule_update`. When `true` (default), only the changed rules are updated. When `false`, all rules are destroyed and recreated.
+        - Standardized the `resource_tags` variable, updated variable descriptions, and added access tag validation.
+        - Updated `network_acls` and `security_group_rules` variable schemas to the flat attribute format.
+        - Added a non-fatal deprecation warning when a `Hyper Protect Crypto Services` (HPCS / hs-crypto) instance or key CRN is provided in the `existing_kms_instance_crn` input variable. Plan your migration to a supported key management service ahead of the end of support.
+        - Updated the validation of the `existing_kms_instance_crn` input variable to accept `hs-crypto` CRNs.
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
+
+    - Version 4.1.2 of the `QuickStart - Basic and simple` variation is available.
+        - Updated the deployable architecture versions showing in the customize flow to the latest.
+        - Updated the IBM terraform provider version to `2.8.2`.
+        - Added support for update inline rule logic on `ibm_is_network_acl` resources via the new optional boolean variable `incremental_rule_update`. When `true` (default), only the changed rules are updated. When `false`, all rules are destroyed and recreated.
+        - Standardized the `resource_tags` variable, updated variable descriptions, and added access tag validation.
+        - Updated `network_acls` and `security_group_rules` variable schemas to the flat attribute format.
+
+    - Version 8.23.8 of the `QuickStart - Financial Services edition` and `Standard - Financial Services edition` variations are available.
+        - Added support for update inline rule logic on `ibm_is_network_acl` resources via the new optional boolean variable `incremental_rule_update`. When `true` (default), only the changed rules are updated. When `false`, all rules are destroyed and recreated.
+        - Added the `provider_visibility` variable to control the IBM provider network visibility (`public`, `private`, or `public-and-private`). The default is `private`.
+        - Added the `kms_endpoint_type` variable to set the endpoint type (`public` or `private`) used for keys, key rings, and key policies in the Key Management Service instance. The default is `private`.
+        - Added support for using an existing Object Storage instance through the new optional variables `existing_cos_instance_name`, `existing_cos_resource_group`, `existing_cos_endpoint_type`, `use_existing_cos_for_vpc_flowlogs`, and `use_existing_cos_for_atracker`.
+        - Updated the IBM terraform provider version to `2.8.2`.
+        - Updated the `hashicorp/external` provider version to `2.4.2`.
+        - Updated the provider range strategy to support IBM provider v2.
+        - Updated the `prefix` variable description with a note that changing the prefix after deployment recreates resources.
 
 ### 03 November 2026
 {: #secure-infrastructure-vpc-nov-0326}
